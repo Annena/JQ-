@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>订单点评</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201703111732">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201703111732">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201703111732">
+<link rel="stylesheet" type="text/css" href="../../css/page/pinglun.css?v=201703111732">
+</head>
+<body style="height:100%">
+    
+
+    <!--main部分-->
+    <div class="pinglun-nav">
+        <div class="stafffloat">
+            <div class="pinglun-lan">
+                当前位置：评论列表
+            </div>
+            <div class="pinglun-search">
+                <ul>
+                    <li class="clearfix">
+                        <p>开始日期：
+                            <input type="text" id="start-date" name="start-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})"> 
+                        </p>
+                        <p>结束日期：
+                            <input type="text" id="end-date" name="end-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </p>
+                        <p><input type="button" value="查询" id="searchbtn" class="btn"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdiv" style="height:131px;"></div>
+        <div class="pinglun-content" id="comment-content">
+            
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <!-- 回复 -->
+    <div id="reply-message" class="message">
+        <div class="messageimg"><img src="../../img/base/website_84.gif"></div>
+        <h1 class="title">回复点评</h1>
+        <div class="container">
+            <textarea class="shurukuang" id="reply-info"></textarea>
+        </div>
+        <div class="close-message">
+            <div id="cancelt-reply" class="close-dialog"></div>
+            <div id="definite-reply" class="definite-dialog"></div>
+        </div>
+        <div class="messageimg"><img src="../../img/base/website_84.gif"></div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201703111732"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201703111732"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201703111732"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201703111732"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201703111732"></script>
+    <script type="text/javascript" src="../../js/page/shopOrderReview.js?v=201703111732"></script>
+</body>
+</html>

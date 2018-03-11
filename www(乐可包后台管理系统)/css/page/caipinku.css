@@ -1,0 +1,389 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 菜品库 (you@example.org)
+ * @date    2018-12-6 15:44:06
+ * @version $Id$
+ */
+/*价格弹出层样式*/
+.select-dialog_1{
+    width: 800px !important;
+    left: 50%;
+    margin-left: -400px;
+}
+.price_strategy{
+	padding:15px 30px 30px 30px;
+}
+.price_strategy .price_p{
+    font-size: 16px;
+    color: #333;
+    padding-bottom:5px;
+   /* line-height: 40px; */
+}
+.price_strategy select,second-width{
+	width: 110px; margin:0 20px;
+}
+.price_strategy  ul li{
+    padding: 15px 0;
+}
+.price_con{
+	padding-left: 48px; 
+}
+.price_left{
+	float: left; 
+	font-size:16px;
+}
+.select-dialog {
+    width: 344px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 6px;
+    /*position: fixed;*/
+    z-index: 999;
+    max-height: 441px;
+    display: table;
+   /* top: 20%;
+    left: 25%;*/
+    /* transform: translate(-50%,-50%); */
+    z-index: 666666;
+    font-size: 14px;
+    border:1px solid #ccc;
+}
+.select-dialog-title {
+    height: 50px;
+    background: #af030a;
+    border-bottom: 1px solid #E5E5E5;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+}
+.close-btn {
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: url(../../img/base/close.png) no-repeat center;
+    -webkit-background-size: 17px;
+    background-size: 17px;
+}
+.priceContent_left{
+	float:left;
+	width:100px;
+	padding-left:30px;
+}
+.priceContent_right{
+	float:left;
+	width:400px;
+}
+.price_left .Wdate{
+	margin-left: 15px;
+    margin-right: 15px;
+}
+.price_left_1{
+	margin-left:4px;
+	position: relative;
+    top: -8px;
+}
+.week_select{
+	padding-left:20px;
+	font-size: 16px;
+}
+.week_select label{
+	padding-right:10px;
+}
+.price_title{
+	line-height:40px;
+}
+.clearfix_1{
+	padding-bottom: 10px;
+}
+.clearfix_2{
+	padding-bottom: 2px;
+}
+.dialog-button{
+    border-top:1px solid #dfdfdf;
+}
+.dialog-button input{
+	width:115px;
+	height:40px;
+	margin:20px 116px;
+}
+.search_save{
+	color:#fff;
+	background:#b0020b;
+	border:1px solid #b0020b;
+}
+.search_cancel{
+	color:#ecac2e;
+	background:#fff;
+	border:1px solid #ecac2e;
+}
+.nav-shop_1{
+    font-size:28px !important;
+    color:#333;
+    width:184px;
+    text-indent:10px;
+}
+
+/*菜品管理添加*/
+.stores-caozuo-btn {
+    width: 70px;
+    height: 30px;
+    background: #FF8366;
+    line-height: 25px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    background: #FF8366;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    opacity: 1;
+}
+.changeBtn{
+    padding:10px;
+}
+.EditTable{
+    width:740px;
+    margin-bottom: 10px;
+}
+.nav-content-edit-table{
+    padding-left:114px;
+}
+
+/*会员名称等弹出框*/
+.message_2{
+    width:600px;
+   /* height:260px;*/
+     margin: -80px 0 0 -300px;
+    /*border: 2px solid #FFFFFF;*/
+    text-align: center;
+    font-size: 22px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* margin-left: -400px; */
+}
+.StrategyTitle_2{
+    width:600px;
+    height: 50px;
+}
+.StrategyBox_2{
+    width:600px;
+}
+.clearfix_2{
+    text-align:left;
+    font-size:16px;
+}
+.indent{
+    text-indent:4px;
+}
+.used{
+    padding-bottom:16px;
+}
+.used table{
+    margin-bottom: 10px;
+}
+.custom{
+    padding-bottom:40px;
+}
+.custom select{
+    width:110px;
+}
+.custom_dayin{
+    padding-bottom:0px;
+}
+.used_dayin ul{
+    padding-left: 50px;
+    font-size: 16px;
+}
+.used_dayin ul li{
+      line-height: 36px;
+      color:#999;
+}
+.used_dayin ul li span{
+    color:#333;
+}
+.custom_dayin select{
+    height:32px;
+    font-size: 16px;
+}
+.dishesStoreEdit .custom_dayin select{
+    font-size: 12px;
+}
+.custom_dayin ul{
+    padding-left: 50px;
+}
+.custom_dayin ul li{
+    line-height: 46px;
+    color:#999;
+}
+.custom_dayin ul li span{
+    color:#333;
+}
+.used_dayin label{
+    padding-bottom:6px;
+    display:inline-block;
+}
+.custom_dayin label{
+    padding-bottom:0px;
+    width:100%;
+    display:inline-block;
+}
+/*价格弹出框样式*/
+.used_price label{
+    padding-bottom:20px;
+    display:inline-block;
+}
+.custom_peice label{
+    padding-bottom:20px;
+    display:inline-block;
+}
+.add_price {
+    background: #FF8366;
+    color: #fff;
+    display: block;
+    line-height: 180%;
+    text-align: center;
+    outline: none;
+    border: none;
+    line-height: 25px;
+    padding: 0 5px;
+    border-radius: 2px;
+   /* margin-top:18px;*/
+}
+/*勾选复选框，才可自定义菜品*/
+.StrategyCont_t{
+    font-size:16px;
+    padding:60px 0px;
+}
+.StrategyFoot_1{
+    text-align: center;
+    font-size: 0;
+    padding: 20px 0px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+}
+.haven{
+    width:100%;
+    text-align:center;
+}
+.StrategyBox_haven{
+    width:100%;
+    padding: 350px 0px;
+}
+.StrategyBox_tc{
+    width: 650px;
+}
+.StrategyTitle_tc{
+     width: 650px;
+}
+
+.clearfix_3{
+    text-align: left;
+    padding-bottom: 2px;
+    float:left;
+    width:85%;
+    font-size:13px;
+}
+.clearfix_3 table{
+    width:672px;
+}
+.clearfix_3 .used_dayin{
+    padding-bottom: 20px;
+}
+.clearfix_3 .used_dayin ul{
+    font-size:13px;
+}
+.clearfix_3 .custom_revise{
+    padding-bottom: 20px;
+}
+.dishesStoreEdit .clearfix{
+    color: #838383;
+}
+.custom_peice table{
+    margin-bottom:10px;
+}
+.custom_peice .add_price{
+    margin-bottom:10px;
+}
+.message_tc{
+    width: 650px;
+    border: 2px solid #FFFFFF;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.StrategyCont{
+    padding: 30px 30px 22px;
+}
+/*打印机*/
+.StrategyCont_dayin{
+    padding: 30px 120px 22px;
+}
+/*#add_price_strategy{
+    left: 50%;
+    margin-left: -400px;
+    top: 50%;
+   margin-top: -306px !important;
+}*/
+.dishesMaContent{
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: scroll; 
+}
+.dishesMaContent>div{
+    min-width: 1200px;
+}
+/*菜品库提示*/
+.inputLibraryClose{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    background: #FF8366;
+    line-height: 50px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    background: #E79D06;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    opacity: 1;
+}
+.message_3{
+    width: 800px;
+    margin: -120px 0 0 -400px;
+    /* border: 2px solid #FFFFFF; */
+    text-align: center;
+    font-size: 22px;
+    border-radius: 5px;
+    /* overflow-y: scroll; */
+    max-height: 600px;
+    /* margin-left: -400px; */
+}
+.message_4{
+    width: 600px;
+    /* height: 260px; */
+    margin: -170px 0 0 -300px;
+    /* border: 2px solid #FFFFFF; */
+    text-align: center;
+    font-size: 22px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* margin-left: -400px; */
+}
+
+.message_3 .StrategyCont{
+    height: 410px;
+    overflow-y: scroll;
+}

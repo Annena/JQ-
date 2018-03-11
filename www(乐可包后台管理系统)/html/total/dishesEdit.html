@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>菜品添加</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=1518231563037">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=1518231563037">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=1518231563037">
+<link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=1518231563037">
+<link rel="stylesheet" type="text/css" href="../../css/page/caipinku.css?v=201801291718">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">菜品管理</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+                <span><input type="button" value="保存" id="updatebtn" class="nav-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+                <input class="hide" type="text" id="menuId" name="menu_id" value>
+                <input class="hide" type="text" id="CID" name="cid" value>
+                <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品编号：</div>
+                    <div><input type="text" name="menu_did" id="menuDid" data-description="菜品编号" class="nav-shop" value="" placeholder="" autocomplete="off"></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品名称：</div>
+                    <div><input type="text" name="menu_name" id="menuName" class="nav-shop" data-description="菜品名称" value="" placeholder="" autocomplete="off"><p class="font red">*必填</p>&nbsp;最多支持10个汉字、字母、数字、符号_.:-()(字母数字符号算半个) </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品助记码：</div>
+                    <div><input type="text" name="search_code" id="searchCode" class="nav-shop" data-description="助记码" placeholder="" autocomplete="off"><span  class="preInfor" id="autoGene">自动生成</span></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品标签：</div>
+                   <div><textarea id="menu_byname" name="menu_byname" data-description="备注名称" style="margin: 0px; width: 333px; height: 100px; resize: none; "></textarea>&nbsp;最多支持12个汉字，最多支持5个标签(字母数字符号算半个)</div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">条形码：</div>
+                    <div><input type="text" name="scan_code" id="scanCode" class="nav-shop" data-description="条形码" placeholder="" autocomplete="off" maxlength="6">&nbsp;条形码为20开头的六位数字</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品价格：</div>
+                    <div class="nav-content-edit-table">
+                        <div id="PriceContent" class="PriceStrategy hide">
+                            <table cellpadding="0" cellspacing="0" class="EditTable">
+                                <thead>
+                                    <tr class="stores_title dishesTitle">
+                                        <th>价格</th>                        
+                                        <th>日期</th>
+                                        <th>星期</th>
+                                        <th>时段</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="add_price_tbodys">
+                                   
+                                </tbody>
+                            </table> 
+                        </div>
+                        <input id="addPrice" type="button" name="addPrice" value="添加价格策略" class="add_price"> 
+                            <p class="font red">*必填</p>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">会员价：</div>
+                    <div class="nav-content-edit-table">
+                        <div id="PriceMemberContent" class="PriceStrategy hide">
+                            <table cellpadding="0" cellspacing="0" class="EditTable">
+                                <thead>
+                                    <tr class="stores_title dishesTitle">
+                                        <th>会员价</th>                        
+                                        <th>日期</th>
+                                        <th>星期</th>
+                                        <th>时段</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="add_memprice_tbodys">
+                                   
+                                </tbody>
+                            </table> 
+                        </div>
+                        <input id="addmemberPrice" type="button" name="addmemberPrice" value="添加会员价格策略" class="add_price"> 
+                    </div>
+                 
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品单位：</div>
+                    <div class="nav-content-add">
+                        <input type="text" id="menuUnit" data-description="菜品单位" class="nav-shop"  placeholder="默认单位为份" autocomplete="off">&nbsp;最多支持5个汉字、字母(字母数字符号算半个)
+                        
+                    </div>
+                </li>
+                <li class="clerfix">
+                   <div class="nav-content-edit-title s_right">大图显示：</div> 
+                   <div>
+                        <input style="width:20px;" type="checkbox" id="list_style" data-description="" class="nav-shop" value="" placeholder="">
+                   </div>
+                </li>
+                <li class="clearfix take_type">
+                   <div class="nav-content-edit-title s_right">制作类型：</div> 
+                   <div id="take_type" data-description="制作类型">
+                        <label for="takeone"><input type="radio"  value="1"  name="takeType" checked="true" id="takeone">直接制作</label>
+                        <label for="taketwo"><input type="radio"  value="2"  name="takeType" id="taketwo">批量制作</label>
+                   </div>
+                </li>
+                <li class="clearfix">
+                   <div class="nav-content-edit-title s_right">制作时间：</div> 
+                   <div>
+                        <input type="text" id="take_time" data-description="" class="nav-shop" placeholder="0" >&nbsp;分钟
+                   </div>
+                </li>
+               
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品图片：</div>
+                    <div class="vipcard-background">
+                        <div class="vipcard-content-logo" id="menuPic"></div>
+                        <div class="vipcard-content-logo"><input name="menu_picture" id="menuPictt" type="file"></div>
+                        <div class="vipcard-content-logo">图片尺寸:400px*340px</div>
+                        <img src="" class="" id="dd" />
+                    </div>
+                </li>
+                <li class="clearfix hide" id="consume_materiel">
+                    <div class="nav-content-edit-title s_right">物料消耗：</div>
+                    <div id="mater_table" class="vipcard-background material_consumption">
+                        <table class="mater_table_ctn hide" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr class="stores_title">
+                                    <th class="width10">物料</th>
+                                    <th class="width30">物料名称/规格</th>
+                                    <th class="width15">消耗数量</th>
+                                    <th class="width15">消耗单位</th>
+                                    <th class="width30">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="pur_tbody" id="material_deduction">
+                               
+                            </tbody>
+                        </table>
+                        <div id="addM_wrap">
+                            <span><input id="addM_wrap_btn" type="button" value="添加物料" class="caozuo-btn"></span>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品说明：</div>
+                    <div>
+                        <textarea id="menuInfo"  name="menu_info" style="margin: 0px; width: 333px; height: 170px; resize: none;"></textarea>&nbsp;最多支持170个汉字、字母、数字、符号(字母数字符号算半个)
+                    </div>
+                </li>
+                <li class="clearfix test_t">
+                    <div class="nav-content-edit-title s_right">是否特定商品：</div>
+                    <div class="nav-content-add">
+                        <select name="special_type" id="foodsType" class="nav-select">
+                            <option value="0">普通商品</option>
+                            <option value="1">堂食餐包</option>
+                            <option value="2">外卖餐包</option>
+                            <option value="3">外卖送餐费</option>
+                            <option value="11">百度外卖配送费</option>
+                            <option value="12">饿了么外卖配送费</option>
+                            <option value="13">美团外卖配送费</option>
+                            <option value="4">商城配送费</option>
+                            <option value="5">打包盒</option>
+                            <option value="6">必点商品1</option>
+                            <option value="7">必点商品2</option>
+                            <option value="8">必点条件商品</option>
+                        </select>
+                    </div>
+                    <p class="font red"></p>
+                </li>
+<!--                 <li class="clearfix" data-type="sell-sites" data-name="abstellbar">
+                    <div class="nav-content-edit-title">售卖地点设置：</div>
+                    <div id="sell-sites" class="nav-content-edit-righttitle leftShop">
+                        <div class="fendian" data-shopSell><input type="checkbox" name="shopSell">是否支持餐厅售卖</div>
+                        <div class="fendian" data-sell><input type="checkbox" name="sell">是否支持商城售卖</div>
+                    </div>
+                </li>  -->
+                <li class="clearfix" data-type="order-type" data-name="abstellbar">
+                    <div class="nav-content-edit-title">下单类型设置：</div>
+                    <div id="order-type" class="nav-content-edit-righttitle leftShop">
+                        <div class="fendian" data-shop><input type="checkbox" name="shop">是否支持堂食订单</div>
+                        <div class="fendian" data-takeout><input type="checkbox" name="takeout">是否支持外卖送餐订单</div>
+                        <div class="fendian" data-pack><input type="checkbox" name="pack">是否支持门店自取订单</div>
+                        <div class="fendian" data-sell><input type="checkbox" name="sell">是否支持商城售卖</div>
+                    </div>
+                    <p class="font red">&nbsp;*必填</p>
+                </li> 
+                <li class="clearfix" data-name="abstellbar" data-packBox>
+                    <div class="nav-content-edit-title s_right">打包盒：</div>
+                    <div class="nav-content-add">
+                        <select name="pack_id" id="packbox" class="nav-select">
+                        </select>
+                    </div>
+                    <p class="font">按菜品大小选择所需餐盒</p>
+                </li> 
+                <li class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">菜品口味：</div>
+                    <div>
+                        <textarea id="menuFlavor" name="menu_flavor" style="margin: 0px; width: 333px; height: 100px; resize: none;"></textarea>
+                        <span style="vertical-align: top;">请每行输入一个口味</span>
+                    </div>
+                </li>
+                <li class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">菜品备注：</div>
+                    <div>
+                        <textarea id="menuNote" name="menu_note" style="margin: 0px; width: 333px; height: 100px; resize: none; "></textarea>
+                        <span style="vertical-align: top;">请每行输入一个备注</span>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品分类：</div>
+                    <div class="nav-content-add">
+                        <select name="menu_type_id" id="disCategoryTbodys" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品属性：</div>
+                    <div class="nav-content-add">
+                        <select name="menu_attribute_id" id="propertyContent" class="nav-select">
+
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">是否输入数量：</div>
+                    <div class="nav-content-add">
+                        <select name="is_input" id="isInput" class="nav-select">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>&nbsp;app点菜时是否可以手动输入数量
+                    </div>
+                </li>
+                <li class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">是否打折：</div>
+                    <div class="nav-content-add">
+                        <select name="is_discount" id="isDiscount" class="nav-select">
+                            <option value="1">是</option>
+                            <option value="0">否</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">是否半份：</div>
+                    <div class="nav-content-add">
+                        <select name="is_half" id="isHalf" class="nav-select">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </div>
+                </li> 
+
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">是否赠菜：</div>
+                    <div class="nav-content-add">
+                        <select name="is_give" id="isGive" class="nav-select">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                        </select>
+                    </div>
+                    <p class="font">&nbsp;如设置为“是”，在点餐时可作为0元菜赠送给顾客；设置成功后不影响该菜品的正常售卖。</p>
+                </li> 
+
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">菜品适用范围：</div>
+                    <div class="nav-content-add">
+                        <select name="menuScope" id="menuScope" class="nav-select" >
+                            <option value="3">在线/门店售卖</option>
+                            <option value="1">仅支持在线售卖</option>
+                            <option value="2">仅支持门店售卖</option>
+                            <option value="0">不支持售卖</option>
+                        </select>
+                    </div>
+                </li>
+                <!--总部菜品提成-->
+                <li id="allAdd" class="clearfix" data-name="abstellbar">
+                    <div class="nav-content-edit-title s_right">提成金额：</div>
+                    <div><input type="tel" name="" id="ticheng" class="nav-shop" data-description="" placeholder="">&nbsp;（所有适用门店）
+                    </div>
+                    <p class="redp">*如需设置单独门店提成金额，请选择查询单独门店后设置</p>
+                </li>
+                <!--门店菜品提成-->
+                <li id="otherAdd" class="clearfix hide">
+                    <div class="nav-content-edit-title s_right">提成金额：</div>
+                    <div>
+                        <p><input class="veam" data-type="allTicheng" type="radio" name="ticheng" value="all"><span id="allTicheng" class=""></span>元&nbsp;&nbsp;（所有适用门店）</p>
+                        <p class="padl115">
+                            <input class="veam" data-type="otherTicheng" type="radio" name="ticheng" value="shop">
+                            <span class="padl10"><input style="margin-left: -3px;" class="w125px" id="ticheng" type="tel"></span>&nbsp;&nbsp;元&nbsp;&nbsp;（仅<b class="shopName"></b>适用）
+                        </p>
+                        <p class="redp">*该提成金额只适用于<b class="shopName"></b>，修改后只影响本店提成金额</p>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">配菜打印机：</div>
+                    <div class="nav-content-add">
+                        <select name="jardiniere_printer_id" id="matchPrinter" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+
+                 <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">生产打印机：</div>
+                    <div class="nav-content-add">
+                        <select name="printer_id" id="printLisTbodys" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">标签打印机：</div>
+                    <div class="nav-content-add">
+                        <select name="tag_printer_id" id="tagPrinterId" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">传菜打印机设置：</div>
+                    <div class="nav-content-add">
+                        <select name="pass_printer_id" id="passPrinterId" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title s_right">划菜打印机设置：</div>
+                    <div class="nav-content-add">
+                        <select name="produce_printer_id" id="producePrinterId" class="nav-select">
+                            
+                        </select>
+                    </div>
+                </li>
+                
+                <li class="clearfix" id="disDisplay">
+                    <div class="nav-content-edit-title s_right">状  态：</div>
+                    <div class="nav-content-add">
+                        <select name="menu_status" id="menuStatus" class="nav-select">
+                            <option value="0">上架</option>
+                             <!--<option value="1">估清</option>-->
+                            <option value="2">下架</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            </form>
+        </div>
+    </div>
+
+ 
+     <!-- 添加价格策略弹窗 -->
+    <div id="add_price_strategy" class="select-dialog select-dialog_1 hide">
+        <div class="select-dialog-title">
+            <span class="title-text">价格</span>
+            <i class="close-btn" id="select_close"></i>
+        </div>
+        <div class="dialog-content price_strategy" id="price_strategy">
+            <ul>
+                <li class="clearfix clearfix_1">
+                    <p class="price_left price_title">价格：</p>
+                    <p class="price_left"><input type="tel" id="PriceStrategy" data-description="菜品价格" class="nav-shop nav-shop_1" value="" autocomplete="off"><span class="font color">&nbsp;*必填</span>
+                    </p>
+                </li>
+                <li class="clearfix clearfix_2">
+                    <p class="price_p">时间：<input type="radio" name="pricedate" checked="checked" id="pricedate" data-description="菜品策略时间" value="不限"/>不限
+                    </p>
+                    <div class="time_input price_con">
+                        <p class="price_left price_p">
+                            <input type="radio" name="pricedate" data-description="菜品策略时间" value="自定义"/>自定义
+                        </p>
+                        <div class="price_left price_left_1">
+                            <input type="text" id="start-date" name="start-date" class="Wdate second-width" readonly="readonly" placeholder="请选择" data-required="true" disabled="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                            至
+                            <input type="text" id="end-date" name="end-date" class="Wdate second-width" data-required="true" readonly="readonly"  placeholder="请选择" disabled="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </div>
+                    </div>                    
+                </li>
+                <li class="clearfix clearfix_2">
+                    <p class="price_p">星期：<input type="radio" name="week_radio" id="week_radio" checked="checked" data-description="菜品策略星期" value="不限">不限</p>
+                    <div class="price_con">
+                        <p class="price_left price_p"><input type="radio" name="week_radio" data-description="菜品策略星期" value="自定义">自定义</p>
+                        <div id="weekcheckbox" class="week_select price_left">
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="1" />周一</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="2" />周二</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="3"/>周三</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="4"/>周四</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="5" />周五</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="6"/>周六</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="7"/>周日</label>
+                        </div>
+                        <div class="clearfix"></div>  
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <p class="price_p">时段：<input type="radio" checked="checked" name="hour_radio" id="hour_radio" data-description="菜品策略时段" value="不限">不限</p>
+                    <div class="price_con">
+                        <p class="price_left"><input type="radio" name="hour_radio" value="自定义" data-description="菜品策略时段">自定义</p>
+                        <div class="price_left price_left_1">
+                            <select name="hourstartselect" disabled="true" id="hour_stat_select" class="hour_select">
+                            </select>至
+                            <select name="hourendselect" disabled="true" id="hour_end_select" class="hour_select">
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>  
+                    </div>  
+                </li>
+            </ul>
+        </div>     
+        <p class="dialog-button">
+            <input id="dialog_price_sava_btn" data-type='' type="button" value="保存" class="search-btn search_save">
+            <input id="dialog_price_cancel_btn" type="button" value="取消" class="search-btn search_cancel">
+        </p>
+    </div>
+    <!-- 选择物料消耗弹窗 -->
+    <div id="select_mater_deplete" class="select-dialog hide">
+        <div class="select-dialog-title">
+            <span class="title-text">选择物料消耗</span>
+            <i class="close-btn" id="select_close"></i>
+        </div>
+        <div class="dialog-content">
+            <div id="addOne" class="clearfix">
+                <span><input id="add_mater_deplete" type="button" value="添加项" class="caozuo-btn"></span>
+            </div>
+            <div class="pur_table">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr class="stores_title">
+                            <th class="width10">物料</th>
+                            <th class="width25">物料编号</th>
+                            <th class="width28">物料名称/规格</th>
+                            <th class="width20">基本计量单位</th>
+                            <th class="width20">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="add_mater_tbodys" class="pur_tbody">                      
+                    </tbody>
+                </table>
+            </div>
+            <div id="deplete_num">
+                <div id="deplete_num_left">
+                    <p><span class="tips">*</span>消耗数量</p>
+                    <input id="deplete_num_cost" type="tel" placeholder="填写消耗数量">
+                </div>
+                <div id="deplete_num_right">
+                    <p><span class="tips">*</span>消耗单位</p>
+                    <select id="deplete_num_unit">
+                        <option value="">g</option>
+                    </select>
+                </div>
+            </div>
+        </div>   
+        <p class="dialog-button">
+            <input id="dialog_deplete_btn" type="button" value="确定" class="search-btn">
+        </p>
+    </div>
+
+    <!-- 选择物料名称/规格 -->
+    <div id="select_mater_norm" class="select-dialog hide">
+        <div class="select-dialog-title">
+            <span class="title-text">选择物料名称/规格</span>
+            <i id="mater_norm_exit" class="close-btn"></i>
+        </div>
+        <div class="dialog-content">
+            <div class="pinglun-search search_bar">
+                <ul>
+                    <li class="clearfix">
+                        <p>搜索物料
+                            <input id="serach_code" type="text" placeholder="请输入物料编号/助记码/名称">
+                        </p>
+                        <p><input type="button" value="查询" class="search-btn" id="keywordSearch"></p>
+                        <p class="tips float_right">注：规格或单位不一致的物料不可选</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="dialog_ctn" class="clearfix">
+                <div class="dialog_width">
+                    <div class="dialog_ctn_left" id="material_category_list">
+                    </div>
+                </div>
+                <div class="dialog_ctn_right">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr class="stores_title">
+                                <th class="width17">物料编号</th>
+                                <th class="width15">助记码</th>
+                                <th class="width30">物料名称</th>
+                                <th class="width23">基本计量单位</th>
+                                <th class="width20">规格</th>
+                            </tr>
+                        </thead>
+                        <tbody id="material_list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="dialog-button">
+                <input id="dialog_unit_btn" type="button" value="确定" class="search-btn">
+            </p>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!--日期选中插件-->
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/base/chineseToEng.js?v=1518231563037"></script>
+    <script type="text/javascript" src="../../js/page/dishesManageAdd.js?v=1518231563037"></script>
+
+</body>
+</html>

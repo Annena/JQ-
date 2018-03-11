@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+}
+
+em {
+    font-style: normal;
+}
+
+u {
+    text-decoration: none;
+}
+
+.dishSelect {
+    height: 450px;
+    width: 920px;
+    background-color: #fff;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #000;
+}
+
+.dishSelectTop {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.dishSelectTop h3 {
+    font-size: 22px;
+    color: #ff8367;
+}
+
+.dishSelectCenter {
+    margin: 0 auto;
+    width: 855px;
+    height: 325px;
+    overflow: hidden;
+}
+
+.dishSelectCenterLeft,
+.dishSelectCenterRight {
+    width: 400px;
+    float: left;
+}
+
+.dishSelectCenterLeft h4,
+.dishSelectCenterRight h4 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.dishSelectCenterLeftCenter {
+    width: 400px;
+    height: 285px;
+}
+
+.dishSelectCenterLeftCenterTop {
+    height: 35px;
+    background-color: #ff8367;
+    line-height: 35px;
+}
+
+.dishSelectCenterLeftCenterTop span {
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.dishSelectCenterRight .dishSelectCenterLeftCenterTop span {
+    width: 120px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+.dishSelectCenterLeftCC {
+    width: 420px;
+    height: 240px
+}
+
+.dishSelectCenterLeftCC ul {
+    width: 247px;
+    height: 240px;
+    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    overflow-y: auto;
+    float: left;
+    overflow-x: hidden;
+}
+
+.dishSelectCenterLeftCCRUl {
+    border-right: 1px solid #dddddd;
+}
+
+.dishSelectCenterLeftCC ul li {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+    text-align: left;
+    width: 179px;
+}
+
+.dishSelectCenterLeftCC ul li {
+    width: 218px;
+    position: relative;
+}
+
+.dishSelectCenterLeftCC ul li img {
+    float: right;
+    vertical-align: middle;
+    margin-top: 9px;
+    margin-right: 16px;
+    float: right;
+}
+
+.dishSelectCenterLeftCC .current {
+    background-color: #dadada;
+}
+
+.dishSelectCenterLeftCC div {
+    width: 180px;
+    overflow: hidden;
+    height: 240px;
+    float: left;
+    border-right: 1px solid #ddd;
+}
+
+.addPackageBtn {
+    cursor: pointer;
+}
+
+.dishSelectCenterRight {
+    margin-left: 30px;
+    width: 420px;
+}
+
+.currett {
+    background-color: #f4f4f4;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p {
+    height: 30px;
+    text-align: center;
+}
+
+.dishSelectCenterRCC {
+    border: 1px solid #ddd;
+    border-top: 0px;
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p span {
+    width: 119px;
+    display: inline-block;
+    line-height: 30px;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p span u {
+    width: 50px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p span img {
+    width: 20px;
+    vertical-align: middle;
+    height: 20px;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p span b {
+    width: 20px;
+    display: inherit;
+    height: 20px;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p .dishNume {
+    border-left: none;
+    text-align: left;
+    padding-left: 10px;
+    width: 180px;
+    padding-right: 10px;
+    overflow: hidden;
+    float: left;
+    height: 30px;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p .dishNume em {
+    width: 109px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 25px;
+}
+
+.dishSelectCenterLeftCCRUl marquee {
+    width: 110px;
+}
+
+.dishSelectCenterLeftCCRUl i {
+    float: r;
+    position: absolute;
+    right: 44px;
+    color: #666;
+}
+
+#dishSelectCenterRCC ul {
+    height: 240px;
+    overflow-y: scroll;
+    width: 440px;
+}
+
+.dishNume i {
+    float: right;
+    color: #666;
+}
+
+.vertical {
+    height: 240px;
+    width: 1px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #ddd;
+    right: 116px;
+}
+
+.verticalTwo {
+    height: 240px;
+    width: 1px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    border-right: 1px solid #ddd;
+    left: 182px;
+}
+
+.dishSelectBot div {
+    width: 445px;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
+}
+
+.dishSelectBot div input {
+    width: 75px;
+    height: 30px;
+    outline-style: none;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    background-color: #fff;
+}
+
+.dishSelectBot .dishSelectBotL input {
+    border: 1px solid #fd9178;
+    color: #fd9178;
+}
+
+.dishSelectBot .dishSelectBotR input {
+    border: none;
+    background-color: #fd9178;
+    color: #fff;
+}
+
+.replace {
+    width: 520px;
+    border: 1px solid #ddd;
+    border-top: none;
+    margin-left: 104px;
+    margin-bottom: 50px;
+}
+
+.replaceTop {
+    height: 40px;
+    background-color: #FF8366;
+    width: 520px;
+    margin-left: -1px;
+}
+
+.replaceTop span {
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+.w190 {
+    width: 190px;
+}
+
+.w145 {
+    width: 145px;
+}
+
+.w185 {
+    width: 175px;
+}
+
+.replaceCenter p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.replaceCenter p span {
+    display: inline-block;
+}
+
+.replaceCenter p u {
+    width: 45px;
+    display: inline-block;
+    text-align: left;
+}
+
+.replaceCenter p u input {
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+}
+
+.replaceCenter .w185 a {
+    color: #ff8367;
+    cursor: pointer;
+}
+
+.dishSelectCenterRight .dishSelectCenterRCC p span b .show {
+    display: inline-block;
+}
+
+.nav-content-add span {
+    color: red;
+}
+
+
+/*店铺*/
+
+.nav-content-edit-righttitle {
+    font-size: 13px;
+    font-weight: bold;
+    float: left;
+    /* width: 1240px;;/*85%*/
+    */ margin-top: 3px;
+    padding-left: 0;
+}
+
+.fendian {
+    min-width: 130px;
+    padding: 6px;
+    border: 1px solid #dedede;
+    text-align: center;
+    font-weight: normal;
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.redp {
+    padding-left: 115px;
+    line-height: 30px;
+    color: red;
+}
+
+.padl115 {
+    padding-left: 104px;
+    margin-top: 5px;
+}
+
+.veam {
+    vertical-align: middle;
+}
+
+.w125px {
+    width: 125px;
+}
+
+.padl10 {
+    padding-left: 10px;
+}
+
+.shopName {
+    font-weight: normal;
+}

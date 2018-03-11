@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>外卖菜品关联</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201712302334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201712302334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/base.css?v=201712302334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201712302334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/form-button.css?v=201712302334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/platformDishes.css?v=201712302334">
+
+</head>
+
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                <div class="layderdivfirst">当前位置： 外卖菜品关联</div>
+                <div class="layderrightfirst">
+                    <div id="platformAdd" class="stores-btn">添加外卖菜品</div>
+                </div>
+            </div>
+            <!-- notice -->
+            <div id="notice" class="clearfix">
+                <div class="notice-left">
+                    注意：
+                </div>
+                <div class="notice-right">
+                    <p>
+                        1.如果外卖平台菜品名称与门店菜品名称不一致，请务必关联！
+                    </p>
+                    <p>
+                        2.如果外卖平台菜品与门店菜品名称一致，系统则自动关联无须添加！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="stores-content">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th width="32%" id="operation">操作</th>
+                        <th width="24%">外卖菜品</th>
+                        <th width="22%">关联菜品分类</th>
+                        <th width="22%">关联菜品</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 选择菜品弹出框 -->
+    <div id="dishes-select" class="hide">
+        <div id="dishes-select-title">
+            <span id="dishes-text">选择菜品</span>
+            <i class="close-btn" id="dishe-exit"></i>
+        </div>
+        <ul id="dishes-select-content" class="clearfix">
+
+        </ul>
+    </div>
+
+    <!-- 删除确认 -->
+    <div id="system-hint" class="hide">
+        <div id="system-hint-title">
+            系统提示
+            <i class="close-btn" id="system-exit"></i>
+        </div>
+        <div id="system-hint-content">
+            您确认删除该菜品吗？
+        </div>
+        <div id="system-hint-btns">
+            <div id="cancel-hint-btn" class="system-hint-btn">取消</div>
+            <div id="definite-hint-btn" class="system-hint-btn">删除</div>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog">取消</div>
+            <div id="definite-alert" class="definite-dialog">确认</div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <!-- 自动升级（弹出框） -->
+    <div id="upgrade-message" class="message">
+        <h1 id="upgrade-title" class="title" style="text-align: center;">系统提示</h1>
+        <div id="upgrade-content" class="container">正在进行版本更新，请稍候。。。</div>
+        <div id="close-upgrade-message" class="close-message">
+            <input type="button" value="重新启动" id="retain-log" class="otherlayderbtn">
+            <input type="button" value="重新启动" id="retain-nolog" class="otherlayderbtn hide" style="background:#92908b;">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201712302334"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201712302334"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201712302334"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201712302334"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201712302334"></script>
+    <script type="text/javascript" src="../../js/page/platformDishes.js?v=201712302334"></script>
+</body>
+
+</html>

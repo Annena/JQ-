@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>营业报表详情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801161401">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801161401">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801161401">
+<link rel="stylesheet" type="text/css" href="../../css/page/daybusinessstate.css?v=201801161401">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav self_stores">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： <a href="daybusinessstate.html" target="main" id="daybusines">营业报表</a> <b id="shop_b">>></b><b id="shop_name"></b>
+               <!--  <div class="caipin-add" id="permissions">
+                    <input type="button" value="下载" id="downloadbtn1" class="stores-btn">
+                </div> -->
+                <form class="hide" id="form1" action="" method="post">
+                    <input id="start_date" type="text" class="hide" name="start_date">
+                    <input id="end_date" type="text" class="hide" name="end_date">
+                    <input id="shop_id" type="text" class="hide" name="shop_id">
+                    <input id="cid" type="text" class="hide" name="cid">
+                    <input id="company_name_en" type="text" class="hide" name="company_name_en">
+                </form>
+            </div>
+        </div>
+        <div class="pinglun-search self_search">
+            <ul>
+                <li class="clearfix">
+                    <p>开始日期：
+                        <input type="text" id="statDate" name="statDate" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                    </p>
+                    <p>结束日期：
+                        <input type="text" id="endDate" name="endDate" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                    </p>
+                    <p><input type="button" value="查询" id="memberBtn1" class="btn"></p>
+                    <p><input type="button" value="下载" id="downloadbtn" class="btn"></p>
+                    <p id="printDisplay"><input type="button" value="打印" id="printBtn" class="btn"></p>
+                </li>
+            </ul>
+        </div>
+        <div class="stafffloatdivt self_staff"></div>
+        <div class="stores-content  stores-content-print contentlist" id="memberScorll">
+            <section id="tableShow">
+                <nav class="clearfix sale_style">
+                    <p></p>
+                    <p></p>
+                    <span class="sale_share_sty sale_img_sty font_weight_bold">销售</span>
+                </nav>
+
+
+                <nav class="clearfix margin_style padding_none" data-coupon>
+                    <table>
+                        <tbody>
+                            <tr class="haderTr">
+                                <th>名称</th>
+                                <th>金额</th>
+                            </tr>
+                            <tr class="haderBr shallow">
+                                <td class="font_weight">开台数量</td>
+                                <td id="total_count" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>未结开台数量</td>
+                                <td id="not_count" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>已结开台数量</td>
+                                <td id="table_num" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow">
+                                <td class="font_weight">就餐人数</td>
+                                <td id="total_user_num" class="color_0"></
+                            </tr>
+                            <tr class="haderBr shallow">
+                                <td>未结就餐人数</td>
+                                <td id="not_user_num" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow">
+                                <td>已结就餐人数</td>
+                                <td id="user_num" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow textbold">
+                                <td style="color: #fb5555 !important;">消费金额</td>
+                                <td id="total_consume" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="not_consumeDisplay">
+                                <td>未结消费金额</td>
+                                <td id="not_consume" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow">
+                                <td>已结消费金额</td>
+                                <td id="consume"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td class="font_weight">桌均消费</td>
+                                <td id="table_money" class="color_0"></td>
+                            </tr>
+
+                            <tr class="haderBr shallow">
+                                <td class="font_weight">人均消费</td>
+                                <td id="user_price" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="cancel_menu_consumeDisplay">
+                                <td class="font_weight">退菜金额</td>
+                                <td id="cancel_menu_consume" class="color_0"></td>
+                            </tr>
+
+                            <tr class="haderBr shallow textbold">
+                                <td style="color: #fb5555 !important;">优惠金额</td>
+                                <td id="dayDiscount"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="voucherDisplay">
+                                <td>抵用劵</td>
+                                <td id="voucherMoney" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>会员价优惠</td>
+                                <td id="sub_user_price" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>会员折扣优惠</td>
+                                <td id="sub_user_discount" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="sub_moneyDisplay">
+                                <td>银台折扣</td>
+                                <td id="sub_money" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="useMenuDiscountDisplay">
+                                <td>套餐优惠</td>
+                                <td id="useMenuDiscount" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="sts_moneyDisplay">
+                                <td>储值赠送消费</td>
+                                <td id="sts_money" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="preferential_moneyDisplay">
+                                <td>自定义支付方式优惠</td>
+                                <td id="preferential_money" class="pre_hade icon-down color_0">
+                                    <span class="padding_right" id="prefe_money">0.00</span>
+                                </td>
+                            </tr>
+                            <tr class="haderBr shallow" id="give_menu_consumeDisplay">
+                                <td>赠菜金额</td>
+                                <td id="give_menu_consume" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="small_changeDisplay">
+                                <td>抹零</td>
+                                <td id="small_change" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow textbold">
+                                <td style="color: #fb5555 !important;">实收金额</td>
+                                <td id="pay_money"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="cashDisplay">
+                                <td>现金</td>
+                                <td id="cash" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="cardDisplay">
+                                <td>银行卡</td>
+                                <td id="card" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="wxpayDisplay">
+                                <td>微信支付</td>
+                                <td id="wxpay" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="alipayDisplay">
+                                <td>支付宝支付</td>
+                                <td id="alipay" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="str_moneyDisplay">
+                                <td>储值本金消费</td>
+                                <td id="str_money" class="color_0"></td>
+                            </tr>
+                            <tr class="haderBr" id="other_pay_moneyDisplay">
+                                <td>自定义支付方式实收</td>
+                                <td id="other_pay_money" class="pay_hade icon-down color_0">
+                                    <span class="padding_right" id="other_money">0.00</span>
+                                </td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="mtpayDisplay">
+                                <td>美团支付收入</td>
+                                <td id="mtpay" class="color_0"></td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="bdpayDisplay">
+                                <td>百度支付收入</td>
+                                <td id="bdpay" class="color_0"></td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="elepayDisplay">
+                                <td>饿了么支付收入</td>
+                                <td id="elepay" class="color_0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </nav>
+                <nav class="clearfix sale_style">
+                    <p></p>
+                    <p></p>
+                    <span class="sale_share_sty stored_img_sty font_weight_bold">储值</span>
+                </nav>
+
+                <nav class="clearfix margin_style padding_none" data-sty>
+                    <table>
+                        <tbody>
+                            <tr class="haderTr">
+                                <th>名称</th>
+                                <th>金额</th>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td class="font_weight">储值金额</td>
+                                <td id="s_money" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>储值本金</td>
+                                <td id="s_stored_money" class="pay_hade icon-down color_0">
+                                    <span class="padding_right" id="s_sto_money">0.00</span>
+                                </td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">现金</td>
+                                <td id="stored_cash" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">银行卡</td>
+                                <td id="stored_card" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">免单</td>
+                                <td id="stored_free" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">银台微信</td>
+                                <td id="stored_wxpay_shop" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">银台支付宝</td>
+                                <td id="stored_alipay_shop" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">微信支付</td>
+                                <td id="stored_wxpay" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow back_color storedClick hide">
+                                <td class="ileftclass">支付宝支付</td>
+                                <td id="stored_alipay" data-type="stored" class="irightclass color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow hide" id="">
+                                <td></td>
+                                <td id="" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>储值赠送</td>
+                                <td id="s_give_money" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td class="font_weight">储值消费</td>
+                                <td id="p_g_moeny" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="principalDisplay">
+                                <td>储值本金消费</td>
+                                <td id="principal_money" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr" id="give_moneyDisplay">
+                                <td>储值赠送消费</td>
+                                <td id="give_money" class=" color_0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </nav>
+
+                <nav class="clearfix sale_style">
+                    <p></p>
+                    <p></p>
+                    <span class="summary_share_sty summary_img_sty font_weight_bold">资金流</span>
+                </nav>
+
+                <nav class="clearfix margin_style padding_none" data-Summary>
+                    <table class="all_money">
+                        <tbody>
+                            <tr class="haderTr textbold">
+                                <th class="">汇总</th>
+                                <th id='summary'></th>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>现金</td>
+                                <td id="all_cash" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>银行卡</td>
+                                <td id="all_card" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>银台微信</td>
+                                <td id="all_wxpay_shop" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>银台支付宝</td>
+                                <td id="all_alipay_shop" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>微信支付</td>
+                                <td id="all_wxpay" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr shallow" id="">
+                                <td>支付宝支付</td>
+                                <td id="all_alipay" class=" color_0"></td>
+                            </tr>
+                            <tr class="haderBr" id="summary_pay_moneyDisplay">
+                                <td>自定义支付方式实收</td>
+                                <td id="summary_pay_money" class="pay_hade icon-down  color_0">
+                                    <span class="padding_right" id="summary_money">0.00</span>
+                                </td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="">
+                                <td>美团支付收入</td>
+                                <td id="all_mtpay" class=" color_0"></td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="">
+                                <td>百度支付收入</td>
+                                <td id="all_bdpay" class=" color_0"></td>
+                            </tr>
+                            <tr class="hide haderBr shallow" id="">
+                                <td>饿了么支付收入</td>
+                                <td id="all_elepay" class=" color_0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </nav>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/page/daybusinesDetails.js?v=201801161401"></script>
+    <!--添加日期控件-->
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script>
+</body>
+</html>

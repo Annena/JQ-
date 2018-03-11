@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>支付方式添加</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801081345">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801081345">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801081345">
+<link rel="stylesheet" type="text/css" href="../../css/page/addpay.css?v=201801081345">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">支付方式列表</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel">
+                    <input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn">
+                </span>
+                <span>
+                    <input type="button" value="保存" id="updatebtn" class="nav-btn">
+                </span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">名称：</div>
+                    <div><input type="text" id="payTypename" name="test" class="nav-shop" value="" data-description="名称" placeholder="" autocomplete="off"> &nbsp;*输入内容不超过10个汉字 </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">编号：</div>
+                    <div><input  onKeyUp="value=value.replace(/[^\d\w|chun]/g,'')" type="text" id="payTypedid" name="shop" class="nav-shop" data-description="编号" value="" placeholder=""  autocomplete="off"> <!-- &nbsp;*必填 --></div>
+                </li>
+                <li class="clearfix" id="attribute_setting">
+                    <div class="nav-content-edit-title">属性设置：</div>
+                    <div class="part_content">
+                        <p>
+                            <span><input type="checkbox" name="sellsave" value="1"/> 计入实收</span>
+                            <span><input type="checkbox" name="sellsave" value="2"/> 实收参与积分</span>
+                        </p>
+                        <p>
+                            <span><input type="checkbox" name="sellsave" value="3"/> 计入优惠</span>
+                            <span><input type="checkbox" name="sellsave" value="4"/> 优惠参与积分</span>
+                        </p>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">会员价订单：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="is_member_price" class="nav-select">
+                            <option value="0">不支持支付会员价订单</option>
+                            <option value="1">支持支付会员价订单</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">会员折扣订单：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="is_member_discount" class="nav-select">
+                            <option value="0">不支持支付会员折扣订单</option>
+                            <option value="1">支持支付会员折扣订单</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">描述：</div>
+                    <div><textarea type="text" id="payTypeinfo" name="shop" class="nav-shop" value="" placeholder="" autocomplete="off" style="margin: 0px; width: 300px; height: 165px;"></textarea></div>
+                </li>
+                <li class="clearfix" id="addNoDisplay">
+                    <div class="nav-content-edit-title">状态：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="payStatus" class="nav-select">
+                            <option value="0">启用</option>
+                            <option value="1">禁用</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801081345"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801081345"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801081345"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801081345"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801081345"></script>
+    <script type="text/javascript" src="../../js/page/payWayManageAdd.js?v=201801081345"></script>
+</body>
+</html>

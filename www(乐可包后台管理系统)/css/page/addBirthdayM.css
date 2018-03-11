@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+em {
+    font-style: normal;
+}
+
+u {
+    text-decoration: none;
+}
+
+h3 {
+    color: #333;
+    font-size: 14px;
+    margin-top: 10px !important;
+}
+
+input[type="text"] {
+    width: 159px;
+}
+
+select {
+    font-size: 16px;
+}
+
+i {
+    color: red;
+    font-style: normal;
+}
+
+hr {
+    width: 30px;
+    float: left;
+    height: 2px;
+    border: 0;
+    background: #333;
+}
+
+.nav-content-edit-title {
+    font-weight: normal;
+    width: 125px;
+    line-height: 38px;
+}
+
+.nav-shop {
+    height: 38px;
+}
+
+.Wdate {
+    width: 160px !important;
+}
+
+.w120px {
+    width: 120px;
+}
+
+.mart10px {
+    margin-top: 10px;
+}
+
+.radio {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.border0 {
+    border: 0 !important;
+}
+
+.w179px {
+    width: 179px !important;
+}
+
+.w151px {
+    width: 151px !important;
+}
+
+.nav-content ul li {
+    margin-bottom: 5px;
+}
+/*新增点评,新用户领卡，消费*/
+.information_top {
+    height: 33px;
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+    margin-bottom: 40px;
+}
+.information_topAdd {
+    width: 120px;
+    background: #fff;
+    position: absolute;
+    color: #333;
+    font-size: 16px;
+    bottom: -15px;
+    left: 24px;
+}
+.information_topAdd img {
+    margin-left: 10px;
+}
+.information_topAdd span {
+    position: relative;
+    left: 2px;
+    top: -5px;
+}
+.nav .nav-content{
+    padding-top: 0px;
+}

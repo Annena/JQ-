@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>会员卡修改</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/page/vipcard.css?v=201802221448">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="vipcard-nav">
+        <div class="stafffloat">
+            <div class="vipcard-lan">
+                当前位置：<a href="cardManage.html" target="main">会员卡信息</a> >> 会员卡信息修改
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="vipcard-quxiao-btn"></span>
+                <span><input type="button" value="保存" id="consumebtn" class="vipcard-btn" ></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="vipcard-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+            <input class="hide" type="text" id="CID" name="cid" value>
+            <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+            <li class="clearfix">
+                <div class="vipcard-content-title">会员卡LOGO：</div>
+                <div class="vipcard-content-logo"><img src="" id="cardLogo" class="vipcard-content-img"></div>
+                <div class="vipcard-content-logo"><input type="file" name="logo_picture" id="logo_picture"></div>
+            </li>
+            <li class="clearfix">
+                <div class="nav-content-edit-text"> 会员卡名称：</div>
+                <div><input type="text" name="card_name" data-description="会员卡名称" class="vipcard-shop" id="cardName" value="">&nbsp;*必填不能为空</div>
+            </li>
+            <li class="clearfix">
+                <div class="nav-content-edit-text"> 适用范围：</div>
+                <div><input type="text" name="card_scope" data-description="默认全国适用" class="vipcard-shop" id="cardScope" value="">&nbsp;会员卡适用的区域或门店</div>
+            </li>
+            <li class="clearfix hide">
+                <div class="nav-content-edit-text">发卡额度：</div>
+                <div>
+                    <input type="text" id="maxCardRate" name="shop" class="vipcard-shop" data-description="发卡额度" value=""> % 
+                    <span>发卡员可设置的会员卡最大额度</span>
+                </div>
+            </li>
+            <li class="clearfix  member_price_used  card-type-checkbox">
+                <div class="nav-content-edit-text">会员价适用范围：</div>
+                <div class="show-checkbox-list">
+                    <input type="checkbox" class="nav-input-1" value="1" name="1">普通会员（所有领卡会员都可享受会员价）<br>
+                    <input type="checkbox" class="nav-input-1" value="2" name="2">储值会员（储值过，且有余额，才享受会员价）<br>
+                    <input type="checkbox" class="nav-input-1" value="3" name="3">折扣会员（仅有打折额度的会员可享受会员价）<br>
+                    <input type="checkbox" class="nav-input-2" value="4" name="4">授权会员（仅扫码授权过的会员可享受会员价）<br>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="vipcard-content-title">会员卡背景：</div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img src="../../img/base/bg01.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="card_1" name="card_image" type="radio" value="1" >背景1</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img src="../../img/base/bg02.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="card_2" name="card_image" type="radio" value="2" >背景2</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img src="../../img/base/bg03.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="card_3" name="card_image" type="radio" value="3" >背景3</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img src="../../img/base/zanw.png" id="card_custom"></div>
+                    <div class="vipcard-content-logo-title"><input id="card_0" name="card_image" type="radio" value="0">自定义(图片尺寸：600*346px)</div>
+                    <div class="vipcard-content-logo-txt"><input type="file" name="card_picture" id="card_file"></div>
+                </div>
+                <div class="card_view_out">
+                    <div class="vipcard-background">
+                        <div class="vipcard-content-logo  card-view">
+                            <div class="homecard-logo">
+                                <img src="../../img/base/no-pic.png" id="cardLogo-1" class="icon-logo">
+                            </div>
+                            <div class="shop_name" id="cardName-1"></div>
+                            <div class="shop_adds" id="cardScope-1"></div>
+                           <div class="shop-logo-money">
+                            <ul>
+                                <li>
+                                    储值：<span>100</span>
+                                </li>
+                                 <li>
+                                    折扣：<span>5</span>
+                                </li>
+                               
+                                <li>
+                                    抵用券：<span>100</span>
+                                </li>
+                                <li>
+                                    积分：<span>100</span>
+                                </li>
+                            </ul>
+                        </div>
+                            <div class="vipcard-content-logo card-bg"><img id="card_custom_1" src="../../img/base/bg01.png"></div>
+                        </div>
+                        <div class="vipcard-content-logo-txt">预览效果</div>
+                    </div>
+                </div>
+            </li>
+            <li class="hide clearfix">
+                <div class="vipcard-content-title">会员卡效果图：</div>
+                <div class="vipcard-field-content" style="background: url() repeat-x 0px -3px;" card-id="cc1fczgbkoyy" data-type="cardClick">
+                    <div><img src="../../img/base/header.png" class="vipcard-icon-logo"></div>
+                    <div class="vipcard-icon-title">乐卡包</div>
+                    <div class="vipcard-icon-futitle">
+                        <div class="vipcard-icon-futitle-txt">仅限于北京各门店</div>
+                        <p class="" id="yue">储值：￥<span>1000672</span></p>
+                        <p class="" id="zhekou">折扣：<span>100</span></p>
+                        <p class="" id="diyognquan">抵用券：<span>0</span></p>
+                        <p class="" id="jifen">积分：<span>1</span></p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="clearfix">
+                <div class="vipcard-content-title">商户页背景：</div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img class="self_img" src="../../img/base/bg01.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="company_1" name="company_image" type="radio" value="1">背景1</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img class="self_img" src="../../img/base/bg02.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="company_2" name="company_image" type="radio" value="2">背景2</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img class="self_img" src="../../img/base/bg03.png"></div>
+                    <div class="vipcard-content-logo-txt"><input id="company_3" name="company_image" type="radio" value="3">背景3</div>
+                </div>
+                <div class="vipcard-background">
+                    <div class="vipcard-content-logo"><img class="self_img" src="" id="company_custom"></div>
+                    <div class="vipcard-content-logo-title"><input id="company_0" name="company_image" type="radio" value="0">自定义(图片尺寸：600*216px)</div>
+                    <div class="vipcard-content-logo-txt"><input type="file" name="company_picture" id="company_file"></div>
+                </div>
+            <div class="card-bgBox_out">
+                <div class="card-bgBox">
+                    <div class="card_wraps">
+                        <div class="homecard-logo">
+                            <img class="img_left_a" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEMDBDQjFCRTY4MTQxMUU2OEFDOEI5MEU0MEVFMzlDMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEMDBDQjFCRjY4MTQxMUU2OEFDOEI5MEU0MEVFMzlDMiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQwMENCMUJDNjgxNDExRTY4QUM4QjkwRTQwRUUzOUMyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQwMENCMUJENjgxNDExRTY4QUM4QjkwRTQwRUUzOUMyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+0sqkLAAAAiFJREFUeNrsmz0sQ1EUx6tKIgYi0UUnNibSRVITupWKRCMVic+NGsViEKtoJ6WDgYgJkSCMViZhYvExqETaSOOznv9LTtMbW9vX+967957kl/RMN7++13vPvfe0QtM0h0zhdEgWSlgJK2ElrIQLjDGwBxp4DOYyWXYSrIFKok/kJxwBGySaBDEuo+qVlgksaPl4AB28xjZDdpmRvQWtPMfnLbvKyF6BZt5fuIvjahCnSUqPCxAET7wnDh7C1WATDFN+DgbBixkzZbmFa8E26Kf8FAyBtIiFRz0VFDnZPXqN0yYuhWUTdoND0Eu5/pRD4F3E0tIDjoGP8nUwCr4tUUwbPO23gGtm6VkxqbDhsg63gTtGdslqskYKe8EjIztvRVmjhH0gycjOWFXWCGE/SJHoDxi3smypwkGQIdkPELK6bCnCYfBJsm8gYAfZYoWnQZZkX0G3XWSLEZ5jJqdn0Gkn2UKFFxnZe9BuN9lChGOM7I0ZG3ejkO5cWr3SatKSfFmSsvCQsrSUcvMg5fZQygMAKY94pDzEy+EBl4x0HDhFFtZxg3NGegtUibx50G/0A+CM8jDYBTUiN7WkwAA4oFz/vA/qRO7iydBt4Q7lfrpzahS5bekLjIAE5V3gCDSJ3Kf1C6ZAlHIvOAHNdr9MU00tqm0pT+Tf6UmP6Id4UfpdZ6ljYFaGXssECes9lhM8BqxQf/JQwkpYCSthJWyd+BNgAHgt6Mzu44yoAAAAAElFTkSuQmCC" />
+                            <img src="../../img/base/no-pic.png" id="cardLogo-2" class="icon-logo">
+                            <img class="img_left_b" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABaCAYAAADkUTU1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzJFQkQwMTY2ODQwMTFFNkE5MjFGOEY5QzA4OUFFMEIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzJFQkQwMTU2ODQwMTFFNkE5MjFGOEY5QzA4OUFFMEIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg3MDNDQjQ1NjgxMzExRTY4MUE4QkZEMEYzQkEyMDZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg3MDNDQjQ2NjgxMzExRTY4MUE4QkZEMEYzQkEyMDZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+gZCGwAAAAopJREFUeNrsm09OwkAUxltliUn1AMqChC03oNzApTvxBMoJgBNwBMvOnXoC4ASwZSVyAIG4NvU1vMZn05TpMMUx/V7ypS1pO+83f970TYsbhqFTJjtxSmYABjCAAQxgAAMYwFYChwYUuK7rSEW/Gbo3WjjN3BzJQ3ziDWmhWd4Hterq103D8JI2F5r3a5CeYhaVCyoahSzI6bmxGt9VwErnWp1MD0ELwAAGMIABDGAAA9iGZ2mPt5/0OPhlg/Pk+yltzvhwYxSYUzlrTZWjdF26kqMGfctZJkXlw9bGI9P58LZUURpBCw8eAP7fwDRGJqy6ReO2HvtlfB4ma/G2alGDVYVf6NIABjCAAQxgAAPYLtN5P9w44AvcIl6I588jFWXCgpTyA0P3VuLAujSCFoABDGAAAxjAAAYwgAEM4DzAPcfOF+Bj1lEWAFQKij4c7x6xApqkocJ5I2f33wqtFY+swm003xHff1RSunJ8kjyektoGeoCO1Ui3Yl/6NVLwK8zq0n7ixvHx+x+2kCf88BJ+vR46htuiBvsKtXcMmws/xgk/MS2ZiNI11iRnoGgZ8G+aUW5UxpJlDHjG0bfP3dzfc37sXIuvOdT6KcCRP2/cCG3e1wKOAkKHI2JTjJ8B6YUDV1Yrd8T+gGUqSt+Trnl/w/6M2L++QqWJmP2zSN3kBe1H0nOexW3WmOUY1gNpTRqSZhplRNZLW4iPauucdMf7tljAfnUdxW+i80TpjYWB1ahPyJbKOg97Gs/JzSOMfU90cdVMKRN4LWCXKfPrvumjqBRwlghi8dhW8cvPAo4i4ZXIROS8qlL7RT1Lx3PpVgAvFf3yZfKD16UABjCAAQxgAAMYwEXZtwADALX8RRbG7xlEAAAAAElFTkSuQmCC" />
+                        </div>
+                        <div class="shop_name" id="cardName-2"></div>
+                        <div class="shop-logo-money">
+                            <ul>
+                                <li>
+                                    储值：<span>100</span>
+                                </li>
+                                 <li>
+                                    折扣：<span>5</span>
+                                </li>
+                               
+                                <li>
+                                    抵用券：<span>100</span>
+                                </li>
+                                <li>
+                                    积分：<span>100</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-bg"><img id="company_custom_1" src="../../img/base/bg01.png"></div>
+                    </div>
+                    <div class="shop-nav">
+                        <div class="icon-back">
+                            <div class="one-line">
+                                <div class="shop-icon-features">
+                                    <div class="meal-icon"></div>
+                                    <div class="meal-title">点餐</div>
+                                </div>
+                                <div class="shop-icon-features" >
+                                    <div class="reviews-icon" ></div>
+                                    <div class="meal-title ">订单/点评</div>
+                                </div>
+                                <div class="shop-icon-features img-grey" >
+                                    <div class="order-icon"></div>
+                                    <div class="meal-title ">外卖/自提</div>
+                                </div>
+                                <div class="shop-icon-features img-grey" >
+                                    <div class="buy-icon"></div>
+                                    <div class="meal-title ">商城</div>
+                                </div>
+                            </div>
+                            <div class="two-line">
+                                <div class="shop-icon-features">
+                                    <div class="pay-icon"></div>
+                                    <div class="meal-title ">支付</div>
+                                </div>
+                                <div class="shop-icon-features">
+                                    <div class="storedvalue-icon"></div>
+                                    <div class="meal-title ">储值</div>
+                                </div>                                
+                                <div class="shop-icon-features" >
+                                    <div class="collar-icon"></div>
+                                    <div class="meal-title ">抵用劵</div>
+                                </div>
+                                <div class="shop-icon-features" >
+                                    <div class="giv-icon"></div>
+                                    <div class="meal-title ">打赏</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner_space"></div>
+                        <div class="shop-list">
+                            <div class="shop-list-title">
+                                店铺列表
+                                <span class="youjiantou"><img src="data:image/png;base64,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0p8zAAA6MGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMTEgNzkuMTU4MzI1LCAyMDE1LzA5LzEwLTAxOjEwOjIwICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoV2luZG93cyk8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTUtMTItMjRUMTg6NTU6NTMrMDg6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE1LTEyLTI0VDE4OjU1OjUzKzA4OjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxNS0xMi0yNFQxODo1NTo1MyswODowMDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6OTgzZmEzYzEtZDZlNS05NTQxLWFlZTEtMzE3YjY5MWMxODhkPC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6ZDc4NTQyNTktYWEyYy0xMWU1LWFjZGMtOGE5N2FjMzYzZDQzPC94bXBNTTpEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6ODI5YTQ4YjQtZTUyZC04MDRlLWIwNzQtZjRmMzUwNjE0MzU3PC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpIaXN0b3J5PgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+Y3JlYXRlZDwvc3RFdnQ6YWN0aW9uPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6aW5zdGFuY2VJRD54bXAuaWlkOjgyOWE0OGI0LWU1MmQtODA0ZS1iMDc0LWY0ZjM1MDYxNDM1Nzwvc3RFdnQ6aW5zdGFuY2VJRD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OndoZW4+MjAxNS0xMi0yNFQxODo1NTo1MyswODowMDwvc3RFdnQ6d2hlbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OnNvZnR3YXJlQWdlbnQ+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo5ODNmYTNjMS1kNmU1LTk1NDEtYWVlMS0zMTdiNjkxYzE4OGQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTUtMTItMjRUMTg6NTU6NTMrMDg6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmNoYW5nZWQ+Lzwvc3RFdnQ6Y2hhbmdlZD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC94bXBNTTpIaXN0b3J5PgogICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3BuZzwvZGM6Zm9ybWF0PgogICAgICAgICA8cGhvdG9zaG9wOkNvbG9yTW9kZT4zPC9waG90b3Nob3A6Q29sb3JNb2RlPgogICAgICAgICA8cGhvdG9zaG9wOklDQ1Byb2ZpbGU+c1JHQiBJRUM2MTk2Ni0yLjE8L3Bob3Rvc2hvcDpJQ0NQcm9maWxlPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyMDAwMC8xMDAwMDwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT4xPC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj44MjwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj45NDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSJ3Ij8+IirBCgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAEo0lEQVR42uyca4hVVRTHf3e69pga04ghiTKKpCCCPqijPaCiPojlSLHoVJAUFmgfJDKKmKCHIEVSREEFBVGzm1U+xkSxqCnMcUgsqwFporAnFRHRw0LK6cPZloz3nL2xuXfOmbPWp2HOf+YefrPWXnutWXvXRkdHMfv/1mYIDKSBNJBmBtJAGkgDaWYgDaSBNDOQBtJAGkizkNWb/QG1Wu3frxORo4AngBnAjU7194kGMF792FqzG7sHQSYi0wAFrvCPdgNXOdWvDWQkyETkLGATcM6Yx98BVzvVnWUH2fQ1MhG5BHivAUSAU4B3EhGxZBO2lcBJOc+PA/oSkZ5EpGYgs60beDJC9wDwYiJybBlBtjLZLPMZO/TH2wEsdqrfW7LJ3v5c6TP3iYEf+xJY6FQ/tmTTwJzq68A84POA9HRgMBFZaGtkNsw9wFxgW0B6AtCfiNxha+SY0B6zLToaeBpYEvFrngVud6r7bY3M3mfeBawGQlufAeBap/qTgcyGuQjoBdoD0hFfCX1S6WSTs272AxcBXwWks4ChROSyyiebHJgf+CQUqrunAVsTkVst2eSHeTvwPBBTfz8G3OlU/7bQPtwz9wHXAQ9GyFcAGxORqeaR+d55PfAccExAOkza29xb6awdgNkF9AOdAekPvkYftNBuHOpDwBzgo4C0ExhIRG6w0M73zA6/14ypv1cBPU511DzycM/8lbS3uSZCfi+gfgdgHpnjnUtJm8VTAtJdvhL6tvLJJgfmpcBaYHpA+o2H+b6FduNQH/CV0EhAeiqwLRFZXIkS8Qhhfgp0AW8GpO3AukTkblsj88N8Cun/g26LkL8ALD3Y26z8GpkBdAXwaESkbQe6neqPBjIb5gLgZaAjIN0LLOjt69tT+TUyY93cDMwHvghIzwCesmSTD3PYl5V5dfeGyCqpmqE9JsynAh967zvUhoALneqByu8jIyB2AlsaQMRvmdYmIsdbaOdDPI90Am5+jqybdNTQQOZk7UFgZkTWXmYgs/eRr0VsfbYDs/3Ux7hYfZIAPOLKxkD+B3E68ApweYT8Hqe6uhnvUS85xLN9wpgVkO4jPUWxvlnvUi8xxHHpR1Y62fgO+dYIiLuAOc2GWDqP9AeeHgZiZiZfBW7yAwdNt7YSQezw9XEMxFWAtApiaTwyEZkJbATOD0j3Azc71Zda/Y71EkBs6qRFJULbz/68HQFxGJg7URAL65H+BNj9QE+EfDOQONVfJvKd6wWE2NL5yEkJMhGZ4dfD2QHpX8Byp/pMUd69XiCIF3iIpwWkPwPXONW3iuQEbQWBuAh4NwLiCNBVNIiFAOnP2awnfDRkAJg3nkdDJkVoF+XkV6lBJiInA+uAiwPSA8BKp7qGglt9AiCeS9pDPDMg/c3vDzdRAqu3GGLhzmuXLtn4GwS2REDcQdpDLA3Elnik7yE+DiyPkPcCtzjVPymZtSK0NxA3Y3Mf8FDMSYSqgnyEdOIh68qaP4AlTlUpsdlNVGUaonKqn5FeCvLGId/eTTrtsJNJYK2+rsZu6zMreNPCQJoZSANpIA2kmYE0kAbSQJoZSANpIM0MZBPtnwEABpbeLKVuLc4AAAAASUVORK5CYII="/></span>
+                            </div>
+                        </div>
+                        <div class="inner_space"></div>
+                        <div class="news-list">
+                            <div class="news-list-title">
+                                最新消息
+                            </div>
+                            <div class="inner_space"></div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="view_size">预览效果</div>
+                   
+                <div>
+            </li>
+
+            <li class="clearfix hide">
+                <div class="vipcard-content-title">商户页背景效果：</div>
+                <div class="vipcard-header clearfix">
+                    <div href="" class="vipcard-back-icon-wrap">
+                        <i class="back-header-i back-icon"></i>
+                    </div>
+                    <div class="vipcard-logo" id="merchantLogo">
+                        <img src="">
+                    </div>
+                    <div class="vipcard-logo-title" id="merchantName"></div>
+                    <div class="vipcard-logo-money" id="moneyDisplay">
+                        <ul>
+                            <li id="yue">
+                                储值:
+                                <span id="surplusMoney"></span>
+                            </li>
+                            <li id="zhekou" >
+                                折扣:
+                                <span id="discount"></span>
+                            </li>
+                            <li id="diyongquan">
+                                抵用券:
+                                <span id="coupons"></span>
+                            </li>
+                            <li id="jifen">
+                                积分:
+                                <span id="integral"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="vipcard-icon-back">
+                            <div class="one-line">
+                                <div class="shop-icon-features" id="dishes">
+                                    <div class="meal-icon"></div>
+                                    <div class="meal-title ">点餐</div>
+                                </div>
+                                <div class="shop-icon-features" id="payQuick" rel="payQuick,true">
+                                    <div class="pay-icon"></div>
+                                    <div class="meal-title ">支付</div>
+                                </div>
+                                <div class="shop-icon-features" id="storedvalue" rel="storedvalue,true">
+                                    <div class="storedvalue-icon"></div>
+                                    <div class="meal-title ">储值</div>
+                                </div>
+                            </div>
+                            <div class="two-line">
+                                <div class="shop-icon-features" id="vouchersList" rel="vouchersList,true">
+                                    <div class="collar-icon"></div>
+                                    <div class="meal-title ">抵用劵</div>
+                                </div>
+                                <div class="shop-icon-features" id="orderlist" rel="orderlist,true">
+                                    <div class="reviews-icon"></div>
+                                    <div class="meal-title ">点评</div>
+                                </div>
+                                <div class="shop-icon-features" id="orderlist" rel="orderlist,true">
+                                    <div class="order-icon"></div>
+                                    <div class="meal-title ">订单</div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </li>
+            </form>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/page/cardManageEdit.js?v=201802221448"></script>
+</body>
+</html>

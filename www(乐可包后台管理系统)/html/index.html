@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=ie8">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>乐卡包-登录页面</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <link rel="stylesheet" type="text/css" href="../css/base/public.css?v=201802221448">
+    <link rel="stylesheet" type="text/css" href="../css/page/login_new.css?v=201802221448">
+    <link rel="stylesheet" type="text/css" href="../css/base/number_key.css?v=201802221448">
+
+    <link rel="stylesheet" type="text/css" href="../css/base/header.css?v=201802221448">
+    <link rel="stylesheet" type="text/css" href="../css/page/select.css?v=201802221448">
+
+</head>
+<script type="text/javascript">
+    document.domain="lekabao.net";
+</script>
+<body style="height:100%;">
+    <div id="login_display">
+      <div class="header-box">
+          <div class="header-pd">
+              <div class="inline header-text">
+                  <span class="span-text">乐卡包总部管理系统</span>
+              </div>
+              <div class="header-ctrl header-min" id="minimize">
+                  <span class="heng"></span>
+              </div>
+              <div class="header-ctrl header-close" id="close_t">
+                  <a href="javascript:window.close()">
+                      <div class="rotate">
+                          <span class="heng"></span>
+                          <span class="shu"></span>
+                      </div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <div class="main_logoin">
+          <div class="use_logo_tip">
+               <img src="../../img/base/admin.png">
+          </div>
+          <div class="imgLine"><img src="../../img/base/seg_line.png"></div>
+          <ul>
+              <li>用户登录</li>
+               <!--<div id="save_list" class="save_list hide">
+                  <div class="save_top">
+                      <span class="save_left">请选择账户</span>
+                      <span class="save_right" id="save_right"><img src="../../img/base/login_del.png"/>清除</span>
+                  </div>
+                  <div id="save_data" class="save_data">
+
+                  </div>
+              </div>-->
+              <!--<div id="save_list" class="save_list">
+                  <div class="save_top">
+                      <span class="save_left">请选择账户</span>
+                      <span class="save_right" id="save_right"><img src="../../img/base/login_del.png">清除</span>
+                  </div>
+                  <div id="save_data" class="save_data"><p value="15811111111">15811111111<span>张三</span></p></div>
+              </div>-->
+              <li><input type="tel" id="username" class="test_key test_name" placeholder="输入手机号"/></li>
+              <li>
+                  <input type="password" name="password" class="test_key test_pass test_key_1" style="display:none;" value="" id="password"/>
+                  <input type="text" id="password_text" class="test_key test_pass test_key_1" value="输入密码"/>
+                  <input type="password" style="display:none;" class="test_key test_pass test_key_1" id="passwordPro" placeholder="输入密码"/>
+              </li>
+              <!-- 下面这个退出可在壳子里面关闭壳子 -->
+              <!--<li id="exit_btn" class="hide"><button id="close_dialog" class="exit_box"><a href="javascript:window.close()">退出</a></button></li>-->
+              <li><button id="submit-btn">登 录</button></li>
+              <!--<a href="" class="forget" id="forget">忘记密码？</a>-->
+          </ul>
+          <div id="save_list" class="save_list hide">
+              <div id="save_data" class="save_data">
+                  <!-- <p value="15811111111">15811111111<span>张三</span></p> -->
+              </div>
+              
+          </div>
+      </div>
+     
+      <div class="bg_top"></div>
+      <div class="bg_bottom"></div>
+      <div class="copysite">
+          <p>乐卡包，让品牌真正连接顾客</p>
+          <p>Copyright © 2016 lekabao Corporation,All Rights Reserved</p>
+      </div>
+      <div class="pat_bg"></div>
+    </div>
+
+    <div id="many_display" class="hide">
+      <!-- 头部部分 -->
+      <div class="header">
+          <div class="header-title" id="cardName">总部管理系统</div>
+          <div class="header-subtitle">商家服务中心</div>
+          <div class="header-panefun">
+              <div class="header-panetitle" id="userName"></div>
+              <!-- <div class="header-triangle" id="downopen"></div> -->
+              <div class="header-signout" id="exitBtn">退出</div>
+          </div>
+          <div class="infolayer" style="display: none;" id="exit"></div>
+      </div>
+      <!-- 内容部分 -->
+      <div class="nav clearfix">
+          <ul class="clearfix" id="allContent">
+
+          </ul>
+      </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <!-- 键盘弹出层 -->
+    <div class="main_logoin_t keynum_t test_dilog_t hide">
+      <ul class="key_t" id="key">
+          <li data-key="1" class="12"><span class="56">1</span></li>
+          <li data-key="2"><span>2</span></li>
+          <li data-key="3"><span>3</span></li>
+          <li data-key="4"><span>4</span></li>
+          <li data-key="5"><span>5</span></li>
+          <li data-key="6"><span>6</span></li>
+          <li data-key="7"><span>7</span></li>
+          <li data-key="8"><span>8</span></li>
+          <li data-key="9"><span>9</span></li>
+          <li data-key="0" class="width_153"><span>0</span></li>
+          <li data-key="."><span>.</span></li>
+          <!-- <li data-key="10"><span class="del_t"></span></li> -->
+          <!-- <li data-key="11"><span>切换</span></li> -->
+      </ul>
+      <ul class="key_t key_t_2">
+          <li data-key="10"><span class="del_t"></span></li>
+          <li data-key="enter"><span class="font_size20"></span></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/base/config.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/pattern.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/cache.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/page/login.js?v=201802221448"></script>
+</body>
+
+</html>

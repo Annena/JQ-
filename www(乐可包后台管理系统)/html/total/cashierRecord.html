@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta charset="utf-8">
+<title>收银记录</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802031858">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802031858">
+<link rel="stylesheet" type="text/css" href="../../css/base/base.css?v=201802031858">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802031858">
+<link rel="stylesheet" type="text/css" href="../../css/page/shouyin.css?v=201802031858">
+</head>
+<body style="height:100%">
+    
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： 收银记录
+            </div>
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="nva1" data-type="2">正常</div>
+                <div class="caipin-fenleinucheck" id="nav2" data-type="3">反结账</div>
+            </div>
+            <div class="pinglun-search pinglun-search_1">
+                <ul>
+                    <li class="clearfix">
+                        <p>开始时间
+                            <input type="text" id="start-date" name="start-date" class="Wdate second-width" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',lang:'zh-cn'})">
+                        </p>
+                        <p>结束时间
+                            <input type="text" id="end-date" name="end-date" class="Wdate second-width" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',lang:'zh-cn'})">
+                        </p>
+                        <p>店铺
+                            <input type="text" id="shopList" class="shopList" name="shop" readonly value="全部"  />
+                        </p>
+                        <div style="display: inline-block;float: left">订单
+                            <select name="" id="order_property">
+                                <option value="all">全部订单</option>
+                                <option value="1">堂食订单</option>
+                                <option value="2">外卖订单</option>
+                                <option value="3">自取订单</option>
+                                <option value="4">商城订单</option>
+                            </select>
+                        </div>
+                        <p><input type="button" value="查询" id="selectbtn" class="btn"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdivs"></div>
+        <div class="stores-content navContent" id="nav0-content">
+             <div class="out_table_title hide">
+                <table cellpadding="0" cellspacing="0" class="table_title">
+                    <thead>
+                        <tr class="stores_title">
+                            <th class="twidth">操作</th>
+                            <!-- <th>序号</th> -->
+                             <th class="twidth">流水单号</th>                           
+                             <th class="twidth">结账时间</th>
+                             <th class="twidth">店铺</th>                            
+                            <th id="menu_consume" class="twidth">消费金额<u class="menu_consume"><i class="topjt topjtCurrent"></i><i class="botjt botjtCurrent"></i></u></th>
+                            <th class="twidth">实收金额</th>
+                            <th id="menu_cash" class="twidth">现金收入<u class="menu_cash"><i class="topjt topjtCurrent"></i><i class="botjt botjtCurrent"></i></u></th>
+                            <th class="twidth">银行卡收入</th>
+                            <th id="menu_wxpay" class="twidth">微信支付收入<u class="menu_wxpay"><i class="topjt topjtCurrent"></i><i class="botjt botjtCurrent"></i></u></th>
+                            <th id="menu_alipay" class="twidth">支付宝支付收入<u class="menu_alipay"><i class="topjt topjtCurrent"></i><i class="botjt botjtCurrent"></i></u></th>
+                            <th id="menu_pri_money" class="twidth">储值本金消费<u class="menu_pri_money"><i class="topjt topjtCurrent"></i><i class="botjt botjtCurrent"></i></u></th>
+                            <th class="otherTh_rec"></th><!-- 自定义支付方式实收 -->
+                            <th class="twidth">优惠金额</th>
+                            <th class="twidth">会员价优惠</th>
+                            <th class="twidth">会员折扣优惠</th>
+                            <th class="twidth">抹零</th>
+                            <th class="twidth">抵用劵</th>
+                            <th class="twidth">银台折扣</th>
+                            <th class="twidth">套餐优惠</th>
+                            <th class="twidth">储值赠送消费</th>
+                            <th class="twidth">赠菜金额</th>
+                            <th class="otherTh_dis"></th><!-- 自定义支付方式优惠 -->
+                            <th class="twidth">开台时间</th>
+                            <th class="twidth">桌台名称</th>
+                            <th class="twidth">结账员工 </th>
+                            <th class="twidth">就餐人数</th>
+                            <th class="twidth">人均消费</th>
+                            <th class="twidth">状态</th>                
+                        </tr>
+                    </thead>
+                </table>
+            </div>  
+            <table cellpadding="0" cellspacing="0"  id="table2Dispaly" class="hide Records_content">
+                <thead>
+                    <tr class="stores_title vhide" >
+                            <th class="twidth">操作</th>
+                            <th class="twidth">流水单号</th>                        
+                            <th class="twidth">结账时间</th>
+                            <th class="twidth">店铺</th>
+                            <th class="twidth">消费金额</th>
+                            <th class="twidth">实收金额</th>
+                            <th class="twidth">现金收入</th>
+                            <th class="twidth">银行卡收入</th>
+                            <th class="twidth">微信支付收入</th>
+                            <th class="twidth">支付宝支付收入</th>
+                            <th class="twidth">储值本金消费</th>
+                            <th class="otherTh_rec"></th><!-- 自定义支付方式实收 -->
+                            <th class="twidth">优惠金额</th>
+                            <th class="twidth">会员价优惠</th>
+                            <th class="twidth">会员折扣优惠</th>
+                            <th class="twidth">抹零</th>
+                            <th class="twidth">抵用劵</th>
+                            <th class="twidth">银台折扣</th>
+                            <th class="twidth">套餐优惠</th>
+                            <th class="twidth">储值赠送消费</th>
+                            <th class="twidth">赠菜金额</th>
+                            <th class="otherTh_dis"></th><!-- 自定义支付方式优惠 -->
+                            <th class="twidth">开台时间</th>
+                            <th class="twidth">桌台名称</th>
+                            <th class="twidth">结账员工</th>
+                            <th class="twidth">就餐人数</th>
+                            <th class="twidth">人均消费</th>
+                            <th class="twidth">状态</th>                            
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+
+                </tbody>
+            </table>
+            
+        </div>
+
+        <!--反结账-->
+        <div class="stores-content  hide  navContent" id="nav1-content">
+             <div class="out_table_title hide">
+                    <table cellpadding="0" cellspacing="0" class="table_title">
+                        <thead>
+                        <tr class="stores_title">
+                            <th class="twidth">操作</th>
+                            <!-- <th>序号</th> -->
+                            <th class="twidth">流水单号</th>
+                            <th class="twidth">结账时间</th>
+                            <th class="twidth">店铺</th>
+                            <th class="twidth">消费金额</th>
+                            <th class="twidth">实收金额</th>
+                            <th class="twidth">现金收入</th>
+                            <th class="twidth">银行卡收入</th>
+                            <th class="twidth">微信支付收入</th>
+                            <th class="twidth">支付宝支付收入</th>
+                            <th class="twidth">储值本金消费</th>
+                            <th class="otherTh_rec"></th><!-- 自定义支付方式实收 -->
+                            <th class="twidth">优惠金额</th>
+                            <th class="twidth">会员价优惠</th>
+                            <th class="twidth">会员折扣优惠</th>
+                            <th class="twidth">抹零</th>
+                            <th class="twidth">抵用劵</th>
+                            <th class="twidth">银台折扣</th>
+                            <th class="twidth">套餐优惠</th>
+                            <th class="twidth">储值赠送消费</th>
+                            <th class="twidth">赠菜金额</th>
+                            <th class="otherTh_dis"></th><!-- 自定义支付方式优惠 -->
+                            <th class="twidth">开台时间</th>
+                            <th class="twidth">桌台名称</th>
+                            <th class="twidth">结账员工</th>
+                            <th class="twidth">就餐人数</th>
+                            <th class="twidth">人均消费</th>
+                            <th class="twidth">状态</th>                          
+                        </tr>
+                    </thead>
+                    </table>
+            </div>
+
+            <table cellpadding="0" cellspacing="0"  class="hide Records_content" id="table3Dispaly"><!-- lw 添加了 cleanerRecords-content ID-->
+                <thead>
+                    <tr class="stores_title vhide">
+                        <th class="twidth">操作</th>
+                        <!-- <th>序号</th> -->
+                        <th class="twidth">流水单号</th>
+                        <th class="twidth">结账时间</th>
+                        <th class="twidth">店铺</th>
+                        <th class="twidth">消费金额</th>
+                        <th class="twidth">实收金额</th>
+                        <th class="twidth">现金收入</th>
+                        <th class="twidth">银行卡收入</th>
+                        <th class="twidth">微信支付收入</th>
+                        <th class="twidth">支付宝支付收入</th>
+                        <th class="twidth">储值本金消费</th>
+                        <th class="otherTh_rec"></th><!-- 自定义支付方式实收 -->
+                        <th class="twidth">优惠金额</th>
+                        <th class="twidth">会员价优惠</th>
+                        <th class="twidth">会员折扣优惠</th>
+                        <th class="twidth">抹零</th>
+                        <th class="twidth">抵用劵</th>
+                        <th class="twidth">银台折扣</th>
+                        <th class="twidth">套餐优惠</th>
+                        <th class="twidth">储值赠送消费</th>
+                        <th class="twidth">赠菜金额</th>
+                        <th class="otherTh_dis"></th><!-- 自定义支付方式优惠 -->
+                        <th class="twidth">开台时间</th>
+                        <th class="twidth">桌台名称</th>
+                        <th class="twidth">结账员工</th>
+                        <th class="twidth">就餐人数</th>
+                        <th class="twidth">人均消费</th>
+                        <th class="twidth">状态</th>                       
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+
+                </tbody>
+            </table>
+        </div>
+        
+        <!--分页-->
+        <div class="search_page" id="nav0_search_page">
+            <!-- <a href="javascript:void(0)" class="home_page">首 页</a>
+            <strong href="javascript:void(0)">1</strong>
+            <a href="javascript:void(0)" class="page_number">2</a>
+            <a href="javascript:void(0)" class="page_number">3</a>
+            <span>...</span>
+            <a href="javascript:void(0)" class="page_number">8</a>
+            <a href="javascript:void(0)" class="page_number">9</a>
+            <a href="" class="end_page">尾 页</a>
+                跳转到：
+            <input type="text"  value="1" class="page_just">
+            <input type="button" value="GO" class="page_go"> -->
+        </div>
+        
+        <div class="search_page hide" id="nav1_search_page">
+            <!-- <a href="javascript:void(0)" class="home_page">首 页</a>
+            <strong href="javascript:void(0)">1</strong>
+            <a href="javascript:void(0)" class="page_number">2</a>
+            <a href="javascript:void(0)" class="page_number">3</a>
+            <span>...</span>
+            <a href="javascript:void(0)" class="page_number">8</a>
+            <a href="javascript:void(0)" class="page_number">9</a>
+            <a href="" class="end_page">尾 页</a>
+                跳转到：
+            <input type="text"  value="1" class="page_just">
+            <input type="button" value="GO" class="page_go"> -->
+        </div>
+    </div>
+     <!--详情弹层-->
+        <!-- <div style="display: block;z-index: 9999" class="laydertan"  id="handoveLay"> -->
+        <div class="laydertan hide"  id="handoveLay">
+            <div class="layderspan">
+                <div class="layderdivfirst">收银详情</div>
+                <!-- <input type="button" class="closeBtn" id="can-alert" value="X" /> -->
+                <a  class="closeBtn" id="can-alert"  href="javascript:;"></a>
+            </div>
+            <div class="clearfix">
+                <div class="orderinfobar">
+                    订单信息
+                </div>
+                <div class="mengxiadan">                
+                    <p style="padding-top: 5px;">
+                        <span>桌台名称：&#12288;<span id="tableName"></span></span>
+                        <span class="position_right">订单属性：&#12288;<span id="orderProperty"></span></span>
+                    </p>
+                    <p>
+                        <span>就餐人数：&#12288;<span id="user_num"></span></span>
+                        <span class="position_right">订单状态：&#12288;<span id="order_step"></span></span>
+                    </p>
+                    <div class="dashedbar"></div>
+                    <p style="padding-top: 5px;">
+                        <span>&#12288;收银员：&#12288;<span id="aUserName"></span></span>
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <span>流水单号：&#12288;<span id="payId"></span></span>
+                    </p>             
+                    <p style="padding-top: 5px;">
+                        <span>开台时间：&#12288;<span id="order_time"></span></span>
+                    </p>
+                    <p style="padding-top: 5px;padding-bottom: 5px">
+                        <span>结账时间：&#12288;<span id="add_time"></span></span>
+                    </p>
+                </div>
+                <div class="cashie_scroll">
+                    <div class="orderinfobar">
+                        菜品信息
+                    </div>
+                    <div class="mengcai" id="menuList">
+               
+                    </div>
+                    <div class="orderinfobar">
+                        支付信息
+                    </div>
+                    <div class="billdata">
+                        <ul class="lanheight">
+                            <li class="clearfix" id="consumeDisplay">
+                                <div class="billname bigfont">消费金额</div>
+                                <div class="billxuhao bigfont" id="consume"></div>
+                            </li>
+                            <li class="clearfix" id="afterDiscountDisplay">
+                                <div class="billname bigfont">实收金额</div>
+                                <div class="billxuhao bigfont" id="afterDiscount"></div>
+                            </li>
+                            <li class="clearfix" id="cashDisplay">
+                                <div class="billname">现金收入</div>
+                                <div class="billxuhao" id="cash"></div>
+                            </li>
+                            <li class="clearfix" id="cardDisplay">
+                                <div class="billname">银行卡收入</div>
+                                <div class="billxuhao" id="card"></div>
+                            </li>
+                            <li class="clearfix" id="wxpayDisplay">
+                                <div class="billname">微信支付收入</div>
+                                <div class="billxuhao" id="wxpay"></div>
+                            </li>
+                            <li class="clearfix" id="alipayDisplay">
+                                <div class="billname">支付宝支付收入</div>
+                                <div class="billxuhao" id="alipay"></div>
+                            </li>
+                            <li class="clearfix" id="pri_moneyDisplay">
+                                <div class="billname">储值本金消费</div>
+                                <div class="billxuhao" id="pri_money"></div>
+                            </li>
+                            <li class="clearfix" id="other_pay_mon">
+                                <div class="billname">自定义支付方式实收</div>
+                                <div class="billxuhao"></div>
+                            </li>
+                            <li class="clearfix" id="dis_money_dis">
+                                <div class="billname bigfont">优惠金额</div>
+                                <div class="billxuhao bigfont" id="dis_money"></div>
+                            </li>
+                            <li class="clearfix" id="sub_user_price_dis">
+                                <div class="billname">会员价优惠</div>
+                                <div class="billxuhao" id="sub_user_price"></div>
+                            </li>
+                            <li class="clearfix" id="sub_user_discount_dis">
+                                <div class="billname">会员折扣优惠</div>
+                                <div class="billxuhao" id="sub_user_discount"></div>
+                            </li>
+                            <li class="clearfix" id="smallChangeDisplay">
+                                <div class="billname">抹零</div>
+                                <div class="billxuhao" id="smallChange"></div>
+                            </li>
+                            <li class="clearfix" id="voucherDisplay">
+                                <div class="billname">抵用券</div>
+                                <div class="billxuhao" id="voucher"></div>
+                            </li>
+                            <li class="clearfix" id="subMoneyDisplay">
+                                <div class="billname">银台折扣</div>
+                                <div class="billxuhao" id="subMoney"></div>
+                            </li>
+                            <li class="clearfix" id="pac_moneyDisplay">
+                                <div class="billname">套餐优惠</div>
+                                <div class="billxuhao" id="pac_money"></div>
+                            </li>
+                            <li class="clearfix" id="sts_moneyDisplay">
+                                <div class="billname">储值赠送消费</div>
+                                <div class="billxuhao" id="sts_money"></div>
+                            </li>
+                            <li class="clearfix" id="give_menu_consumeDisplay">
+                                <div class="billname">赠菜金额</div>
+                                <div class="billxuhao" id="give_menu_consume"></div>
+                            </li>
+                            <li class="clearfix" id="other_pay_pre">
+                                <div class="billname">自定义支付方式优惠</div>
+                                <div class="billxuhao"></div>
+                            </li>
+
+                            <!-- <li class="clearfix">
+                                <div class="billname">就餐人数</div>
+                                <div class="billxuhao" id="user_num"></div>
+                            </li> -->
+                            <li class="clearfix">
+                                <div class="billname">人均消费</div>
+                                <div class="billxuhao" id="use_money"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <a class="printTicket" href="javascript:;">补打小票</a> -->
+        </div>
+
+    <!-- 反结弹出层账 lw 2016.3.20 -->
+    <div class="anticheckout hide" id="UncashierRecord-information">
+         <div class="laydertop"></div>
+         <div class="layderspan">
+                <div class="layderdivfirst">确认撤销结账</div>
+                <div class="layderrightfirst" id="can-alert">关闭</div>
+            </div>
+         <div class="anticheckoutcontent" id="laydercontent">
+            <div class="label clearfix">
+                <p>确认要对此单进行撤销结账操作吗？</p>
+                <div class="retreat">备注：</div>
+                <div class="retreatright"><input  id="UncashierRecord_remark" type="text"  value=""/></div>
+            </div>
+            <div class="label clearfix">
+                <div class="retreat">现金退款：</div>
+                <div class="retreatright">
+                    <input type="text" disabled id="cash-lay" class="otherlayderinput" name="username"/>
+                    <span>（线下手动处理）</span>
+                </div>
+            </div>
+            <div class="label clearfix">
+                <div class="retreat">银行卡退款：</div>
+                <div class="retreatright">
+                    <input type="text" disabled id="card-lay" class="otherlayderinput" name="username"/>
+                    <span>（线下手动处理）</span>
+                </div>
+            </div>
+            <!-- <div class="label clearfix">
+                <div class="retreat">快捷支付退款：</div>
+                <div class="retreatright">
+                    <input type="text" disabled id="quickPay-lay" class="otherlayderinput" name="username"/>
+                    <span>（线下手动处理）</span>
+                </div>
+            </div> -->
+            <div class="label clearfix">
+                <div class="retreat">其他退款：</div>
+                <div class="retreatright">
+                    <input type="text" disabled id="other-lay" class="otherlayderinput" name="username"/>
+                    <span>（线下手动处理）</span>
+                </div>
+            </div>
+            <div class="anticheckoutqueren">
+                <input id="UncashierRecord-btn" type="button" value="确认撤销结账"/>
+            </div>
+         </div>
+    </div>
+
+    <!-- 选择菜品分类、选择店铺 -->
+    <div id="favorable-message" class="message">
+        <h1 id="favorable-title" class="title"></h1>
+        <div id="favorable-content" class="container">
+            <div id="select-favorable" class="clearfix">
+                <ul id="set-favorable" class="select-list">
+                </ul>
+                <ul id="show-favorable" class="select-list">
+                </ul>
+            </div>
+        </div>
+        <div id="close-favorable-message" class="close-message">
+            <div id="cancel-favorable" class="close-dialog"></div>
+            <div id="definite-favorable" class="definite-dialog"></div>
+        </div>
+        <div id="favorable-prompt-message" class="prompt-message"></div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201802031858"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802031858"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802031858"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802031858"></script>
+    <script type="text/javascript" src="../../js/page/cashierRecord.js?v=201802031858"></script>
+</body>
+</html>

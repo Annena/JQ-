@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>员工添加修改</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801111340">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801111340">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801111340">
+<link rel="stylesheet" type="text/css" href="../../css/page/addstaff.css?v=201801111340">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">员工列表</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel">
+                    <input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn">
+                </span>
+                <span>
+                    <input type="button" value="保存" id="updatebtn" class="nav-btn">
+                </span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">登录名：</div>
+                    <div><input type="tel" name="shop" class="nav-shop" value="" data-description="登录名" placeholder="" autocomplete="off" id="aUserMobile"> * 员工的联系电话(必填)</div>
+                </li>
+                <li class="clearfix" id="passDisplay">
+                    <div class="nav-content-edit-title">密  码：</div>
+                    <div id="morenpassword" class="">
+                        <input type="text" name="shop" class="nav-shop inputgrey" value="" readonly="readonly" placeholder="" autocomplete="off" id="aUserPass">&nbsp;*系统默认生成
+                    </div>
+                    <div id="restbutton" class="hide">
+                        <input type="button" name="shop" value="重置密码" id="buttonpass">
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">员工编号：</div>
+                    <div><input type="text" name="shop" class="nav-shop" value="" placeholder="" autocomplete="off" id="aUserDid">&nbsp;员工的工号(选填)</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">姓  名：</div>
+                    <div><input type="text" name="shop" class="nav-shop" value="" placeholder="" data-description="姓名" autocomplete="off" id="aUserName">* 请填写员工的真实姓名(必填)</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">昵  称：</div>
+                    <div><input type="text" name="shop" class="nav-shop" value="" placeholder="" data-description="昵称" autocomplete="off" id="aUserNickname"></div>
+                </li>
+                <li class="clearfix" id="empDisplay">
+                    <div class="nav-content-edit-title">状  态：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="statusList" class="nav-select">
+                            <option value="0">正常</option>
+                            <option value="1">冻结</option>
+                        </select>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801111340"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801111340"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801111340"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801111340"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801111340"></script>
+    <script type="text/javascript" src="../../js/page/shopEmployeesEdit.js?v=201801111340"></script>
+</body>
+</html>

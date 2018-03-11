@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>菜品查看</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802071835">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802071835">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802071835">
+<link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=201802071835">
+<link rel="stylesheet" type="text/css" href="../../css/page/caipinku.css?v=201802071835">
+<link rel="stylesheet" type="text/css" href="../../css/page/dishesShopLook.css?v=201802071835">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">菜品管理</a> >> <b id="dishesLook"></b>
+                <span class="stores-cancel"><input type="button" value="返回" id="exitbtn" class="nav-quxiao-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <input class="hide" type="text" id="menuId" name="menu_id" value>
+                <input class="hide" type="text" id="CID" name="cid" value>
+                <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+           		<div class="dishesLook_Content">
+            		<div class="dishesLook_Content_top">
+            			<div class="dishesLook_Content_top_left">
+            				<div class="dishesLook_Content_top_left_title">基本信息</div>
+                			<div class="control-group">
+    							<label class="control-label" for="menu_did">菜品编号：</label>
+    							<div class="controls">
+      								<div id="menu_did"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_name">菜品名称：</label>
+    							<div class="controls">
+      								<span id="menu_name"></span><span id="father_menu_name" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_byname">菜品标签：</label>
+    							<div class="controls">
+      								<div id="menu_byname"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="search_code">菜品助记码：</label>
+    							<div class="controls">
+      								<div id="search_code"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_unit">菜品单位：</label>
+    							<div class="controls">
+      								<div id="menu_unit"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_info">菜品说明：</label>
+    							<div class="controls">
+      								<div id="menu_info"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_flavor">菜品口味：</label>
+    							<div class="controls">
+      								<div id="menu_flavor"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_note">菜品备注：</label>
+    							<div class="controls">
+      								<div id="menu_note"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_type_id">菜品分类：</label>
+    							<div class="controls">
+      								<div id="menu_type_id"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_attribute_id">菜品属性：</label>
+    							<div class="controls">
+      								<div id="menu_attribute_id"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="menu_scope">菜品使用范围：</label>
+    							<div class="controls">
+      								<div id="menu_scope"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+  								<!--  -->
+    							<label class="control-label" for="menuPic">菜品图片：</label>
+    							<div class="controls">
+      								<div id="menuPic"></div>
+    							</div>
+  							</div>
+            			</div>
+            			<div class="dishesLook_Content_top_right">
+            				<div class="dishesLook_Content_top_right_title">菜品设置</div>
+            				<div class="control-group">
+    							<label class="control-label" for="menu_price">价格：</label>
+    							<div class="controls">
+      								<span id="menu_price"></span><span id="father_menu_price" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="member_price">会员价：</label>
+    							<div class="controls">
+      								<span id="member_price"></span><span id="father_member_price" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="barcode">条形码：</label>
+    							<div class="controls">
+      								<div id="barcode"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="produce_type">制作类型：</label>
+    							<div class="controls">
+      								<span id="produce_type"></span><span id="father_produce_type" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="produce_time">制作时间：</label>
+    							<div class="controls">
+      								<div id="produce_time"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="consume_materiel_list">物料消耗：</label>
+    							<div class="controls">
+      								<div id="consume_materiel_list"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="special_type">特定商品：</label>
+    							<div class="controls">
+      								<span id="special_type"></span><span id="father_special_type" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="is_store">下单类型设置：</label>
+    							<div class="controls">
+      								<div id="" class="is_store"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="">打包盒：</label>
+    							<div class="controls">
+      								<span id="pack_id"></span><span id="father_pack_id" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="is_input">是否允许输入：</label>
+    							<div class="controls">
+      								<div id="is_input"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="is_discount">是否打折：</label>
+    							<div class="controls">
+      								<span id="is_discount"></span><span id="father_is_discount" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="is_half">是否半份：</label>
+    							<div class="controls">
+      								<div id="is_half"></div>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="is_give">是否赠菜：</label>
+    							<div class="controls">
+      								<span id="is_give"></span><span id="father_is_give" style="color:red"></span>
+    							</div>
+  							</div>
+  							<div class="control-group">
+    							<label class="control-label" for="sale_commission">提成金额：</label>
+    							<div class="controls">
+      								<span id="sale_commission"></span><span id="father_sale_commission" style="color:red"></span>
+    							</div>
+  							</div>
+            			</div>
+            		</div>
+            		<div class="dishesLook_Content_footer">
+            			<div class="dishesLook_Content_top_footer_title">打印机列表</div>
+            			<div class="dishesLook_Content_footer_top">
+            				<div class="control-group">
+    						<label class="control-label" for="printer_id">生产打印机：</label>
+    							<div class="controls">
+      							<span id="printer_id"></span><span id="father_printer_id" style="color:red"></span>
+    						</div>
+	  						</div>
+							<div class="control-group">
+	    						<label class="control-label" for="jardiniere_printer_id">配菜打印机：</label>
+	    							<div class="controls">
+	      							<span id="jardiniere_printer_id"></span><span id="father_jardiniere_printer_id" style="color:red"></span>
+	    						</div>
+	  						</div>
+	  						<div class="control-group">
+	    						<label class="control-label" for="pass_printer_id">传菜打印机：</label>
+	    						<div class="controls">
+	      							<span id="pass_printer_id"></span><span id="father_pass_printer_id" style="color:red"></span>
+	    						</div>
+	  						</div>
+	  					</div>
+	  					<div class="dishesLook_Content_footer_bottom">
+	  						<div class="control-group">
+	    						<label class="control-label" for="produce_printer_id">划菜打印机：</label>
+	    						<div class="controls">
+	      							<span id="produce_printer_id"></span><span id="father_produce_printer_id" style="color:red"></span>
+	    						</div>
+	  						</div>
+	  						<div class="control-group">
+	    						<label class="control-label" for="tag_printer_id">标签打印机：</label>
+	    						<div class="controls">
+	      							<span id="tag_printer_id"></span><span id="father_tag_printer_id" style="color:red"></span>
+	    						</div>
+	  						</div>
+	  						<div class="control-group">
+	    						<!-- <label class="control-label" for="inputEmail">标签打印机：</label>
+	    							<div class="controls">
+	      							<div></div>
+	    						</div> -->
+	  						</div>
+            			</div>
+            			
+            		</div>
+            	</div>
+            
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!--日期选中插件-->
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201802071835"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802071835"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802071835"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802071835"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802071835"></script>
+    <script type="text/javascript" src="../../js/base/chineseToEng.js?v=201802071835"></script>
+<!--     <script type="text/javascript" src="../../js/page/dishesManageAdd.js?v=201802071835"></script> -->
+    <script type="text/javascript" src="../../js/page/dishesShopLook.js?v=201802071835"></script>
+
+</body>
+</html>

@@ -1,0 +1,522 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-12-29 12:06:40
+ * @version $Id$
+ */
+	body,button,input,select,textarea {
+	font:12px/1.125 宋体,Arial,Helvetica,sans-serif;
+	font-family: XinGothic-SinaWeibo, Microsoft Yahei, Heiti SC, Myriad, Lucida, Grande, Helvetica, HelveticaNeue, arial, Hiragino Sans GB, Droid san-sreif, enQuanYi Micro Hei;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF url(../../img/base/bodybg.png) repeat-x;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+}
+
+ol,ul {
+	list-style:none;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-size:normal;
+	font-weight:normal;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img {
+	border:0;
+}
+caption,th {
+	text-align:left;
+}
+input,button,select,textarea {
+	outline:none;
+	font-family:verdana;
+}
+.clearfix {
+	zoom:1;
+}
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	font-size:0;
+	clear:both;
+	visibility:hidden;
+}
+a:link {
+	color: #666666;
+	text-decoration:none;
+}
+a:visited {
+	color: #666666;
+	text-decoration:none;
+}
+a:hover {
+	color: #666666;
+	text-decoration:none;
+}
+a:active {
+	color: #666666;
+	text-decoration:none;
+}
+.mailLoginBox {
+	min-width:936px;
+}
+.mailLoginBox .mailLogin {
+	position:absolute;
+	height:591px;
+	top:50%;
+	left:0;
+	width:100%;
+	margin-top:-300px;/*-295*/
+}
+.header {
+	margin:0 auto;
+	width:936px;
+	height:70px;
+}
+.header h1 {
+	float:left;
+	margin-top:17px;
+}
+.header .logo {
+	cursor:pointer;
+	font-size: 32px;
+	float:left;
+	height:41px;
+	/*width:500px;*//*144px*/
+	/*line-height:9999px;*/
+	word-spacing:8px; 
+	letter-spacing: -1px;
+	overflow:hidden;
+	color: #FFFFFF;/*FF8367*/
+	background:url(../images/base/logo.png) no-repeat;
+	*_background:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/base/logo.png',sizingMethod='crop');
+}
+.header .nav {
+	float:right;
+	margin-top:39px;
+}
+.header .nav a {
+	color:#666;
+}
+.header .nav span {
+	padding:0 8px;
+	color:#999;
+}
+.mainHeader {
+	width:100%;
+}
+.main {
+	position:relative;
+	margin:0 auto;
+	height:485px;
+}
+.mainFooter {
+	width:100%;
+}
+.main .positionBox {
+	margin:0 auto;
+	width:936px;
+	padding-top:48px;
+}
+.main .loginBox {
+	float:right;
+	border-radius:5px;
+}
+.main .loginBox {
+	position:relative;
+	width:334px;
+	background-color:#fff;
+	*overflow:hidden;
+	border:1px solid #E5E5E5;
+	-webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+	-ms-box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+	box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+}
+.main .loginBox .tit {
+	margin-bottom: 25px;
+	width:336px;
+}
+.main .loginBox .tit li {
+	float:left;
+	height:42px;
+	width:166px;
+	background-color:#f8f8f8;
+	border-right:1px solid #e3e3e3;
+	border-bottom:1px solid #e3e3e3;
+	text-align:center;
+}
+.main .loginBox .tit li.lastChild,.main .loginBox .tit li:last-child {
+	border-right:0px;
+	width:100%;
+}
+.main .loginBox .tit li a {
+	text-decoration:none;
+	display:inline-block;
+	height:14px;
+	width:166px;
+	color:#333;
+	font-size:14px;
+	font-weight:bold;
+	padding:14px 0;
+	vertical-align:central;
+}
+.main .loginBox .tit li a .vip {
+	display:inline-block;
+	margin-right:5px;
+	height:15px;
+	width:21px;
+	background:url(../images/base/iconNew.png) 0 -120px no-repeat;
+	vertical-align:-2px;
+}
+.main .loginBox .tit .current {
+	background-color:#fff;
+	border-bottom:1px solid #fff;
+}
+.main .loginBox .freeMailbox,.main .loginBox .vipMailbox {
+	padding:0 32px 0;
+	width:270px;
+}
+.main .loginBox .loginError {
+	display:block;
+	height:22px;
+	line-height:22px;
+	color:#e32929;
+}
+
+.main .loginBox .username,.main .loginBox .password,.main .loginBox .vsn {
+	ime-mode:disabled;
+	width:242px;
+	height:34px;
+	line-height:34px;
+	border:1px solid #c8c8c8;
+	color:#666;
+	padding-left:8px;
+	padding-right:18px;
+	font-size:14px;
+	font-weight:bold;
+}
+.main .loginBox .passwordBox {
+	position:relative;
+	clear:both;
+	_zoom:1;
+}
+.main .loginBox .mailvsn {
+	position:relative;
+	clear:both;
+	overflow:hidden;
+	_zoom:1;
+}
+.main .loginBox .mailvsn {
+	margin-top:22px;
+	height:36px;
+	width:100%;
+}
+.main .loginBox .loginSetting {
+	margin-top:8px;
+	height:22px;
+	line-height:22px;
+}
+.main .loginBox .loginSetting .forgetPas {
+	float:right;
+	color:#7697c4;
+}
+.main .loginBox .loginSetting input {
+	vertical-align:-3px;
+}
+.main .loginBox .loginSetting span {
+	color:#666;
+}
+.main .loginRegisterSubmit .loginBtn,.main .loginRegisterSubmit .registerBtn,.main .loginMobile a,.main .selectLogin a.pay {
+	background:url(../images/base/iconNew.png) no-repeat;
+}
+.main .loginOrRegister {
+	margin-top:15px;
+	text-align:right;
+}
+.main .loginRegisterSubmit {
+	overflow:hidden;
+	zoom:1;
+	padding: 6px 0px 21px;
+}
+.main .loginRegisterSubmit .loginBtn {
+	float:left;
+	height:44px;
+	width:100%;
+	line-height:44px;
+	color: #FFFFFF;
+	text-align: center;
+	background: #FF8367;
+	border-radius: 6px;
+	overflow:hidden;
+	background-position:0px 0px;
+}
+.main .loginRegisterSubmit .loginBtn:hover {
+	background-position:0 -33px;
+}
+.main .loginRegisterSubmit .loginBtn:active {
+	background-position:0 -66px;
+}
+.main .loginRegisterSubmit .registerBtn {
+	float:right;
+	height:33px;
+	width:96px;
+	line-height:9999px;
+	overflow:hidden;
+	background-position:-104px 0px;
+}
+.main .loginRegisterSubmit .registerBtn:hover {
+	background-position:-104px -33px;
+}
+.main .loginRegisterSubmit .registerBtn:active {
+	background-position:-104px -66px;
+}
+.main .selectLogin {
+	overflow:hidden;
+	zoom:1;
+	padding:6px 0px 21px;
+}
+.main .selectLogin a {
+	overflow:hidden;
+	display:block;
+	float:left;
+	display:inline;
+	margin:0px;
+	height:24px;
+	line-height:24px;
+	color:#7697c4;
+	text-decoration:none;
+}
+.main .selectLogin a:hover {
+	text-decoration:underline;
+}
+.main .selectLogin a.frEle {
+	float:right;
+}
+.main .selectLogin a.pay {
+	padding:0px 0px 0px 22px;
+	background-position:0px -155px;
+}
+
+.main .loginBox .loginOrRegister .loginBtnload,.main .loginBox .loginOrRegister .loginBtnload:hover,.main .loginBox .loginOrRegister .loginBtnload:active {
+	background:url(/images/loginloading.gif) 0 0 no-repeat;
+}
+.main .loginBox .loginOrRegister span {
+	line-height:33px;
+	color:#999;
+	margin-right:10px;
+}
+.main .loginBox .loginOrRegister span a {
+	color:#7697c4;
+}
+.main .loginBox .loginOrRegister p b {
+	color:#999;
+	font-weight:normal;
+}
+.main .loginBox .loginOrRegister p {
+	margin-top:10px;
+	height:16px;
+	line-height:16px;
+	text-align:left;
+}
+.main .loginBox .loginOrRegister p a {
+	color:#7697C4;
+}
+.main .loginBox .usernameBox {
+	position:relative;
+	width:270px;
+	height:36px;
+}
+.main .loginBox .focus input {
+	/*border:1px solid #6b9bdc;
+	box-shadow:0 0 3px #6b9bdc inset;*/
+}
+.main .loginBox .focus label {
+	color:#ccc;
+}
+.main .loginBox .hover {
+	border:1px solid #abcff3;
+	box-shadow:0 0 3px #abcff3 inset;
+}
+.main .loginBox .usernameBox .clearname {
+	position:absolute;
+	right:8px;
+	top:12px;
+	_z-index:2;
+	display:block;
+	height:9px;
+	width:9px;
+	background:url(../images/base/iconNew.png) 0 -200px no-repeat;
+}
+.main .loginBox .placeholder {
+	overflow:hidden;
+	position:absolute;
+	z-index:2;
+	display:block;
+	left:0;
+	top:0;
+	height:34px;
+	line-height:34px;
+	_line-height:40px;
+	color:#999;
+	padding-left:11px;
+	font-size:14px;
+	cursor:text;
+}
+.main .loginBox .vipMailbox .usernameBox span,.main .loginBox .vipMailbox .mailvsn span {
+	font-family:verdana;
+	font-weight:bold;
+}
+.main .loginBox .vipMailbox .usernameBox .clearname {
+	right:122px;
+}
+.main .loginBox .vipMailbox .username,.main .loginBox .vipMailbox .vsn {
+	float:left;
+	ime-mode:disabled;
+	width:130px;
+	*vertical-align:middle;
+	_position:absolute;
+	_left:0;
+	_top:0;
+	_height:34px;
+	_z-index:1;
+}
+.main .loginBox .vipMailbox .vsn {
+	width:130px;
+	*vertical-align:-10px;
+}
+.main .loginBox .vipMailbox .vipDomain {
+	width:110px;
+	_width:111px;
+	height:34px;
+	line-height:34px;
+	background-color:#f9f9f9;
+	border:1px solid #c8c8c8;
+	border-left:0;
+	text-align:center;
+	color:#333;
+	font-size:14px;
+	float:left;
+	_position:absolute;
+	_top:0;
+	_right:0;
+	_z-index:2;
+}
+
+.main .loginBox .checkcodeBox {
+	position:relative;
+	margin-top:5px;
+}
+.main .loginBox .checkcodeBox input {
+	border:1px solid #c8c8c8;
+	float:left;
+	padding-left:8px;
+	width:142px;
+	height:34px;
+	line-height:34px;
+	color:#999;
+	font-size:16px;
+}
+.main .loginBox .checkcodeBox img {
+	float:right;
+	border:1px solid #c8c8c8;
+	vertical-align:bottom;
+}
+.main .loginBox .checkcodeBox p {
+	height:20px;
+	line-height:20px;
+	color:#666;
+	cursor: pointer;
+}
+.main .loginBox .checkcodeBox a {
+	float:right;
+	color:#7697c4;
+}
+.main .loginBox .checkcodeBox .focus input {
+	border:1px solid #6b9bdc;
+	box-shadow:0 0 3px #6b9bdc inset;
+}
+.main .loginBox .checkcodeBox .focus label {
+	color:#ccc;
+}
+.main .loginBox .checkcodeBox .hover {
+	border:1px solid #abcff3;
+	box-shadow:0 0 3px #abcff3 inset;
+}
+.main .loginBox .loginFooter {
+	width:302px;
+	margin-top:12px;
+	margin-left:-32px;
+	padding:12px 0 12px 32px;
+	border-top:1px solid #e9eeed;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+}
+.main .loginBox .loginFooter p {
+	height:20px;
+	line-height:20px;
+}
+.main .loginBox .loginFooter a {
+	font-weight:bold;
+	margin-right:11px;
+	color:#f00;
+	text-decoration:none;
+}
+.main .loginBox .loginFooter a:hover {
+	text-decoration:underline;
+}
+.main .loginBox .loginFooter span {
+	color:#999;
+}
+.footerBox {
+	position: relative;
+	float: right;
+}
+
+.footer {
+	margin:0 auto;
+	width:936px;
+	height:36px;
+	line-height:36px;
+	text-align:right;
+}
+.footer p {
+	/*float:left;*/
+	color:#999;
+}
+.footer a,.footer span {
+	color:#666;
+}
+.footer span {
+	margin:0 7px;
+}
+
+
+.yanzhengcode {
+	width: 95px !important;
+	margin-left: 11px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #D8D8D8 !important;
+	word-spacing:8px; 
+	letter-spacing: 10px;
+	background: url(../../img/base/codebg.png);
+	cursor: pointer;
+}

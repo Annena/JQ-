@@ -1,0 +1,499 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 用户账户支付
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+/* 公共使用样式 */
+.font_size_14 {
+    font-size: 14px;
+}
+.font_size_16 {
+    font-size: 16px;
+}
+.color_333 {
+    color: #333;
+}
+.color_888 {
+    color: #888;
+}
+.border_radius_6 {
+    border-radius: 6px;
+}
+.border_bott_1_dashed {
+    border-bottom: 1px dashed #dfdfdf;
+}
+
+/* 当前位置 样式 */
+.stores-nav {
+    /* float: left; */
+    width: 96%;
+    margin-top: 10px;
+    margin-left: 25px;
+    overflow: hidden;
+}
+
+.stores-lan {
+    font-size: 15px;
+    height: 55px;
+    font-weight:  bold;
+    line-height: 55px;
+    border-bottom: 1px solid #dedede;
+}
+
+.stores-lan span {
+    background: #FF8366;
+    float: right;
+    margin-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* 主要概括 */
+.stored_pay_main {
+    width: 100%;
+   /* margin-left: 75px;*/
+    overflow-y: auto;
+}
+
+/* 输入信息 */
+.account_number {
+    color: #333;
+    line-height: 33px;
+    display: inline-block;
+}
+.account_text {
+    /*margin: 0px 10px;*/
+    line-height: 33px;
+}
+.account_input{
+    position: relative;
+    display: inline-block;
+}
+.account_input input {
+    outline: none;
+    /* line-height: 30px; */
+    box-sizing: content-box;
+    height: auto;
+    padding: 9px 0;
+    text-indent: 5px;
+}
+.account_input input:hover{
+    border-color: #ff7247;
+}
+.account_input u{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: url('../../img/base/store_pay_xg.png');
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+.phone_number {
+    line-height: 33px;
+    display: inline-block;
+}
+.phone_text {
+    margin: 0px 10px 0px 20px;
+    line-height: 33px;
+}
+.phone_input input {
+    outline: none;
+    /* line-height: 30px; */
+    box-sizing: content-box;
+    height: auto;
+    padding: 10px 0;
+    text-indent: 5px;
+    border: 1px solid #dfdfdf;
+}
+
+
+.confirm_select input {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    width: 90px !important;
+    background-color: #d50c1e;
+    border: 0px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* 结账单信息区分线 */
+.account_disc_line {
+    width: 760px;
+    margin: 20px 0px 10px 0px;
+    position: relative;
+}
+.account_disc_line p {
+    height: 20px;
+}
+.account_disc_line .onep{
+    border-bottom: 1px dashed #dfdfdf;
+}
+.account_disc_line span {
+    width: 87px;
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    background: url(../../img/base/store_pay_xinx.png) no-repeat 10px;
+    z-index: 999;
+    background-size: 22px;
+    background-color: #fff;
+    padding: 0 10px 0px 34px;
+    box-sizing: content-box;
+}
+
+/* 主要支付内容 */
+.stored_pay_cont {
+    width: 760px;
+    height: 368px;
+    border: 1px solid #dfdfdf;
+}
+
+.pay_content_top {
+    height: 87px;
+    background-color: #d50c1e;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+}
+.pay_con_top_tex {
+    color: #fff;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.pay_con_top_mon {
+    text-align: center;
+    color: #fff;
+}
+.pay_con_top_mon span {
+    font-size: 24px;
+    font-weight: bold;
+}
+.pay_con_top_mon b {
+    font-size: 48px;
+}
+
+.pay_content_text {
+    height: 27px;
+    border-bottom: 2px solid #d50c1e;
+}
+.pay_content_text span {
+    width: 307px;
+    text-align: center;
+    display: inline-block;
+    line-height: 27px;
+}
+.pay_detll ul {
+    width: 379px;
+    height: 252px;
+    font-size: 14px;
+    display: inline-block;
+    float: left;
+}
+.pay_detll ul li {
+    width: 328px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 25px;
+}
+.pay_detll .pay_detll_right li{
+    height: 50px;
+    line-height: 50px;
+}
+.pay_de_left {
+    width: 99px;
+    text-align: right;
+    display: inline-block;
+    margin-left: 5px;
+    float: left;
+}
+.pay_de_right {
+    display: block;
+    float: right;
+    margin-right: 5px;
+}
+.pay_detll_left {
+    border-right: 1px solid #dfdfdf;
+}
+.pay_detll_right {
+    float: bold;
+}
+.pay_detll_right li .pay_de_left{
+    width: 70px;
+    float: left;
+}
+.pay_detll_right .stored input{
+    width: 100px;
+    border: 0;
+    border-bottom: 1px solid #ededed;
+    outline: none;
+}
+/* 授权验证码 */
+.author_code {
+    width: 760px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.author_code_text {
+    margin-right: 10px;
+}
+.author_code_input input {
+    width: 360px;
+    /* line-height: 35px; */
+    height: 38px;
+    line-height: 38px;
+    padding: 8px 0;
+    text-indent: 5px;
+}
+.author_code_input{
+    position: relative;
+    display: inline-block;
+}
+.author_code_input u{
+    color: #d50b1e;
+    text-decoration: none;
+    position: absolute;
+    top: 11px;
+    right: 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* 确认支付按钮 */
+.confirm_pay {
+    width: 760px;
+    text-align: center;
+}
+.confirm_pay input {
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    background-color: #d50c1e;
+    border: 0px;
+    color: #fff;
+    margin-left: 10px;
+
+}
+.pay_de_right .clickVouch{
+    display: inline-block;
+    background: #e70012;
+    color: #fff;
+    border-radius: 3px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    margin-top:7px;
+}
+.pay_de_right .clickVouch i{
+    margin-right: 3px;
+    font-style: normal;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 100px;
+    border: 1px solid #fff;
+    line-height: 13px;
+}
+.pay_de_right .clickVouch b{
+    width: 18px;
+    display: inline-block;
+    height: 10px;
+    background: url('../../img/base/store_pay_xiajiantou.png') no-repeat 5px 1px;
+}
+.pay_detll_right .vocth{
+    float: none;
+    width: 67%;
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height:50px;
+    float: right;
+}
+
+.outVouch{
+    width: 360px;
+    height: 440px;
+    position: fixed;
+    top: 10%;
+    background: #fff;
+    z-index: 999;
+    left: 25%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.vouchers-content{
+    text-align: center;
+    height: 122px;
+    width: 315px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 0 12px 15px;
+    background: url(../../img/base/store_pay_dyz.png) repeat-x 0px -1px;
+    background-size: contain;
+    color: #fff;
+    position: relative;
+    box-sizing: border-box;
+}
+.vorchers-check{
+    position: absolute;
+    left: -3%;
+    width: 28px;
+    border-radius: 45px;
+    background: url(../../img/base/store_pay_gg.png) no-repeat;
+    background-size: 25px;
+    height: 28px;
+    color: #FFFFFF;
+    top: 43px;
+}
+.vouchers-left{
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+}
+.vorchers-explain-title{
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 42px;
+    width: 200px;
+}
+.vorchers-explain-futitle{
+    font-size: 10px;
+    width: 200px;
+}
+.vouchers-right{
+    width: 75px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+}
+.vorchers-right-title{
+    font-weight: normal;
+    font-size: 28px;
+    color: #FFFFFF;
+    height: 60px;
+    width: 75px;
+}
+.vorchers-right-futitle{
+    font-size: 10px;
+    padding-bottom: 12px;
+    line-height: 10px;
+    box-sizing: content-box;
+}
+.outVouch .ptop{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #ff7247;
+    margin-bottom: 20px;
+    color: #fff;
+    box-sizing: content-box;
+}
+.pay_detll_right .gou{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 16px;
+    border: 2px solid #666666;
+    background-size: contain;
+    box-sizing: border-box;
+    -webkit-border-radius: 50%;
+}
+.pay_detll_right .gouCurrent{
+    background: url('../../img/base/store_pay_gou.png') no-repeat;
+    border: 0;
+    background-size: 18px;
+
+}
+
+.setBg {
+    background: #E3E3E3 !important;
+}
+.setCol {
+    color: #E3E3E3 !important;
+}
+#voucherList {
+    height: 380px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.no_detail {
+    font-size: 24px;
+    text-align: center;
+    width: 620px;
+    margin-top: 50px;
+}
+/*实体卡新增*/
+.consumption label{
+    display:inline-block;
+    /*padding:20px 0px;*/
+}
+.consumption_li{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+.card_count div{
+    padding-bottom:16px;
+
+}
+.account_text i{
+    width:8px;
+    display:inline-block;
+}
+.consumption label span{
+    display:inline-block;
+    padding-left:8px;
+    padding-right:40px;
+    height:20px;
+    line-height:13px;
+}
+.account_input_1 input:hover{
+    border-color: #dfdfdf;
+}
+.accountNum{
+   background: url('../../img/base/pencil.png') no-repeat 163px center;
+}
+.stored_count,.card_count{
+    margin-left:75px;
+}
+.card_tex{
+    margin: 0px 00px 0px 16px;
+    line-height: 33px;
+}
+.pay_de_right .clickVouch span{
+    position: relative;
+    top: -2px;
+}
+.card_count input{
+    width:194px;
+    display:inline-block;
+}

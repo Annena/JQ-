@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>添加生日营销</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addBirthdayM.css?v=201801202334">
+</head>
+
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">会员营销</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+                <span><input type="button" value="保存" id="sub" class="nav-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+                <input class="hide" type="text" id="menuId" name="menu_id" value>
+                <input class="hide" type="text" id="CID" name="cid" value>
+                <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+                <ul>
+                    <!-- <li>
+                        <h3>基本设置</h3>
+                        <hr>
+                    </li> -->
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/information_data.png">
+                            <span>基本设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案名称：</div>
+                        <div><input type="text" name="market_name" id="market_name" data-description="方案名称" class="nav-shop w179px" value="" placeholder="" autocomplete="off">&nbsp;<i>*必填</i></div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案状态：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="market_status">
+                                    <option value="1">立即启用</option>
+                                    <option value="0">暂不启用</option>
+                            </select>
+                        </div>
+                    </li>
+                   <!--  <li>
+                        <h3>会员范围</h3>
+                        <hr>
+                    </li> -->
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/Range.png">
+                            <span>会员范围</span>
+                        </div>
+                    </div>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right ">注册时间：</div>
+                        <div>
+                            <input id="register_start_raido" class="radio" type="radio" value="1" name="register_time" checked>
+                            <input class="nav-shop border0" type="text" value="全部会员" readonly>
+                        </div>
+                        <div class="">
+                            <div class="nav-content-edit-title s_right ">&nbsp;</div>
+                            <input id="register_end_raido" class="radio" type="radio" value="2" name="register_time">
+                            <input type="text" id="register_start" name="register_start" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;至
+                            <input type="text" id="register_end" name="register_end" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;注册的会员
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">年龄区间：</div>
+                        <div>
+                            <input id="age_start_radio" class="radio" type="radio" value="1" name="age" checked>
+                            <input class="nav-shop border0" type="text" value="全部会员" readonly>
+                        </div>
+                        <div class="">
+                            <div class="nav-content-edit-title s_right ">&nbsp;</div>
+                            <input id="age_end_radio" class="radio" type="radio" value="2" name="age">
+                            <input class="" type="text" id="age_start">&nbsp;至&nbsp;<input class="" type="text" id="age_end">&nbsp;岁的会员
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">性别：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="user_sex">
+                                <option value="">全部会员</option>                                    
+                                <option value="1">男性会员</option>
+                                <option value="2">女性会员</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="clearfix birthday_li">
+                        <div class="nav-content-edit-title s_right ">生日区间：</div>
+                        <div>
+                            <input id="birthday_start_radio" class="radio" type="radio" value="1" name="birthday_time" checked>
+                            <input class="nav-shop border0" type="text" value="全部会员" readonly>
+                        </div>
+                        <div class="">
+                            <div class="nav-content-edit-title s_right ">&nbsp;</div>
+                            <input id="birthday_end_radio" class="radio" type="radio" value="2" name="birthday_time">
+                            <input type="text" id="birthday_start" name="birthday_start" class="birthday_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">至
+                            <input type="text" id="birthday_end" name="birthday_end" class="birthday_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;过生日的会员
+                        </div>
+                    </li>
+                    <li class="clearfix scanCode_li">
+                        <div class="nav-content-edit-title s_right">沉默时间：</div>
+                        <div><input type="text" name="day_num" id="day_num" class="nav-shop w179px" data-description="" placeholder="" autocomplete="off" maxlength="6">&nbsp;天未消费的会员</div>
+                    </li>
+
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/Distribution.png">
+                            <span>发放设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix festival_li">
+                        <div class="nav-content-edit-title s_right">节日选择：</div>
+                        <div>
+                            <input id="festival_start_radio" class="radio" type="radio" value="1" name="festival_time" checked>
+                            <select class="nav-shop" name="" id="festival">
+                                <option value="2017-05-01">劳动节</option>
+                                <option value="">儿童节</option>
+                                <option value="">国庆节</option>
+                            </select>
+                        </div>
+                        <div class="mart10px">
+                            <div class="nav-content-edit-title s_right ">&nbsp;</div>
+                            <input id="festival_end_radio" class="radio" type="radio" value="2" name="festival_time"> 自定义节日：
+                            <input type="text" id="festival_time" name="festival" class="Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </div>
+                    </li>
+                    <li class="clearfix advance_day_li">
+                        <div class="nav-content-edit-title s_right">发放时间：</div>
+                        <div>提前&nbsp;<input type="text" name="scan_code" id="advance_day" class="nav-shop w151px" data-description="" placeholder="" autocomplete="off" maxlength="6" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">&nbsp;天发放
+                        </div>
+                    </li>
+
+                    <li class="clearfix start_time_li hide">
+                        <div class="nav-content-edit-title s_right">发放时间：</div>
+                        <div class="">
+                            <input type="text" id="start_time" name="start_time" class="birthday_time Wdate w151px" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">至
+                            <input type="text" id="end_time" name="end_time" class="birthday_time Wdate w151px" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </div>
+                    </li>
+
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right ">发放抵用券选择：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="voucher">
+                                    <option value="10">10</option>
+                                    <option value="10">20</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/lib/calendar.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/page/addBirthdayM.js?v=201801202334"></script>
+
+</body>
+
+</html>

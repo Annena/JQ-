@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name=" viewport" content="width=device-width   initial-scale=1.0  minimum-scale=1.0  miximum=1.0  user-scalable=no"/>
+<title>用户账户支付</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802051749">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802051749">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802051749">
+<link rel="stylesheet" type="text/css" href="../../css/page/storedpay.css?v=201802051749">
+<link rel="stylesheet" type="text/css" href="../../css/base/number_key.css?v=201802051749">
+</head>
+<script type="text/javascript">
+    document.domain="lekabao.net";
+</script>
+<body style="height:100%">
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置：用户账户支付
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <li class="consumption_li hide" id="mode_consumption">
+            <span>消费方式：</span>
+            <span class="consumption">
+                <label id="stored_lab"><input type="radio" name="discount" value="nohavaDiscount" checked=""><span>储值</span></label>
+                <label id="card_lab"><input type="radio" name="discount" value="nohavaDiscount"><span>实体卡</span></label>
+            </span>
+        </li>
+        <div class="stored_pay_main">
+            <div id="stored_count" class="stored_count">
+                <span class="account_number font_size_16 color_333">
+                    <span class="account_text">结<i></i>账<i></i>号</span>
+                    <span class="account_input">
+                        <input type="text" id="account_input" placeholder="请输入流水单号" class="test_total_key">
+                        <!--<u id="eliminate"></u>-->
+                    </span>
+                </span>
+                <span class="phone_number font_size_16 color_333">
+                    <span class="phone_text">手机号</span>
+                    <span class="phone_input">
+                        <input type="tel" id="phone_input" placeholder="请输入顾客的手机号" class="test_key">
+                    </span>
+                </span>
+                <span class="confirm_select">
+                    <input type="button" id="confirm_select" value="确定" class="border_radius_6">
+                </span>
+            </div>
+            <div id="card_count" class="card_count hide">   
+                <div>  
+                    <span class="account_number font_size_16 color_333">
+                        <span class="account_text">结<i></i>账<i></i>号：</span>
+                        <span class="account_input account_input_1">
+                            <input type="text" id="account_input_1"  placeholder="请输入结帐号" class="accountNum test_total_key">
+                        </span>
+                    </span>
+                </div>
+                <div>   
+                    <span class="account_number font_size_16 color_333">
+                        <span class="account_text">读取卡号：</span>
+                        <span class="account_input account_input_1">
+                            <input type="text" id="card_barcode" readonly placeholder="请放卡" class="">
+                        </span>
+                    </span>
+                    <span class="phone_number font_size_16 color_333">
+                        <span class="card_tex">录入卡号：</span>
+                        <span class="phone_input">
+                            <input type="tel" id="card_no" placeholder="输入卡号" class="test_total_key">
+                        </span>
+                    </span>
+                    <span class="confirm_select">
+                        <input type="button" id="confirm_select_1" value="确定" class="border_radius_6">
+                    </span>
+                </div>
+            </div>
+            <div class="hide no_detail" id="no_detail">该用户没有乐币、抵用劵，请返回收银台！</div>
+            <div id="main_display" class="hide">
+                <div class="account_disc_line">
+                    <p class="onep"></p>
+                    <p></p>
+                    <span class="font_size_16">结账单信息</span>
+                </div>
+                <div class="stored_pay_cont border_radius_6">
+                    <div class="pay_content_top">
+                        <p class="pay_con_top_tex font_size_16">应付金额</p>
+                        <p class="pay_con_top_mon">
+                            <span>￥</span>
+                            <b id="copeWithPay">0.00</b>
+                        </p>
+                    </div>
+                    <div class="pay_content_text font_size_14 color_888">
+                        <span class="pay_con_tex_left">结账信息</span>
+                        <span class="pay_con_tex_right">支付方式</span>
+                    </div>
+                    <div class="pay_detll">
+                        <ul class="pay_detll_left">
+                            <li class="border_bott_1_dashed" id="order_money_disp">
+                                <span class="pay_de_left color_888">订单金额：</span>
+                                <span class="pay_de_right color_333" id="order_menu_consume">0.00</span>
+                            </li>
+                            <li class="border_bott_1_dashed" id="exit_step_disp">
+                                <span class="pay_de_left color_888">取消订单金额：</span>
+                                <span class="pay_de_right color_333" id="exit_step_money">0.00</span>
+                            </li>
+                            <li class="border_bott_1_dashed">
+                                <span class="pay_de_left color_888">消费金额：</span>
+                                <span class="pay_de_right color_333" id="consume">0.00</span>
+                            </li>
+                            <li class="border_bott_1_dashed">
+                                <span class="pay_de_left color_888">会员价优惠：</span>
+                                <span class="pay_de_right color_333" id="sub_user_price">0.00</span>
+                            </li>
+                            <li class="border_bott_1_dashed">
+                                <span class="pay_de_left color_888">会员折扣优惠：</span>
+                                <span class="pay_de_right color_333" id="sub_user_discount">0.00</span>
+                            </li>
+                            <li class="border_bott_1_dashed">
+                                <span class="pay_de_left color_888" style="width:auto">
+                                    <i style="font-style: normal;float: left;">银台折扣优惠：</i>
+                                    <i style="font-style: normal;width: 80px;display: inline-block;overflow: hidden;float: left;text-align: left;text-overflow: ellipsis;white-space: nowrap;" id="sub_moneyu"></i>
+                                </span>
+                                <span class="pay_de_right color_333" id="tableDiscount">0.00</span>
+                            </li>
+                            <li class="">
+                                <span class="pay_de_left color_888">已付金额：</span>
+                                <span class="pay_de_right color_333" id="pay_order_data_money">0.00</span>
+                            </li>
+                        </ul>
+                        <ul class="pay_detll_right">
+                            <li class="border_bott_1_dashed" id="selectVouch">
+                                <span class="pay_de_left color_888">抵用劵：</span>
+                                <span class="pay_de_right vocth color_333">
+                                    <u class="clickVouch" id="clickVouch">
+                                        <i>￥</i>
+                                        <span id="voucher">100</span>元<b></b>
+                                    </u>
+                                    <i class="gou" id="isVoucher"></i>
+                                </span>
+                            </li>
+                            <li class="stored" id="UseLe">
+                                <span class="pay_de_left color_888">乐币支付：</span>
+                                <span class="pay_de_right vocth color_333" id="clickUseLe">
+                                    <input type="tel" id="stored" class="test_key">
+                                    <i class="gou gouCurrent" id="isLecoin"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="author_code font_size_16 color_333" id="author_code_display">
+                    <span class="author_code_text">授权验证码</span>
+                    <span class="author_code_input">
+                        <input type="tel" id="author_code_input" placeholder="请输入顾客手机收到的授权验证码" class="border_radius_6 test_key">
+                        <u id="author_code" disabled-data="">发送验证码</u>
+                    </span>
+                </div>
+                <div class="confirm_pay">
+                    <input type="button" id="confirm_pay" value="确认支付" class="border_radius_6">
+                </div>
+            </div>
+
+            <div class="outVouch hide" id="choice_vourcher">
+                <p class="ptop">选择优惠券</p>
+                <div id="voucherList">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 键盘弹出层 -->
+    <div class="main_logoin_t keynum_t test_dilog_t hide">
+      <ul class="key_t" id="key">
+          <li data-key="1" class="12"><span class="56">1</span></li>
+          <li data-key="2"><span>2</span></li>
+          <li data-key="3"><span>3</span></li>
+          <li data-key="4"><span>4</span></li>
+          <li data-key="5"><span>5</span></li>
+          <li data-key="6"><span>6</span></li>
+          <li data-key="7"><span>7</span></li>
+          <li data-key="8"><span>8</span></li>
+          <li data-key="9"><span>9</span></li>
+          <li data-key="0" class="width_153"><span>0</span></li>
+          <li data-key="."><span>.</span></li>
+          <!-- <li data-key="10"><span class="del_t"></span></li> -->
+          <!-- <li data-key="11"><span>切换</span></li> -->
+      </ul>
+      <ul class="key_t key_t_2">
+          <li data-key="10"><span class="del_t"></span></li>
+          <li data-key="enter"><span class="font_size20"></span></li>
+      </ul>
+    </div>
+
+    <!--带字幕数字的键盘-->
+    <div class="main_logoin_y hide">
+        <ul class="key_y_0">
+            <li data-key="1"><span>1</span></li>
+            <li data-key="2"><span>2</span></li>
+            <li data-key="3"><span>3</span></li>
+            <li data-key="4"><span>4</span></li>
+            <li data-key="5"><span>5</span></li>
+            <li data-key="6"><span>6</span></li>
+            <li data-key="7"><span>7</span></li>
+            <li data-key="8"><span>8</span></li>
+            <li data-key="9"><span>9</span></li>
+            <li data-key="0"><span>0</span></li>
+            <li data-key="." class="key_t_d"><span>.</span></li>
+        </ul>
+        <ul class="key_y_1">
+            <li data-key="q" class="letter"><span>q</span></li>
+            <li data-key="w" class="letter"><span>w</span></li>
+            <li data-key="e" class="letter"><span>e</span></li>
+            <li data-key="r" class="letter"><span>r</span></li>
+            <li data-key="t" class="letter"><span>t</span></li>
+            <li data-key="y" class="letter"><span>y</span></li>
+            <li data-key="u" class="letter"><span>u</span></li>
+            <li data-key="i" class="letter"><span>i</span></li>
+            <li data-key="o" class="letter"><span>o</span></li>
+            <li data-key="p" class="letter"><span>p</span></li>
+            <li data-key="10" class="key_y_3_l"><i></i></li>
+        </ul>
+        <ul class="key_y_2">
+            <li data-key="a" class="letter"><span>a</span></li>
+            <li data-key="s" class="letter"><span>s</span></li>
+            <li data-key="d" class="letter"><span>d</span></li>
+            <li data-key="f" class="letter"><span>f</span></li>
+            <li data-key="g" class="letter"><span>g</span></li>
+            <li data-key="h" class="letter"><span>h</span></li>
+            <li data-key="j" class="letter"><span>j</span></li>
+            <li data-key="k" class="letter"><span>k</span></li>
+            <li data-key="l" class="letter"><span>l</span></li>
+        </ul>
+         <ul class="key_y_3">
+            <li data-key="12" class="key_y_3_qh"><i></i></li>
+            <li data-key="z" class="letter"><span>z</span></li>
+            <li data-key="x" class="letter"><span>x</span></li>
+            <li data-key="c" class="letter"><span>c</span></li>
+            <li data-key="v" class="letter"><span>v</span></li>
+            <li data-key="b" class="letter"><span>b</span></li>
+            <li data-key="n" class="letter"><span>n</span></li>
+            <li data-key="m" class="letter"><span>m</span></li>
+            <!--<li data-key="10" class="key_y_3_l"><i></i></li>-->
+        </ul>
+       <ol class="key_y_4">
+            <li data-key="enter" class="key_y_3_hc"></li>
+        </ol>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201802051749"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802051749"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802051749"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802051749"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802051749"></script>
+    <script type="text/javascript" src="../../js/page/storedAccountPay.js?v=201802051749"></script>
+</body>
+</html>

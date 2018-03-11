@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name=" viewport" content="width=device-width   initial-scale=1.0  minimum-scale=1.0  miximum=1.0  user-scalable=no"/>
+<title>授权会员码</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201712251719">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201712251719">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201712251719">
+<link rel="stylesheet" type="text/css" href="../../css/page/chuzhiguanli.css?v=201712251719">
+<link rel="stylesheet" type="text/css" href="../../css/base/number_key.css?v=201712251719">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置：授权会员码
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <!--选项卡添加-->
+        <div class="caipin-lan clearfix">
+            <div class="caipin-fenleicheck" id="cardType_4" data-type="1">授权</div>
+            <div class="caipin-fenleinucheck" id="cardType_5" data-type="2">授权码作废</div>
+        </div>
+        <div class="quickpay-table">
+            <div class="senior-mem stores-content" id="cardTypeContent_4">
+                <div>
+                    <ul class="radio-member_y">
+                        <li>
+                            <span class="radio-member_span">储值方式 :</span>
+                            <span><input type="radio" name="discount"  checked="" id="nohavaDiscount" value="1"><span>打印授权会员二维码</span></span>
+                            <span class="radio-member_span1"><input type="radio" name="discount" id="haveDiscount" value="0"><span>直接授权</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <form class="authorization hide">
+                    <div class="authorization_1 authorization_2">
+                        <span>手机号：</span><input class="tel-input test_key" type="text" id="authorization-psn" placeholder="输入顾客的手机号" name="telephone">
+                    </div>
+                    <div class="authorization_1 member-tel">
+                        <input class="tel-input test_key" type="text" id="authorization-psw" placeholder="输入验证码">
+                        <span id="sendCode" disabled-data="">发送验证码</span>
+                    </div>
+                </form>
+                <div class="explain-text">
+                    <p>打印二维码用户扫描成功后，即升级为授权会员，享有授权会员的权限。</p>
+                    <p>本二维码为一次性授权码，用户扫描授权成功后立即失效。</p>
+                    <p class="hide">高级会员授权，影响会员价的适用范围。</p>
+                </div>
+                <div class="enter">
+                    <span class="chuzhi">备注：</span>
+                    <textarea class="note note1" name="" id="note_user" cols="30" rows="10"></textarea>
+                </div>
+                <div class="">
+                    <p class="tecentent clearfix">
+                        <input type="button" id="sellingMine" class="quickpay-savebutton  quickpay-save" value="确认授权">
+                    </p>
+                </div>
+
+            <!--弹出二维码层-->
+                <div class="quicklaydertan hide " style="margin-top: 100px" id="qr-code">
+                    <div class="quicklaydertanspan" id="ale-content">授权二维码<span id="can-alert" style="display:inline-block;width: 50px;height: 40px;text-align: right">关闭</span></div>
+                    <div id="qrcode">
+                        <!-- 二维码 -->
+                    </div>
+                    <div class="quicklaydertancontent">
+                        <p>授权码:<span id="ordernumber"><span></p>
+                    </div>
+                    <div id="confirm-print" class="quicklaydertancontentbtn hide"><input class="quicklaydertancontent-button hide" type="button" value="确认打印"></div>
+                </div>
+            </div>
+            <div class="quickpay-tableset stores-content hide" id="cardTypeContent_5">
+                <!--<h2>授权码作废</h2>-->
+                <p class="clearfix">
+                    <span class="spanleft">授权码：</span>
+                    <span class="spanright">
+                        <input type="text" id="scanCode" class="test_total_key" data-description="授权码" value="" placeholder="">
+                    </span>
+                </p>
+                <p class="clearfix">
+                    <span class="spanleft">店长账号：</span>
+                    <span class="spanright">
+                        <input type="tel" id="userMobile" class="test_key" data-description="店长账号" value="" placeholder="">
+                    </span>
+                </p>
+                <p class="clearfix">
+                    <span class="spanleft">店长密码：</span>
+                    <span class="spanright">
+                        <input type="password" id="userPass" class="test_total_key" data-description="店长密码" value="" placeholder="">
+                    </span>
+                </p>
+                <p class="tecentent clearfix">
+                    <input type="button" id="invalidMine" class="quickpay-savebutton" value="确认作废">
+                </p>
+            </div>
+        </div>
+    
+    <!-- 键盘弹出层 -->
+    <div class="main_logoin_t keynum_t test_dilog_t hide">
+      <ul class="key_t" id="key">
+          <li data-key="1" class="12"><span class="56">1</span></li>
+          <li data-key="2"><span>2</span></li>
+          <li data-key="3"><span>3</span></li>
+          <li data-key="4"><span>4</span></li>
+          <li data-key="5"><span>5</span></li>
+          <li data-key="6"><span>6</span></li>
+          <li data-key="7"><span>7</span></li>
+          <li data-key="8"><span>8</span></li>
+          <li data-key="9"><span>9</span></li>
+          <li data-key="0" class="width_153"><span>0</span></li>
+          <li data-key="."><span>.</span></li>
+          <!-- <li data-key="10"><span class="del_t"></span></li> -->
+          <!-- <li data-key="11"><span>切换</span></li> -->
+      </ul>
+      <ul class="key_t key_t_2">
+          <li data-key="10"><span class="del_t"></span></li>
+          <li data-key="enter"><span class="font_size20"></span></li>
+      </ul>
+    </div>
+
+    <!--带字幕数字的键盘-->
+    <div class="main_logoin_y hide">
+        <ul class="key_y_0">
+            <li data-key="1"><span>1</span></li>
+            <li data-key="2"><span>2</span></li>
+            <li data-key="3"><span>3</span></li>
+            <li data-key="4"><span>4</span></li>
+            <li data-key="5"><span>5</span></li>
+            <li data-key="6"><span>6</span></li>
+            <li data-key="7"><span>7</span></li>
+            <li data-key="8"><span>8</span></li>
+            <li data-key="9"><span>9</span></li>
+            <li data-key="0"><span>0</span></li>
+            <li data-key="." class="key_t_d"><span>.</span></li>
+        </ul>
+        <ul class="key_y_1">
+            <li data-key="q" class="letter"><span>q</span></li>
+            <li data-key="w" class="letter"><span>w</span></li>
+            <li data-key="e" class="letter"><span>e</span></li>
+            <li data-key="r" class="letter"><span>r</span></li>
+            <li data-key="t" class="letter"><span>t</span></li>
+            <li data-key="y" class="letter"><span>y</span></li>
+            <li data-key="u" class="letter"><span>u</span></li>
+            <li data-key="i" class="letter"><span>i</span></li>
+            <li data-key="o" class="letter"><span>o</span></li>
+            <li data-key="p" class="letter"><span>p</span></li>
+            <li data-key="10" class="key_y_3_l"><i></i></li>
+        </ul>
+        <ul class="key_y_2">
+            <li data-key="a" class="letter"><span>a</span></li>
+            <li data-key="s" class="letter"><span>s</span></li>
+            <li data-key="d" class="letter"><span>d</span></li>
+            <li data-key="f" class="letter"><span>f</span></li>
+            <li data-key="g" class="letter"><span>g</span></li>
+            <li data-key="h" class="letter"><span>h</span></li>
+            <li data-key="j" class="letter"><span>j</span></li>
+            <li data-key="k" class="letter"><span>k</span></li>
+            <li data-key="l" class="letter"><span>l</span></li>
+        </ul>
+         <ul class="key_y_3">
+            <li data-key="12" class="key_y_3_qh"><i></i></li>
+            <li data-key="z" class="letter"><span>z</span></li>
+            <li data-key="x" class="letter"><span>x</span></li>
+            <li data-key="c" class="letter"><span>c</span></li>
+            <li data-key="v" class="letter"><span>v</span></li>
+            <li data-key="b" class="letter"><span>b</span></li>
+            <li data-key="n" class="letter"><span>n</span></li>
+            <li data-key="m" class="letter"><span>m</span></li>
+            <!--<li data-key="10" class="key_y_3_l"><i></i></li>-->
+        </ul>
+       <ol class="key_y_4">
+            <li data-key="enter" class="key_y_3_hc"></li>
+        </ol>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.base64.js"></script><!-- base64创建和解码 -->
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201712251719"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201712251719"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201712251719"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201712251719"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201712251719"></script>
+    <script type="text/javascript" src="../../js/lib/qrcode.js"></script>
+    <script type="text/javascript" src="../../js/page/shopSeniorMem.js?v=201712251719"></script>
+</body>
+</html>

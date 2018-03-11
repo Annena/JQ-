@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.nav {
+	float: left;
+	width: 97%;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+
+.nav-lan {
+	font-size: 14px;
+	height: 54px;
+	font-weight:  bold;
+	line-height: 54px;
+	border-bottom: 1px solid #dedede;
+}
+
+.nav-lan span {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.nav-btn {
+	display: block;
+	width: 100px;
+	height: 36px;
+	line-height: 25px;
+	border: none;
+	padding: 2px 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FF8366;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.nav-quxiao-btn {
+	width: 100px;
+	height: 36px;
+	background: #FFFFFF;
+	line-height: 25px;
+	border: 1px solid #e79d06;
+	color: #E79D06;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.nav-content {
+	font-size: 12px;
+	padding-top: 17px;
+	color: #838383;
+}
+
+.nav-content ul {
+	line-height: 21px;
+}
+
+.nav-content ul li {
+	padding-bottom: 14px;
+}
+
+.nav-content-title {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 80px;
+	height: 33px;
+}
+
+.nav-content-edit-title {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 100px;
+}
+
+.nav-content-add {
+	
+	float: left;
+	/*width: 80px;*/
+	margin-right: 8px;
+}
+
+.nav-content ul li span {
+	padding-left: 15px;
+}
+
+.nav-shop {
+	border: #D5D5D5 1px solid;
+	width: 166px;
+	height: 38px;
+	line-height: 38px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-select {
+	width: 168px;
+	text-align: left;
+}
+
+.nav-info-content {
+	border: #D5D5D5 1px solid;
+	width: 200px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-itinfo {
+	font-size: 14px;
+	color: #666666;
+	font-weight: bold;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #dedede;
+}
+
+.vipcard-content-logo {
+	padding-right: 44px;
+	font-size: 13px;
+	float: left;
+}
+
+.stores-cancel {
+	margin-left: 10px;
+}
+/*新增加的样式sunyang*/
+.nav-content-edit-title+div{
+	float: left;
+}
+.nav-content-edit-title+div>p{
+	line-height: 40px;
+	padding-bottom: 5px;
+}
+.nav-content-edit-title+div>p>input[type="text"]{ 
+	margin-left:10px;
+	width:63px;
+
+}
+.nav-content-edit-title+div>p>select{
+	width:168px;
+}
+
+.nav-content-add .nav-select{line-height: 40px;}
+.redp{
+	padding-left: 102px;
+    line-height: 30px;
+    color: red;
+    text-align: l;
+    float: left;
+}
+.padl115{
+	margin-top: -5px;
+}
+.veam{
+	vertical-align: middle;
+}
+.w125px{
+	width: 125px;
+}
+.padl10{
+	padding-left: 10px;
+}
+.red{
+	color: red;
+}
+.shopName{
+	font-weight: normal;
+}

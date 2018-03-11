@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>乐卡包-选店页面</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <link rel="stylesheet" type="text/css" href="../css/base/public.css?v=201802221448">
+    <link rel="stylesheet" type="text/css" href="../css/base/header.css?v=201802221448">
+    <link rel="stylesheet" type="text/css" href="../css/page/select.css?v=201802221448">
+
+</head>
+<script type="text/javascript">
+    document.domain="lekabao.net";
+    // 调用子iframe切换商户
+    function text_mercheant_click() {
+    }
+    // 调用子iframe切换门店
+    function text_shopstore_click() {
+    }
+</script>
+<body>
+    <!-- 头部部分 -->
+    <div class="header" id="admin_header">
+        <div class="header-title" id="cardName"></div>
+        <div class="header-subtitle">商家服务中心</div>
+        <div class="header-panefun">
+            <div class="header-panetitle" id="userName"></div>
+            <div class="header-triangle" id="downopen"></div>
+            <div class="header-signout" id="exit-system">退出</div>
+        </div>
+        <div class="infolayer" style="display: none;" id="exit"></div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="nav clearfix">
+        <ul class="clearfix" id="allContent">
+
+        </ul>
+        <ul class="clearfix" id="content">
+
+        </ul>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/lib/jquery-1.10.2.min.js?v=201802221448"></script>
+    <script type="text/javascript" src="../plug-in/layer/layer.min.js?v=201802221448"></script>
+    <script type="text/javascript" src="../plug-in/jquery.cookie/jquery.cookie.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/config.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/common.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/pattern.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/cache.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript" src="../js/page/chooseShop.js?v=201802221448"></script>
+<script type="text/javascript">
+    function text_shop_click() {
+        $('#exit-system').click();
+    }
+</script>
+</body>
+
+</html>

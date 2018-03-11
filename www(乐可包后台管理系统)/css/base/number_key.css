@@ -1,0 +1,382 @@
+@charset "UTF-8";
+/**
+ * 注意：
+ *       关于单位，pcweb使用px，移动端使用rem，使用时注意修改body中的font-size（或者其它位置的相应单位）
+ */
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: middle; }
+
+html {
+  color: #333;
+  height: 100%; }
+
+/*防止在webkit下出现font boosting*/
+* {
+  max-height: 999999px; }
+
+/*@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    html { font-size: 15px; }
+}*/
+body {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: "Microsoft YaHei", "SimSun";
+  height: 100%;
+/*   -moz-user-select: none;
+ -webkit-user-select: none;
+ -ms-user-select: none;
+ -khtml-user-select: none;
+ user-select: none; */ }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: ''; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  /* color: $color2; */ }
+
+a:focus {
+  outline: none; }
+
+input:focus {
+  outline: none; }
+
+/* ------------- reset end --------------- */
+/* 单行加省略号 */
+.single-line-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all; }
+
+/*消除浮动的影响*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden; }
+
+.clearfix {
+  display: inline-block; }
+
+.clearfix {
+  display: block; }
+
+/* 垂直居中的方法 */
+.hide {
+  display: none; }
+
+
+.main_logoin_t {
+    position: absolute;
+    z-index: 66666666;
+    margin: 5px 0;
+    border-radius: 2px;
+    background-color: #647b9b;
+    -moz-box-shadow: 0px 0px 11px #bcbcbc;
+     -webkit-box-shadow: 0px 0px 11px #bcbcbc; 
+     box-shadow: 0px 0px 11px #bcbcbc; 
+    box-shadow: 0px 0px 11px 1px #bcbcbc;
+}
+.main_logoin_t > * {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle; 
+}
+
+.main_logoin_t.keynum_t {
+  width: 330px;
+  height: 330px;
+  box-shadow: 2px 2px 5px #647b9b;
+}
+.main_logoin_t.keynum_t .key_t {
+  width: 237px;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.main_logoin_t.keynum_t .key_t_2 {
+  width: 75.3333px !important;
+  margin-left: 0px;
+}
+.main_logoin_t.keynum_t .key_t_2 > li {
+  height: 151px !important;
+  line-height: 151px !important;
+}
+.main_logoin_t.keynum_t .width_153 {
+  width: 149px !important;
+}
+.main_logoin_t.keynum_t .font_size20 {
+  font-size: 20px !important;
+  display:inline-block;
+  width:73px;
+  height:121px;
+  background: url(../../img/base/enter.png) no-repeat 19px 45px;
+  background-size: 47%;
+}
+/*.key_t_2 .font_size20{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  background: url(enter.png) no-repeat ;
+  background-size: 24%;
+}*/
+
+.main_logoin_t.keynum_t .key_t > li {
+  width: 70px;
+  height: 70px;
+  line-height: 72px;
+  box-sizing: initial;
+  background-color: #eceff3;
+  border: 1px solid #eceff3;
+  color: #666;
+  font-size: 0;
+  margin: 0px 7px 7px 0px;
+  float: left;
+  list-style: none;
+  line-height: 72px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.66);
+}
+.main_logoin_t.keynum_t .key_t > li > span {
+  font-size: 30px;
+  font-weight:900;
+  color:#333;
+}
+.main_logoin_t.keynum_t .key_t > li > span.del_t {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  background: url(../../img/base/del_2.png) no-repeat; 
+  background-size:95%;
+}
+
+
+/*带字幕数字的键盘样式*/
+
+.main_logoin_y{
+  
+  text-align: center;
+  padding-top:10px;
+  padding-left:10px;
+  width:663px;
+  height:251px;
+  background: #647b9b;
+  box-shadow: 0px 0px 11px 1px #bcbcbc;
+  color:#333;
+  font-weight:bold;
+  position: absolute;
+  z-index: 66666666;
+  margin: 5px 0;
+  border-radius: 2px;
+  background-color: #647b9b;
+  -moz-box-shadow: 0px 0px 11px #bcbcbc;
+  -webkit-box-shadow: 0px 0px 11px #bcbcbc; 
+  box-shadow: 0px 0px 11px #bcbcbc; 
+  box-shadow: 0px 0px 11px 1px #bcbcbc;
+}
+.main_logoin_y ul{
+  width:654px;
+  height:60px;
+  /*border:1px solid #333;*/
+}
+.main_logoin_y li {
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  float: left;
+  background: #eeeff3;
+  font-weight:bold;
+  margin-right: 7px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #000;
+}
+.main_logoin_y .key_t_d span{
+  height: 52px;
+  line-height: 35px;
+}
+.main_logoin_y li span{
+  height:52px;
+  line-height:48px;
+  display:inline-block;
+  font-size:26px;
+  font-weight: 900;
+}
+/*.main_logoin_y .key_y_4 li{
+   width:90%;
+}*/
+/*.main_logoin_y .key_y_2{
+   width:478px;
+   margin:0 auto;
+}*/
+.main_logoin_y .key_y_3{
+   width:530px;
+  
+  
+}
+.key_y_4 li{
+    width:120px;
+
+    position:absolute;
+}
+.main_logoin_y .key_y_3_l{
+  background:#d50c1e;
+}
+.main_logoin_y .key_y_3_l i{
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+ background: url(../../img/base/del_2.png) no-repeat 8px 0px;
+    background-size: 70%;
+  font-size: 24px;
+}
+.key_y_4{
+  position:relative;
+}
+.key_y_4 li {
+    position: absolute;
+    width: 111px;
+    height: 111px;
+    line-height: 90px;
+    top: -119px;
+    right: 5px;
+}
+.main_logoin_y .key_y_3_qh{
+   width: 110px;
+   height: 52px;
+   background: #d50c1e;
+}
+.main_logoin_y .key_y_3_qh i{
+  display: inline-block;
+  width: 110px;
+  height: 50px;
+  background: url(../../img/base/upwar_arrow.png) no-repeat 40px 6px;//down_arrow
+  background-size: 20%;
+  font-size: 24px;
+  background-size:32%;
+}
+.main_logoin_y .key_y_3_hc{
+  display: inline-block;
+  background:#d50c1e url(../../img/base/enter.png) no-repeat 34px 34px;
+  background-size: 36%;
+  background-color: #d50c1e;
+  font-size: 24px;
+}
+.main_logoin_t.keynum_t .key_t_2 > li{
+  background: #d50c1e;
+  border: 1px solid #d50c1e;
+}

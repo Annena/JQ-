@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商户信息修改</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/page/shopinfo.css?v=201706191846">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+        	<div class="nav-lan">
+        		当前位置：<a href="information.html" target="main">商户信息</a> >> 信息修改
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+        		<span><input type="button" value="保存" id="consumebtn" class="nav-btn"></span>
+        	</div>
+        </div>
+        <div class="stafffloatdivt"></div>
+    	<div class="nav-content">
+    		<ul>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">公司名称：</div>
+	    			<div id="companyName">西贝莜面村</div>
+	    		</li>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">英文名称：</div>
+	    			<div id="companyNameEn">西贝莜面村</div>
+	    		</li>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">企业法人：</div>
+	    			<div id="companyLegal">张朝阳</div>
+	    		</li>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">联 系 人：</div>
+	    			<div><input type="text" id="merchantPer" name="shop" class="nav-shop" value=""><span>必须为真实姓名</span></div>
+	    		</li>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">联系电话：</div>
+	    			<div><input type="tel" id="merchantTel" name="shop" class="nav-shop" value=""><span>必须为数字</span></div>
+	    		</li>
+				<li class="clearfix">
+	    			<div class="nav-content-edit-title">发卡额度：</div>
+	    			<div><input type="text" id="maxCardRate" name="shop" class="nav-shop" data-description="发卡额度" value=""> % <span>发卡员可设置的会员卡最大额度</span></div>
+	    		</li>
+    		</ul>
+    		<div class="nav-itinfo">IT管理员信息</div>
+    		<ul>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">联 系 人：</div>
+	    			<div><input type="text" id="itPer" name="shop" class="nav-shop" value=""><span>IT管理负责人</span></div>
+	    		</li>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">联系电话：</div>
+	    			<div><input type="tel" id="itTel" name="shop" class="nav-shop" value=""><span>联系人的联络方式必须真实电话</span></div>
+	    		</li>
+    		</ul>
+    	</div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/page/informationEdit.js?v=201706191846"></script>
+</body>
+</html>

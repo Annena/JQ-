@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>添加领卡营销</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addBirthdayM.css?v=201801202334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/newMarketing.css?v=201801202334">
+</head>
+
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">会员营销</a> >><a id="selectJump" target="main">添加领卡营销</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+                <span><input type="button" value="保存" id="sub" class="nav-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+                <input class="hide" type="text" id="menuId" name="menu_id" value>
+                <input class="hide" type="text" id="CID" name="cid" value>
+                <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+                <ul>
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/information_data.png">
+                            <span>基本设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案名称：</div>
+                        <div><input type="text" name="market_name" id="market_name" data-description="方案名称" class="nav-shop w179px" value="" placeholder="" autocomplete="off">&nbsp;<i>*必填</i></div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案状态：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="market_status">
+                                    <option value="1">立即启用</option>
+                                    <option value="0">暂不启用</option>
+                            </select>
+                        </div>
+                    </li>
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/Range.png">
+                            <span>会员范围</span>
+                        </div>
+                    </div>
+                    <li>
+                        <div class="nav-content-edit-title s_right">需完善信息：</div>
+                        <div id="payWay" class="payWay">
+                            <label>
+                                <input id="all" class="radio" type="checkbox" value="all" name="all" checked>
+                                <span>全部</span>
+                            </label>
+                            <label id="is_user_name">
+                                <input id="is_user_name" class="radio" type="checkbox" value="1" name="" checked>
+                                <span>昵称</span>
+                            </label>
+                            <label id="is_birthday">  
+                                <input id="is_birthday" class="radio" type="checkbox" value="1" name="" checked>
+                                <span>生日</span>
+                            </label>
+                            <label id="is_sex">
+                                <input id="is_sex" class="radio" type="checkbox" value="1" name="" checked>
+                                <span>性别</span>
+                            </label>
+                        </div>
+                    </li>
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/Distribution.png">
+                            <span>发放设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">发放日期：</div>
+                        <p>
+                            <input type="text" id="start_time" name="start_time" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;至
+                            <input type="text" id="end_time" name="end_time" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;
+                        </p>
+                    </li>
+                     <li class="clearfix" id="contentSel">
+                        <div class="nav-content-edit-title s_right ">发放抵用券选择：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="voucher">
+                                    <option value="10">10</option>
+                                    <option value="10">20</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="clearfix festival_li" id="giveIntegral">
+                        <div class="nav-content-edit-title s_right">赠送积分：</div>
+                        <div>
+                            <input type="text" name="" id="integral_num"><span>积分</span>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/lib/calendar.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/page/addRegisterM.js?v=201801202334"></script>
+
+</body>
+
+</html>

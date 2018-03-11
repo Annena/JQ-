@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=ie8">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>后台管理系统</title>
+    <style type="text/css">
+        html {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        #topFrame{
+            height:70px;
+        }
+    </style>
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript">
+        document.domain="lekabao.net";
+        // 调用子iframe退出登录
+        function text_shop_click() {
+            window.topt.call_exit_login();
+        }
+        // 调用子iframe切换商户
+        function text_mercheant_click() {
+            window.topt.header_shop_select();
+        }
+        // 调用子iframe切换门店
+        function text_shopstore_click() {
+            window.topt.header_mercheant();
+        }
+
+        // 子iframe调用过来跳转切换商户
+        function jump_mercheant_click() {
+            window.location.replace(ajax_php_ress+'/html/chooseMerchant.html?v='+version+'');
+        }
+        // 子iframe调用过来跳转切换门店
+        function jump_shopstore_click() {
+            window.location.replace(ajax_php_ress+'/html/index-select.html?v='+version+'');
+        }
+    </script>
+</head>
+
+<frameset rows="70,*" cols="*" frameborder="no" border="0" framespacing="0" id="frameset">
+    <frame src="header.html?v=201802221448" name="topt" scrolling="No" noresize="noresize" id="topFrame" title="topFrame" />
+    <frameset rows="*" cols="195,*" framespacing="0" frameborder="no" border="0" bordercolor="#333333" id="frameset_body">
+        <frame src="left.html?v=201802221448" name="left" scrolling="yes" noresize="noresize" id="leftFrame" title="leftFrame" />
+        <frame src="information.html?v=201802221448" name="main" id="mainFrame" title="mainFrame" />
+    </frameset>
+</frameset>
+<noframes>
+
+    <body>
+    </body>
+</noframes>
+
+</html>

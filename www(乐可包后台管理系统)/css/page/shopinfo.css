@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.nav {
+	float: left;
+	width: 97%;/*80%*/
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+.nav-lan {
+	font-size: 15px;
+	height: 54px;/*40px*/
+	font-weight:  bold;
+	line-height: 54px;/*40px*/
+	border-bottom: 1px solid #dedede;
+}
+
+.nav-lan span {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 149px;/*100px*/
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.nav-btn {
+	display: block;
+	width: 154px;/*100px*/
+	height: 49px;/*36px*/
+	line-height: 25px;
+	border: none;
+	padding: 2px 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FF8366;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.nav-quxiao-btn {
+	display: block;
+	width: 154px;
+	height: 49px;
+	line-height: 25px;
+	border: 1px solid #FF8366;
+	padding: 2px 15px;
+	color: #FF8366;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FFFFFF;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.nav-content {
+	font-size: 16px;
+	padding-top: 17px;
+	color: #666;
+	/*margin-top: 23px;*/
+}
+
+.nav-content ul {
+	line-height: 21px;
+}
+
+.nav-content ul li {
+	padding-bottom: 14px;
+}
+
+.nav-content-title {
+	font-size: 16px;
+	font-weight: bold;
+	float: left;
+	width: 130px;
+	height: 38px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.nav-content-edit-title {
+	font-size: 13px;
+    font-weight: bold;
+    float: left;
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.nav-content ul li span {
+	padding-left: 15px;
+}
+
+.nav-shop {
+	border: #D5D5D5 1px solid;
+	width: 159px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-itinfo {
+	font-size: 14px;
+	color: #666666;
+	font-weight: bold;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #dedede;
+}
+
+li {
+  list-style: none;
+}
+
+.stores-cancel {
+	margin-left: 20px;
+}
+
+.stores-search {
+	background: #FAFAFA;
+	height: 54px;
+	line-height: 54px;
+	width: 100%;
+	border: 1px solid #E5E5E5;
+	margin-top: 17px;
+	font-size: 14px;
+}
+
+.sale-title {
+	font-size: 13px;
+	float: left;
+	width: 111px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.sale-input {
+	border: 1px solid #CFC9C9 !important;
+}
+
+.sale-save {
+	padding-left: 68px;
+	padding-top: 20px;
+}
+.sale-save input {
+	width: 85px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	background: #E79D06;
+	border: 0;
+	color: #fff;
+	-webkit-border-radius: 2px;
+}
+
+/*会员卡折扣样式*/
+
+.salestyle {
+	color: #A0A0A0;
+	font-size: 14px;
+	font-weight: bold;
+	/*padding-top: 15px;*/
+	padding-left: 10px;
+}
+.salestyle>input {
+	outline: none;
+	box-sizing: content-box;
+	height: auto;
+	padding: 10px 0;
+	text-indent: 5px;
+	border:  1px solid #dfdfdf;
+}
+.salestyle>input.stores-caozuo-btn {
+	width: 85px;
+	height: 40px;
+	background: #FF8366;
+	line-height: 40px;
+	border: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+	background: #E79D06;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	margin-left: 10px;
+	padding: 0;
+}
+
+/*新增加的样式20160614*/
+.list_tip{
+	width:130px;
+}
+.nav_content_set{
+	margin-top:10px;
+}

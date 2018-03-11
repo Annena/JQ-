@@ -1,0 +1,55 @@
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.main_system {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.main_system .system_text {
+    font-size: 16px;
+    color: #666;
+}
+
+.stores-caozuo-btn {
+    margin-right: 5px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.stores_title th,
+tr,
+td {
+    line-height: normal;
+}
+
+.delete_btn {
+    background: #fff;
+    border: 1px solid #E79D06;
+    color: #E79D06;
+}
+
+.comment_rightButton{
+    background: #d20c1d;
+    float: right;
+    margin-bottom: 5px;
+    width:154px;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    color: #FFFFFF;
+}

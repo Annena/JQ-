@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>抵用券管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201705251801">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201705251801">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201705251801">
+<link rel="stylesheet" type="text/css" href="../../css/page/voucher.css?v=201705251801">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置：抵用券列表
+            </div>
+
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="vouchersMan">使用中</div>
+                <div class="caipin-fenleinucheck" id="vouchersShe">停用中</div>
+                <div class="caipin-fenleinucheck" id="vouchersLimit">每日领用限制</div>
+                <div class="caipin-add"  id="permissions"><input type="button" value="添加抵用券" id="updatebtn" class="stores-btn"></div>
+                <div class="caipin-add hide"  id="limitDispalay"><input type="button" value="保存" id="limitbtn" class="stores-btn"></div>
+            </div>
+        </div>
+        <div class="stafffloatdiv" style="height:134px;"></div>
+        <div class="stores-content" id="vouchersList" style="padding-top:10px;">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th style="width:15%;">名称</th>
+                        <!--<th style="width:10%;">抵用方式</th>-->
+                        <th style="width:10%;">面值</th>
+                        <th style="width:15%;">用券最低消费额</th>
+                        <th style="width:15%;">适用店铺</th>
+                        <th style="width:12%;">有效期开始</th>
+                        <th style="width:12%;">有效期结束</th>
+                        <th style="width:12%;">发放方式</th>
+                        <th style="width:7%;" id="operation">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="dayLimit" class="hide">
+            <p class="omn">        
+                <input type="radio" name="limit" checked id="radio_no">不限制
+                <input type="radio" class="xianzhi" name="limit" id="radio_yes">限制
+                <input type="text" id="limitNum">单
+            </p>
+            <p>限制领取抵用劵以订单为单位，订单（包括补单）内不论包含几张抵用券都算作一单</p>
+            <p>扫描打印小票获取抵用券时超过限制单数后，订单可隔日扫描获取，APP自助下单推送抵用券时超过限制数将不再推送</p>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201705251801"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201705251801"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201705251801"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201705251801"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201705251801"></script>
+    <script type="text/javascript" src="../../js/page/vouchersManage.js?v=201705251801"></script>
+</body>
+</html>

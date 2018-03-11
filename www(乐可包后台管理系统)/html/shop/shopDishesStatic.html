@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>菜品统计</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801301718">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801301718">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801301718">
+<link rel="stylesheet" type="text/css" href="../../css/page/statisticsdishes.css?v=201801301718">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： <!-- <b id="Navigation"> -->菜品统计<!-- </b> -->
+                <span class="hide"><a></a><input type="button" value="导出" id="consumebtn" class="stores-btn"></a></span>
+            </div>
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="Navigation" data-type="1">按分类</div>
+                <div class="caipin-fenleinucheck" id="EnProperty" data-type="2">按属性</div>
+                <div class="caipin-fenleinucheck" id="package" data-type="3">套餐统计</div>
+             </div>
+            <div class="stores-search" id="isDate">
+                <ul>
+                    <li class="clearfix">
+                        <div class="showBotton">
+                            <p>开始日期：
+                                <input type="text" id="start-date" name="start-time" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                            </p>
+                            <p>结束日期：
+                                <input type="text" id="end-date" name="start-time" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                            </p>
+                            <p>开始时段：
+                                <select name="start_hour" id="start_hour">
+
+                                </select>
+                            </p>
+                            <p>结束时段：
+                                <select name="end_hour" id="end_hour">
+                                    
+                                </select>
+                            </p>
+                            <p><span id="Names">菜品分类：</span>
+                                <input type="text" id="dishesList" name="dishesList" readonly value="全部" />
+                            </p>
+                            <p><span id="region">区域名称：</span>
+                                <select id="region_sel">
+                                    <option >全选</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="selbutton">
+                            <p><input type="button" value="查询" id="selectbtn" class="btn"></p>
+                            <form method="post" >
+                                <input type="text" class="hide" id="start_date" name="start_date">
+                                <input type="text" class="hide" id="end_date" name="end_date">
+                                <input type="text" class="hide" id="start_hourF" name="start_hour">
+                                <input type="text" class="hide" id="end_hourF" name="end_hour">
+                                <input type="text" class="hide" id="type" name="type">
+                                <input type="text" class="hide" id="shop_ids" name="shop_ids">
+                                <input type="text" class="hide" id="region_id_t" name="region_id">
+                                <input type="text" class="hide" id="menu_type_ids" name="menu_type_ids">
+                                <input type="text" class="hide" id="menu_attribute_ids" name="menu_attribute_ids">
+                                <input type="text" class="hide" id="cid" name="cid">
+                                <input type="text" class="hide" id="company_name_en" name="company_name_en">
+                                <p><input type="button" value="下载" id="download" class="btn"></p>
+                            </form>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdiv" style="height:117px"></div>
+    <!-- 按照分类统计 -->
+    <div class="stores-content"  style="margin-top: -7px;overflow-x: scroll">
+     <!-- 按照分类统计 -->
+    <div class="navContent" id="nav0-content" style="">
+        <div class="wrap_title_classify hide" id="kindHeader">
+            <!-- 表头样式单独出来 -->
+            <table class="title_classify" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="7%">分类名称</th>
+                    <th width="4.89%">序号</th>
+                    <th width="4.89%">均价</th>
+                    <th width="4.89%">单位</th>
+                    <th width="4.89%">销售总量</th>
+                    <th width="4.89%">销售总额</th>
+                    <th width="4.89%">退菜数量</th>
+                    <th width="4.89%">退菜金额</th>
+                    <th width="4.89%">销售数量</th>
+                    <th width="4.89%">销售金额</th>
+                    <th width="4.89%">赠送数量</th>
+                    <th width="4.89%">赠送金额</th>
+                    <th width="4.89%">净销售量</th>
+                    <th width="4.89%">净销售额</th>
+                    <th width="4.89%">折扣金额</th>
+                    <th width="4.89%">结账金额</th>
+                    <th width="4.89%">销售量占比</th>
+                    <th width="4.89%">结账金额占比</th>
+                    <th width="4.89%">折扣率</th>          
+                </tr>
+            </table>
+            <!-- 表头样式单独出来over -->
+        </div>
+
+        <div class="wrap_content_classify" id="tbodys">
+
+        </div>
+    </div>
+
+     <!-- 按照属性统计 -->
+    <div class="navContent hide" id="nav1-content" style="">
+        <div class="wrap_title_classify hide" id="propertyHeader">
+            <!-- 表头样式单独出来 -->
+            <table class="title_classify" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="7%">属性名称</th>
+                    <th width="4.89%">序号</th>
+                    <th width="4.89%">均价</th>
+                    <th width="4.89%">单位</th>
+                    <th width="4.89%">销售总量</th>
+                    <th width="4.89%">销售总额</th>
+                    <th width="4.89%">退菜数量</th>
+                    <th width="4.89%">退菜金额</th>
+                    <th width="4.89%">销售数量</th>
+                    <th width="4.89%">销售金额</th>
+                    <th width="4.89%">赠送数量</th>
+                    <th width="4.89%">赠送金额</th>
+                    <th width="4.89%">净销售量</th>
+                    <th width="4.89%">净销售额</th>
+                    <th width="4.89%">折扣金额</th>
+                    <th width="4.89%">结账金额</th>
+                    <th width="4.89%">销售量占比</th>
+                    <th width="4.89%">结账金额占比</th>
+                    <th width="4.89%">折扣率</th>    
+                </tr>
+            </table>
+            <!-- 表头样式单独出来over -->
+        </div>
+
+        <div class="wrap_content_classify hide" id="propertyTbodys">
+
+        </div>
+    </div>
+
+    <!-- 按照套餐统计 -->
+    <div class="navContent " id="nav2-content" style="" >
+        <div class="wrap_title_classify hide" id="padkageHeader">
+            <!-- 表头样式单独出来 -->
+            <table class="title_classify " cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                       <th width="7%">菜品名称</th>
+                        <th width="4.89%">序号</th>
+                        <th width="4.89%">套餐均价</th>
+                        <th width="4.89%">单位</th>
+                        <th width="4.89%">销售总量</th>
+                        <th width="4.89%">销售总额</th>
+                        <th width="4.89%">退菜数量</th>
+                        <th width="4.89%">退菜金额</th>
+                        <th width="4.89%">销售数量</th>
+                        <th width="4.89%">销售金额</th>
+                        <th width="4.89%">售卖金额</th>
+                        <th width="4.89%">赠送数量</th>
+                        <th width="4.89%">赠送金额</th>
+                        <th width="4.89%">净销售量</th>
+                        <th width="4.89%">净销售额</th>
+                        <th width="4.89%">折扣金额</th>
+                        <th width="4.89%">结账金额</th>
+                        <th width="4.89%">销售量占比</th>
+                        <th width="4.89%">结账金额占比</th>
+                        <th width="4.89%">折扣率</th>     
+                     </tr>
+                 </thead>
+            </table>
+            <!-- 表头样式单独出来over -->
+        </div>
+
+        <div class="wrap_content_classify hide" id="packageTable">
+
+        </div>
+     </div>
+        <div class="mengBottom hide">
+            <h5>统计说明</h5>
+            <p id="explain">全部菜品统计：<span>含单菜、套餐（套餐所属菜品）</span></p>
+            <p>均价：<span>销售金额/销售数量</span></p>
+            <p>销售总量: <span>销售数量+退菜数量</span></p>
+            <p>销售总额: <span>销售金额 + 退菜金额</span></p>
+            <p>退菜数量: <span>退的菜品数量</span></p>
+            <p>退菜金额: <span>退的菜品金额</span></p>
+            <p>销售数量：<span>菜品的售卖数量（含赠送数量，不含退菜数量）</span></p>
+            <p>销售金额：<span>所有订单菜品的原价合计（含增菜金额，不含退菜金额）</span></p>
+            <p>赠送数量：<span>赠送的菜品数量</span></p>
+            <p>净销售量: <span>销售数量 - 赠送数量</span></p>
+            <p>净销售额: <span>销售金额 - 赠送金额</span></p>
+            <p>折扣金额：<span>会员价优惠 + 会员折扣优惠 + 银台折扣 + 套餐优惠</span></p>
+            <p>结账金额: <span>净销售额 - 折扣金额</span></p>
+            <p>优惠金额: <span>赠送金额 + 折扣金额 + 支付方式优惠部分</span></p>
+            <p>实收金额: <span>结账金额 - 支付方式优惠部分</span></p>
+            <!-- <p>销售净额：<span>销售金额 - 赠送金额 - 折扣金额</span></p> -->
+            <p>销售量占比：<span>分类销量占比 = 分类销售数量/总销售数量；单个菜品销量占比 = 单个菜品销售数量/所属分类销售数量</span></p>
+            <p>结账金额占比：<span>分类结账金额占比 = 分类结账金额/总结账金额；单个菜品结账金额占比 = 单个菜品结账金额/所属分类结账金额</span></p>
+            <p>折扣率：<span>折扣金额/销售金额</span></p>
+        </div>
+    </div>
+    </div>
+    <!-- 选择菜品分类 -->
+    <div id="favorable-message" class="message">
+        <h1 id="favorable-title" class="title"></h1>
+        <div id="favorable-content" class="container">
+            <div id="select-favorable" class="clearfix">
+                <ul id="set-favorable" class="select-list">
+                </ul>
+                <ul id="show-favorable" class="select-list">
+                </ul>
+            </div>
+        </div>
+        <div id="close-favorable-message" class="close-message">
+            <div id="cancel-favorable" class="close-dialog"></div>
+            <div id="definite-favorable" class="definite-dialog"></div>
+        </div>
+        <div id="favorable-prompt-message" class="prompt-message"></div>
+    </div>
+
+     <!-- 选择菜品属性-->
+    <div id="property-message" class="message">
+        <h1 id="property-title" class="title"></h1>
+        <div id="property-content" class="container">
+            <div id="select-property" class="clearfix">
+                <ul id="set-property" class="select-list">
+                </ul>
+                <ul id="show-property" class="select-list">
+                </ul>
+            </div>
+        </div>
+        <div id="close-property-message" class="close-message">
+            <!-- 取消按钮 -->
+            <div id="cancel-property" class="close-dialog"></div>
+            <!-- 确认按钮 -->
+            <div id="definite-property" class="definite-dialog"></div>
+        </div>
+        <div id="property-prompt-message" class="prompt-message"></div>
+    </div>
+
+
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201801301718"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801301718"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801301718"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801301718"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801301718"></script>
+    <script type="text/javascript" src="../../js/page/shopDishesStatic.js?v=201801301718"></script>
+</body>
+</html>

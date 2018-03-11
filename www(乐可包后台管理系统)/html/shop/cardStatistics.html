@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name=" viewport" content="width=device-width   initial-scale=1.0  minimum-scale=1.0  miximum=1.0  user-scalable=no"/>
+<title>储值卡售卖记录</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/base.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/page/cardstatistics.css?v=201802221448">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： 储值卡售卖记录
+                
+                <!-- 当前位置： 收银记录 -->
+            </div>
+            
+            <!-- 选择标签按钮 -->
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="cardType_2" data-type="1" type="1">储值卡售卖</div>
+                <div class="caipin-fenleinucheck" id="cardType_4" data-type="1" type="2">实体卡售卖</div>
+                <div class="caipin-fenleinucheck hide" id="cardType_1" data-type="1" type="1">售卖未储值</div>
+                <div class="caipin-fenleinucheck" id="cardType_3" data-type="2" type="1">已作废</div>
+            </div>
+            
+            <!-- 选择日期按钮 -->
+            <div class="pinglun-search">
+                <ul>
+                    <li class="clearfix">
+                        <p>日期：
+                            <input type="text" id="start-date" name="start-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})"> <span>-</span>
+                            <input type="text" id="end-date" name="end-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})" readonly>
+                        </p>
+                        <p><input type="button" value="查询" id="selectbtn" class="btn"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdivs"></div>
+        <!-- 已售卖记录 -->
+        <div class="stores-content" id="cardTypeContent_1">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th>日期时间</th>
+                        <th>储值卡名称</th>
+                        <th>储值状态</th>
+                        <th>储值金额</th>
+                        <th>赠送金额</th>
+                        <th>现金</th>
+                        <th>银行卡</th>
+                        <th>免单</th>
+                        <th>银台微信</th>
+                        <th>银台支付宝</th>
+                        <th>微信支付</th>
+                        <th>支付宝支付</th>
+                        <th>售卖员工</th>
+                        <th>收银员工</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+        <!--已使用记录-->
+        <div class="stores-content hide" id="cardTypeContent_2">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th>日期时间</th>
+                        <th>储值卡名称</th>
+                        <th>储值状态</th>
+                        <th>储值金额</th>
+                        <th>赠送金额</th>
+                        <th>现金</th>
+                        <th>银行卡</th>
+                        <th>免单</th>
+                        <th>银台微信</th>
+                        <th>银台支付宝</th>
+                        <th>微信支付</th>
+                        <th>支付宝支付</th>
+                        <th>售卖员工</th>
+                        <th>收银员工</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+        <!--已作废记录-->
+        <div class="stores-content hide" id="cardTypeContent_3">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th>日期时间</th>
+                        <th>储值卡名称</th>
+                        <th>储值状态</th>
+                        <th>储值金额</th>
+                        <th>赠送金额</th>
+                        <th>现金</th>
+                        <th>银行卡</th>
+                        <th>免单</th>
+                        <th>银台微信</th>
+                        <th>银台支付宝</th>
+                        <th>微信支付</th>
+                        <th>支付宝支付</th>
+                        <th>售卖员工</th>
+                        <th>收银员工</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+        <!--实体卡售卖-->
+        <div class="stores-content hide" id="cardTypeContent_4">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th>日期时间</th>
+                        <th>录入卡号</th>
+                        <th>储值卡名称</th>
+                        <th>储值状态</th>
+                        <th>储值金额</th>
+                        <th>赠送金额</th>
+                        <th>现金</th>
+                        <th>银行卡</th>
+                        <th>免单</th>
+                        <th>银台微信</th>
+                        <th>银台支付宝</th>
+                        <th>微信支付</th>
+                        <th>支付宝支付</th>
+                        <th>售卖员工</th>
+                        <th>收银员工</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/page/cardStatistics.js?v=201802221448"></script>
+</body>
+</html>

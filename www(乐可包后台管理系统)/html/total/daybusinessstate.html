@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta charset="utf-8">
+    <title>营业报表</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801161401">
+    <link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801161401">
+    <link rel="stylesheet" type="text/css" href="../../css/base/base.css?v=201801161401">
+    <link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801161401">
+    <link rel="stylesheet" type="text/css" href="../../css/page/daybusinessstate.css?v=201801161401">
+</head>
+
+<body style="height:100%">
+
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： 营业报表
+            </div>
+            <div class="pinglun-search">
+                <ul>
+                    <li class="clearfix">
+                        <p>开始日期：
+                            <input type="text" id="statDate" name="statDate" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </p>
+                        <p>结束日期：
+                            <input type="text" id="endDate" name="endDate" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </p>
+                        <p><input type="button" value="查询" id="memberBtn" class="btn"></p>
+                        <p id="downDisplay"><input type="button" value="下载" id="downloadbtn" class="btn"></p>
+                        <form class="hide" id="form" action="" method="post">
+                            <input id="start_date" type="text" class="hide" name="start_date">
+                            <input id="end_date" type="text" class="hide" name="end_date">
+                            <input id="cid" type="text" class="hide" name="cid">
+                            <input id="company_name_en" type="text" class="hide" name="company_name_en">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdivs"></div>
+        <div class="stores-content navContent" id="nav0-content">
+            <div class="out_table_title">
+                <table cellpadding="0" cellspacing="0" class="table_title" style="width: 98%;">
+                    <thead>
+                        <tr class="stores_title">
+                            <th class="bwidth">排行</th>
+                            <th class="owidth">店铺</th>
+                            <th id="consumptionToday" class="twidth">
+                                消费金额
+                                <u class="menu_productSales">
+                                    <i class="topjt topjtCurrent"></i>
+                                    <i class="botjt botjtCurrent"></i>
+                                </u>
+                            </th>
+                            <th id="paymentToday" class="twidth">
+                                实收金额
+                                <u class="menu_productSalesCom">
+                                    <i class="topjt topjtCurrent"></i>
+                                    <i class="botjt botjtCurrent"></i>
+                                </u>
+                            </th>
+                            <th id="ordersNum" class="twidth">
+                                开台数量
+                                <u class="menu_storedSales">
+                                    <i class="topjt topjtCurrent"></i>
+                                    <i class="botjt botjtCurrent"></i>
+                                </u>
+                            </th>
+                            <th id="everyConsumption" class="twidth">
+                                人均消费
+                                <u class="menu_storedSalesCom">
+                                    <i class="topjt topjtCurrent"></i>
+                                    <i class="botjt botjtCurrent"></i>
+                                </u>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <table cellpadding="0" cellspacing="0" id="table2Dispaly" class="Records_content" style="width: 98%;">
+                <thead>
+                    <tr class="stores_title">
+                        <th class="bwidth">排行</th>
+                        <th class="owidth">店铺</th>
+                        <th class="twidth">消费金额</th>
+                        <th class="twidth">实收金额</th>
+                        <th class="twidth">开台数量</th>
+                        <th class="twidth">人均消费</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201708171154"></script>
+
+    <!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801161401"></script>
+    <script type="text/javascript" src="../../js/page/daybusinessstate.js?v=201801161401"></script>
+</body>
+
+</html>

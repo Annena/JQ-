@@ -1,0 +1,54 @@
+/* 按性别年龄 */
+.table_wrap{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.table_wrap table{
+	width: 49%;
+}
+.table_wrap table th{
+	background: #f2f2f2;
+}
+.tdbg{
+	background: #f2f2f2;
+	color: #666 !important; 
+	font-weight: bold !important;
+}
+#gender_table{
+	float: left;
+}
+#gender_table td{
+	width: 20%;
+}
+#count_table{
+	float: right;
+}
+#count_table td{
+	width:12.5%;
+}
+table tr{
+    background: #fff !important;
+    border: none !important;
+}
+/* 图表样式 */
+/* 会员性别占比表 */
+#charts_wrap{
+	text-align: center;
+}
+#gender_charts{
+	display: inline-block;
+	/* width: 390px; */
+	width: 49%;
+	height:330px; 
+	float: left;
+	border: 1px solid #e3eaf2;
+}
+/* 会员年龄占比表 */
+#count_charts{
+	display: inline-block;
+	/* width: 390px; */
+	width: 49%;
+	height:330px; 
+	float: right;
+	border: 1px solid #e3eaf2;
+}

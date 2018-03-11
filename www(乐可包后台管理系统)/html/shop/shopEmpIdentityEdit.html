@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>身份添加</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201705271657">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201705271657">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201705271657">
+<link rel="stylesheet" type="text/css" href="../../css/page/addidentity.css?v=201705271657">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">员工列表</a> >> <b id="empIdentitylist">身份列表</b> >> <b id="addAndedit"></b>
+                <span class="stores-cancel">
+                    <input type="button" value="取消" id="exitbtn" class="nav-btn">
+                </span>
+                <span>
+                    <input type="button" value="保存" id="updatebtn" class="nav-btn">
+                </span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">员工姓名：</div>
+                    <div>
+                        <input type="text" name="shop" id="aUserNameIde" class="nav-shop" value="" readonly="readonly" placeholder="" autocomplete="off">
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">身    份：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="statusList" class="nav-select">
+                            <option value="us1fd0f3bi4e">收银员</option>
+                            <option value="us1fd0f1imw1">服务员</option>
+                        </select>
+                    </div>
+                    <div class="preInfor" id="preInfor">查看权限信息</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">授权门店：</div>
+                    <div class="" id="a_user_organization">
+                            
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- 身份权限弹出窗 -->
+    <div class="otherlayderNot mengOtherlayderNot layer_pageContent message" id="confirm-message">
+        <div class="relativeBox">
+            <div class="otherlaydertitle"><span id="permName">收银员</span>权限<i id="cancel-confirm"></i></div>
+        </div>
+        <div class="confirm maxHeight" id="confirm">
+            <!-- <div class="powerCashier">
+                <div class="powerCashier_t">收银系统</div>
+                <p>预结，结账，预结，结账</p>
+            </div>
+            <div class="powerShop">
+                <div class="powerShop_t">门店管理</div>
+                <p>门店管理，数据统计</p>
+            </div>
+            <div class="powerMember">
+                <div class="powerMember_t">会员管理</div>
+                <p>会员注册，会员管理，会员授权，会员折扣，账户支付，储值统计，授权统计</p>
+            </div>
+            <div class="powerAdmin">
+                <div class="powerAdmin_t">总部后台</div>
+                <p>门店管理，数据统计(要修改)</p>
+            </div>
+            <div class="powerSupplyChain">
+                <div class="powerSupplyChain_t">供应链</div>
+                <p>会员注册，会员管理，会员授权，会员折扣，账户支付，储值统计，授权统计(要修改)</p>
+            </div> -->
+        </div>
+        <div class="otherlayderfoot">
+            <div class="button_box">
+                <div class="xiadan button" id="other-logoin">确认</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201705271657"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201705271657"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201705271657"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201705271657"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201705271657"></script>
+    <script type="text/javascript" src="../../js/page/shopEmpIdentityEdit.js?v=201705271657"></script>
+</body>
+</html>

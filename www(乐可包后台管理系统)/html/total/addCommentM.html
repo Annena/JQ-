@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>添加点评营销</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801222334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801222334">
+    <link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801222334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=201801222334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/addBirthdayM.css?v=201801222334">
+    <link rel="stylesheet" type="text/css" href="../../css/page/newMarketing.css?v=201801222334">
+</head>
+
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="" target="main">会员营销</a> >><a id="" target="main">会员点评营销</a> >><b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+                <span><input type="button" value="保存" id="sub" class="nav-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <form id="form" action="" method="post" enctype="multipart/form-data">
+                <input class="hide" type="text" id="menuId" name="menu_id" value>
+                <input class="hide" type="text" id="CID" name="cid" value>
+                <input class="hide" type="text" id="companyNameEn" name="company_name_en" value>
+                <ul>
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/information_data.png">
+                            <span>基本设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案名称：</div>
+                        <div><input type="text" name="market_name" id="market_name" data-description="方案名称" class="nav-shop w179px" value="" placeholder="" autocomplete="off">&nbsp;<i>*必填</i></div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">方案状态：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="market_status">
+                                    <option value="1">立即启用</option>
+                                    <option value="0">暂不启用</option>
+                            </select>
+                        </div>
+                    </li>
+                    <div class="information_top">
+                        <div class="information_topAdd">
+                            <img src="../../img/base/Distribution.png">
+                            <span>发放设置</span>
+                        </div>
+                    </div>
+                    <li class="clearfix festival_li" id="revContent">
+                        <div class="nav-content-edit-title s_right">点评内容：</div>
+                        <div>
+                            <label>
+                            <input id="font_1" class="radio" type="radio" value="0" name="font" checked><span>不限制</span>
+                            </label>
+                            <label>
+                                <input id="font_2" class="radio" type="radio" value="1" name="font">
+                                <span><input type="text" name="" id="content_len"><span>字以上（含）</span></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="clearfix festival_li" id="revPicture">
+                        <div class="nav-content-edit-title s_right">点评图片：</div>
+                        <div>
+                            <label>
+                            <input id="picture_1" class="radio" type="radio" value="0" name="picture" checked><span>不限制</span>
+                            </label>
+                            <label>
+                                <input id="picture_2" class="radio" type="radio" value="1" name="picture">
+                                <span><input type="text" name="" id="picture_num"><span>张以上（含）</span></span>
+                            </label>
+                        </div>
+                    </li>
+                   <!--  <li class="clearfix festival_li">
+                        <div class="nav-content-edit-title s_right">发放抵用卷选择：</div>
+                        <select class="nav-shop" name="" id="">
+                                <option value="">满100返20</option>
+                                <option value="">满100返10</option>
+                                <option value="">满100返5</option>
+                        </select>
+                    </li> -->
+                    <li class="clearfix" id="contentSel">
+                        <div class="nav-content-edit-title s_right ">发放抵用券选择：</div>
+                        <div>
+                            <select class="nav-shop w179px" name="" id="voucher">
+                                    <option value="10">10</option>
+                                    <option value="10">20</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="nav-content-edit-title s_right">发放日期：</div>
+                        <p>
+                            <input type="text" id="start_time" name="start_time" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;至
+                            <input type="text" id="end_time" name="end_time" class="register_time Wdate" value="" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">&nbsp;
+                        </p>
+                    </li>
+                    <li class="clearfix festival_li contentRule" id="contentRule">
+                        <div class="nav-content-edit-title s_right contRule">发放抵用券规则：</div>
+                        <div>
+                            <input id="rule_1" class="radio" type="radio" value="1" name="rule" checked>点评1次赠送1张
+                        </div>
+                         <div>
+                            <input id="rule_2" class="radio" type="radio" value="2" name="rule">下单点评1次赠送1张
+                        </div>
+                        <div>
+                            <input id="rule_3" class="radio" type="radio" value="3" name="rule">1天点评多次赠送1张
+                        </div>
+                    </li>
+                    <li class="clearfix festival_li contentRule hide" id="giveIntegral">
+                        <div class="nav-content-edit-title s_right">赠送积分：</div>
+                        <div>
+                            <input type="text" name="" id="giveIntegralInp"><span>积分</span>
+                        </div>
+                    </li>
+                    <li class="clearfix festival_li hide" id="ContRule">
+                        <div class="nav-content-edit-title s_right contRule">赠送积分规则：</div>
+                        <div>
+                            <input id="rule_11" class="radio" type="radio" value="1" name="rule2" checked>点评1次赠送1次积分
+                        </div>
+                         <div>
+                            <input id="rule_12" class="radio" type="radio" value="2" name="rule2">下单点评1次赠送1次积分
+                        </div>
+                        <div>
+                            <input id="rule_13" class="radio" type="radio" value="3" name="rule2">1天点评多次赠送1次积分
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.form.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../../js/lib/calendar.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801222334"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801222334"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801222334"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801222334"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801222334"></script>
+    <script type="text/javascript" src="../../js/page/addCommentM.js?v=201801222334"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>退款汇总</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802051433">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802051433">
+<link rel="stylesheet" type="text/css" href="../../css/base/base.css?v=201802051433">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802051433">
+<link rel="stylesheet" type="text/css" href="../../css/page/gather.css?v=201802051433">
+</head>
+<body style="height:100%">
+    
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： 退款汇总
+            </div>
+            <div class="caipin-lan clearfix" id="option_tab">
+                <div class="caipin-fenleicheck" data-type="1" id="cardType_1">退款汇总</div>
+                <div class="caipin-fenleinucheck" data-type="2" id="cardType_2">储值通用统计</div>
+            </div>
+            <div class="pinglun-search">
+                <ul>
+                    <li class="clearfix">
+                        <p>开始时间 
+                            <input type="text" id="start-date" name="start-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </p><!-- yyyy-MM-dd -->
+                        <p>结束时间 
+                            <input type="text" id="end-date" name="end-date" class="Wdate" data-required="true" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </p>
+                        <p>店铺 
+                            <input type="text" id="shopList" class="generalShop generalText" data-index="1" name="shop" readonly value="全部"  />
+                        </p>
+                        <p id="shopSel" class="hide">通用商户 
+                            <input type="text" id="region_sel" class="generalShop generalText" data-index="2" readonly value="全部"  />
+                        </p>
+                        <p><input type="button" value="查询" id="selectbtn" class="btn"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="stafffloatdiv"></div>
+        <!--储值通用统计-->
+        <div class="stores-content stores-content_1  navContent hide" id="cardTypeContent_2">
+            <div class="out_table_title_1">
+                <div id="nav2_totalBox" class="hide"></div>
+                <table cellpadding="0" cellspacing="0" class="table_title">
+                    <thead>
+                        <tr class="stores_title">
+                        <th width="12%">时间</th>
+                        <th width="20%">退款商户</th>
+                        <th width="12%">流水单号</th>
+                        <th width="12%">退款消费账户</th>
+                        <th width="7%">退款应收储值</th>
+                        <th width="7%">退款应收本金</th>
+                        <th width="7%">退款应付储值</th>
+                        <th width="7%">退款应付本金</th>
+                    </tr>
+                    </thead>
+                </table>
+               
+            </div>
+            <table cellpadding="0" cellspacing="0" class="hide Records_content"><!-- lw 添加了 cleanerRecords-content ID-->
+                <thead>
+                   <!--<tr class="stores_title vhide">-->
+                        <!--<th width="16%">时间</th>-->
+                        <!--<th width="20%">退款商户</th>-->
+                        <!--<th width="12%">流水单号</th>-->
+                        <!--<th width="12%">退款账户</th>-->
+                        <!--<th width="7%">退款应收储值</th>-->
+                        <!--<th width="7%">退款应收本金</th>-->
+                        <!--<th width="7%">退款应付储值</th>-->
+                        <!--<th width="7%">退款应付本金</th>-->
+                    <!--</tr>-->
+                    <!--<tr class="stores_title vhide">-->
+                        <!--<th width="16%">时间</th>-->
+                        <!--<th width="20%">退款商户</th>-->
+                        <!--<th width="12%">流水单号</th>-->
+                        <!--<th width="12%">退款账户</th>-->
+                        <!--<th width="7%">退款应收储值</th>-->
+                        <!--<th width="7%">退款应收本金</th>-->
+                        <!--<th width="7%">退款应付储值</th>-->
+                        <!--<th width="7%">退款应付本金</th>-->
+                    <!--</tr>-->
+                </thead>
+                <tbody id="tbodys_1" class="tbodys">
+
+                </tbody>
+            </table>
+
+            <div class="search_page" id="nav2_search_page"></div>
+        </div>
+        <!--退钱-->
+        <div class="stores-content  navContent" id="nav3-content">
+            <div class="out_table_title hide">
+                 <div id="nav3_totalBox" class="hide"></div>
+                <table cellpadding="0" cellspacing="0" class="table_title">
+                    <thead>
+                            <tr class="stores_title">
+                                <th width="19%">日期时间</th>
+                                <th width="19%">店铺</th>
+                                <th width="15%">方式</th>
+                                <th width="15%">金额</th>
+                                <th width="17%">订单号</th>
+                                <th width="17%">流水单号</th>
+                                <!-- <th width="15%">应收</th>
+                                <th width="15%">实收</th> -->
+                                <th class="hide">操作</th>
+                            </tr>
+                    </thead>
+                </table>
+               
+            </div>
+            <table cellpadding="0" cellspacing="0" class="hide Records_content"><!-- lw 添加了 cleanerRecords-content ID-->
+                <thead>
+                   <tr class="stores_title vhide">
+                        <th width="19%">日期时间</th>
+                        <th width="19%">店铺</th>
+                        <th width="15%">方式</th>
+                        <th width="15%">金额</th>
+                        <th width="17%">订单号</th>
+                        <th width="17%">流水单号</th>
+                        <th class="hide">操作</th>
+                    </tr>
+                    <tr class="stores_title vhide">
+                        <th width="19%">日期时间</th>
+                        <th width="19%">店铺</th>
+                        <th width="15%">方式</th>
+                        <th width="15%">金额</th>
+                        <th width="17%">订单号</th>
+                        <th width="17%">流水单号</th>
+                        <th class="hide">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys" class="tbodys">
+                    
+                </tbody>
+            </table>
+
+            <div class="search_page" id="nav3_search_page"></div>
+        </div>
+        
+        <!--订单号、流水单号详情弹层-->
+        <!-- <div style="display: block;z-index: 9999;" class="laydertan"  id="handoveLay"> -->
+        <div class="laydertan hide"  id="handoveLay">
+            <div class="layderspan">
+                <div class="layderdivfirst" id="hand_title">退款汇总详情</div>
+                <!-- <input type="button" class="closeBtn" id="can-alert" value="关闭" /> -->
+                <a  class="closeBtn" id="can-alert"  href="javascript:;"></a>
+            </div>
+            <div class="clearfix">
+                <div class="orderinfobar">
+                    订单信息
+                </div>
+                <div class="mengxiadan">
+                    <p style="padding-top: 5px;">
+                        <span>桌台名称：&#12288;<span id="tableName"></span></span>
+                        <span class="position_right">订单属性：&#12288;<span id="orderProperty"></span></span>
+                    </p>        
+                    <p>
+                        <span>就餐人数：&#12288;<span id="user_num"></span></span>
+                        <span class="position_right">订单状态：&#12288;<span id="order_step"></span></span>
+                    </p>
+                    <div class="dashedbar"></div>
+                    <p style="padding-top: 5px;">
+                        <span>&#12288;收银员：&#12288;<span id="aUserName"></span></span>
+                    </p>
+                    <p style="padding-top: 5px;">
+                        <span>流水单号：&#12288;<span id="payId"></span></span>
+                    </p>             
+                    <p style="padding-top: 5px;">
+                        <span>开台时间：&#12288;<span id="order_time"></span></span>
+                    </p>
+                    <p style="padding-top: 5px;padding-bottom: 5px">
+                        <span>结账时间：&#12288;<span id="add_time"></span></span>
+                    </p>    
+                </div>
+                <div class="cashie_scroll">
+                    <div class="orderinfobar">
+                        菜品信息
+                    </div>
+                    <div class="mengcai" id="menuList">
+               
+                    </div>
+                    <div class="orderinfobar">
+                        支付信息
+                    </div>
+                    <div class="billdata">
+                        <ul class="lanheight">
+                            <li class="clearfix" id="consumeDisplay">
+                                <div class="billname bigfont">消费金额</div>
+                                <div class="billxuhao bigfont" id="consume"></div>
+                            </li>
+                            <li class="clearfix" id="afterDiscountDisplay">
+                                <div class="billname bigfont">实收金额</div>
+                                <div class="billxuhao bigfont" id="afterDiscount"></div>
+                            </li>
+                            <li class="clearfix" id="cashDisplay">
+                                <div class="billname">现金收入</div>
+                                <div class="billxuhao" id="cash"></div>
+                            </li>
+                            <li class="clearfix" id="cardDisplay">
+                                <div class="billname">银行卡收入</div>
+                                <div class="billxuhao" id="card"></div>
+                            </li>
+                            <li class="clearfix" id="wxpayDisplay">
+                                <div class="billname">微信支付收入</div>
+                                <div class="billxuhao" id="wxpay"></div>
+                            </li>
+                            <li class="clearfix" id="alipayDisplay">
+                                <div class="billname">支付宝支付收入</div>
+                                <div class="billxuhao" id="alipay"></div>
+                            </li>
+                            <li class="clearfix" id="pri_moneyDisplay">
+                                <div class="billname">储值本金消费</div>
+                                <div class="billxuhao" id="pri_money"></div>
+                            </li>
+                            <li class="clearfix" id="other_pay_mon">
+                                <div class="billname">自定义支付方式实收</div>
+                                <div class="billxuhao"></div>
+                            </li>
+                            <li class="clearfix" id="dis_money_dis">
+                                <div class="billname bigfont">优惠金额</div>
+                                <div class="billxuhao bigfont" id="dis_money"></div>
+                            </li>
+                            <li class="clearfix" id="sub_user_price_dis">
+                                <div class="billname">会员价优惠</div>
+                                <div class="billxuhao" id="sub_user_price"></div>
+                            </li>
+                            <li class="clearfix" id="sub_user_discount_dis">
+                                <div class="billname">会员折扣优惠</div>
+                                <div class="billxuhao" id="sub_user_discount"></div>
+                            </li>
+                            <li class="clearfix" id="smallChangeDisplay">
+                                <div class="billname">抹零</div>
+                                <div class="billxuhao" id="smallChange"></div>
+                            </li>
+                            <li class="clearfix" id="voucherDisplay">
+                                <div class="billname">抵用券</div>
+                                <div class="billxuhao" id="voucher"></div>
+                            </li>
+                            <li class="clearfix" id="subMoneyDisplay">
+                                <div class="billname">银台折扣</div>
+                                <div class="billxuhao" id="subMoney"></div>
+                            </li>
+                            <li class="clearfix" id="pac_moneyDisplay">
+                                <div class="billname">套餐优惠</div>
+                                <div class="billxuhao" id="pac_money"></div>
+                            </li>
+                            <li class="clearfix" id="sts_moneyDisplay">
+                                <div class="billname">储值赠送消费</div>
+                                <div class="billxuhao" id="sts_money"></div>
+                            </li>
+                            <li class="clearfix" id="give_menu_consumeDisplay">
+                                <div class="billname">赠菜金额</div>
+                                <div class="billxuhao" id="give_menu_consume"></div>
+                            </li>
+                            <li class="clearfix" id="other_pay_pre">
+                                <div class="billname">自定义支付方式优惠</div>
+                                <div class="billxuhao"></div>
+                            </li>
+                            <!-- <li class="clearfix" id="re_wxpay_display">
+                                <div class="billname">退微信</div>
+                                <div class="billxuhao" id="re_wxpay"></div>
+                            </li>
+                            <li class="clearfix" id="re_stored_display">
+                                <div class="billname">退乐币</div>
+                                <div class="billxuhao" id="re_stored"></div>
+                            </li>
+                            <li class="clearfix" id="re_voucher_display">
+                                <div class="billname">退抵用券</div>
+                                <div class="billxuhao" id="re_voucher"></div>
+                            </li>
+                            <li class="clearfix" id="giveVoucherDisplay">
+                                <div class="billname">消费返券</div>
+                                <div class="billxuhao" id="giveVoucher"></div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- 流水单号 详情弹层-->
+        <!-- <div class="laydertan hide"  id="payOrder">
+            <div class="laydertop"></div>
+            <div class="layderspan">
+                <div class="layderdivfirst title1">订单详情</div>
+                        <div class="layderdivfirst title2 hide">结账详情</div>
+                <div class="layderrightfirst" id="can-alert">关闭</div>
+            </div>
+            <div class="clearfix">
+                <div class="billdata">
+                    <div class="billnumber">结账ID:<span id="payId"></span></div>
+                    <ul class="lanheight">
+                        <li class="clearfix">
+                            <div class="billname">桌台名称：</div>
+                            <div class="billxuhao" id="tableName"></div>
+                        </li>
+                        <li class="clearfix" id="userIdDisplay">
+                            <div class="billname">用户ID：</div>
+                            <div class="billxuhao" id="userId"></div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="billname">收银员：</div>
+                            <div class="billxuhao" id="aUserName"></div>
+                        </li>
+                        <li class="clearfix" id="consumeDisplay">
+                            <div class="billname">消费：</div>
+                            <div class="billxuhao" id="consume"></div>
+                        </li>
+                        <li class="clearfix" id="moneyDisplay">
+                            <div class="billname">线上优惠：</div>
+                            <div class="billxuhao" id="money"></div>
+                        </li>
+                        <li class="clearfix" id="subMoneyDisplay">
+                            <div class="billname">线下优惠：</div>
+                            <div class="billxuhao" id="subMoney"></div>
+                        </li>
+                        <li class="clearfix" id="smallChangeDisplay">
+                            <div class="billname">系统抹零：</div>
+                            <div class="billxuhao" id="smallChange"></div>
+                        </li>
+                        <li class="clearfix" id="afterDiscountDisplay">
+                            <div class="billname">实收：</div>
+                            <div class="billxuhao" id="afterDiscount"></div>
+                        </li>
+                        <li class="clearfix" id="cashDisplay">
+                            <div class="billname">现金：</div>
+                            <div class="billxuhao" id="cash"></div>
+                        </li>
+                        <li class="clearfix" id="cardDisplay">
+                            <div class="billname">银行卡：</div>
+                            <div class="billxuhao" id="card"></div>
+                        </li>
+                        <li class="clearfix" id="voucherDisplay">
+                            <div class="billname">抵用券：</div>
+                            <div class="billxuhao" id="voucher"></div>
+                        </li>
+                        <li class="clearfix" id="storedDisplay">
+                            <div class="billname">乐币：</div>
+                            <div class="billxuhao" id="stored"></div>
+                        </li>
+                        <li class="clearfix" id="otherDisplay">
+                            <div class="billname">其他支付：</div>
+                            <div class="billxuhao" id="other"></div>
+                        </li>
+                        <li class="clearfix" id="payGiveDisplay">
+                            <div class="billname">赠菜：</div>
+                            <div class="billxuhao" id="payGive"></div>
+                        </li>
+                        <li class="clearfix" id="giveVoucherDisplay">
+                            <div class="billname">赠券：</div>
+                            <div class="billxuhao" id="giveVoucher"></div>
+                        </li>
+                        <li class="clearfix" id="promoDisplay">
+                            <div class="billname">优惠方案：</div>
+                            <div class="billxuhao" id="promo"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dishesdata" id="menuList">
+                    
+                </div>
+            </div>
+        
+        </div> -->
+        
+        
+    </div>
+     <!--分页-->
+      
+    <!-- 选择菜品分类、选择店铺 -->
+    <div id="favorable-message" class="message">
+        <h1 id="favorable-title" class="title"></h1>
+        <div id="favorable-content" class="container">
+            <div id="select-favorable" class="clearfix">
+                <ul id="set-favorable" class="select-list">
+                </ul>
+                <ul id="show-favorable" class="select-list">
+                </ul>
+            </div>
+        </div>
+        <div id="close-favorable-message" class="close-message">
+            <div id="cancel-favorable" class="close-dialog"></div>
+            <div id="definite-favorable" class="definite-dialog"></div>
+        </div>
+        <div id="favorable-prompt-message" class="prompt-message"></div>
+    </div>
+
+    <div id="favorable-message2" class="message">
+        <h1 id="favorable-title2" class="title"></h1>
+        <div id="favorable-content2" class="container">
+            <div id="select-favorable2" class="clearfix">
+                <ul id="set-favorable2" class="select-list">
+                </ul>
+                <ul id="show-favorable2" class="select-list">
+                </ul>
+            </div>
+        </div>
+        <div id="close-favorable-message2" class="close-message">
+            <div id="cancel-favorable2" class="close-dialog"></div>
+            <div id="definite-favorable2" class="definite-dialog"></div>
+        </div>
+        <div id="favorable-prompt-message2" class="prompt-message"></div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201802051433"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802051433"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802051433"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802051433"></script>
+    <script type="text/javascript" src="../../js/page/gather.js?v=201802051433" ></script> <!-- charset="gbk" -->
+</body>
+</html>

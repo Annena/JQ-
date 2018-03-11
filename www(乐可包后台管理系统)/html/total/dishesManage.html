@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>菜品管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/page/caipin.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/page/caipinku.css?v=201802021050">
+</head>
+<body style="height:100%" class="dishesManage">
+
+    <!--main部分-->
+    <div class="stores-nav dishesManage">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置：菜品管理 
+            </div>
+            <div class="pinglun-search">
+                <ul class="checkDishTit">
+                    <li class="clearfix">
+                        <p>门店：
+                            <select name="shopList" id="shopList"></select>
+                        </p>
+                        <p><input style="width:60px;" type="button" value="查询" id="selectbtn" class="btn checkDish"></p>
+                    </li>
+                </ul>
+                <div class="caipin-add" id="updatebtn">
+                    <span id="" style="float: left; margin-right: 10px;">
+                        <input type="button" value="添加套餐菜品" id="addPackage"  class="stores-btn">
+                    </span>
+                    <span id="permissions">
+                        <input type="button" value="添加菜品" id="dishesMaAdd"  class="stores-btn">
+                    </span>
+                    <span id="permissionsProp">
+                        <input type="button" value="添加属性" id="propertyAdd"  class="stores-btn hide">
+                    </span>
+                    <span id="permissionsPro">
+                        <input type="button" value="添加分类" id="disCategoryAdd"  class="stores-btn hide">
+                    </span>
+                </div>
+            </div>         
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleinucheck" id="disCategory">菜品分类设置</div>
+                <div class="caipin-fenleinucheck" id="s_caipin_property">菜品属性设置</div>
+                <div class="caipin-fenleicheck" id="dishesMa">售卖菜品列表</div>
+                <div class="caipin-fenleinucheck" id="shelves">下架菜品列表</div>
+                <div class="caipin-fenleinucheck" id="menu_store">菜品库</div>
+                        
+                <div id="sortDisplay">
+                    <div class="caipin-save hide" id="storesDisplay">
+                        <span ><input type="button" id="sort-btn" value="保存排序" class="stores-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stafffloatdiv"></div>
+        <!--菜品管理-->
+        <div class="stores-content dishesMaContent" id="dishesMaContent">
+            
+        </div>
+        <!--分类管理-->
+        <div class="stores-content hide" id="disCategoryContent">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th width="5%">编号</th>
+                        <th width="40%">名称</th>                        
+                        <th width="30%" id="operation">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="disCategoryTbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+        <!--属性管理-->
+        <div class="stores-content hide" id="propertyContent">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th width="10%">编号</th>
+                        <th width="40%">属性</th>
+                        <th width="40%" id="operation">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="propertyTbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+        <!--菜品库-->
+        <div class="stores-content hide" id="menustoreContent">
+            
+        </div>
+
+    </div>
+     <!--没有菜品显示框 -->
+    <div class="Strategy message haven" id="">
+        <div class="StrategyBox StrategyBox_haven">
+            <img src="../../img/base/dishesEmpty.png">
+            <p>暂无在售菜品</p>
+            <p>请前往菜品库选择出售菜品</p>
+        </div>
+    </div>
+    <!--勾选门店可自定义菜品弹出框 -->
+    <div class="Strategy message message_2" id="inputLibrary">
+        <div class="StrategyBox StrategyBox_2">
+            <div class="StrategyCont_t" id="">勾选列表里的复选框，才可自定义菜品哦</div>
+            <div class="StrategyFoot_1">
+                 <div class="button inputLibraryClose" id="inputLibraryClose">知道了</div>
+            </div>
+        </div>
+    </div>
+    <!-- 添加会员名称等弹窗(自定义为输入框) -->
+    <div class="Strategy message message_2" id="shopLibrary_name_sale">
+        <div class="StrategyBox StrategyBox_2">
+            <div class="StrategyTitle StrategyTitle_2">
+                <span id="menuNameSale"></span><i id="menuName_close"></i>
+            </div>
+            <div class="StrategyCont" id="shopLibrary_content">
+               
+            </div>
+            <div class="StrategyFoot" id="shopLibrary_footer">
+                <div class="button_box ">
+                    <div class="button shopLibrary_name_foot" id="menuName_login">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 添加打印机设置弹出框 -->
+    <div class="Strategy message message_4" id="shopLibraryPrint_content">
+        <div class="StrategyBox StrategyBox_2">
+            <div class="StrategyTitle StrategyTitle_2">
+                <span>打印机</span><i id="shopLibraryPrint_close" class=""></i>
+            </div>
+            <div class="StrategyCont StrategyCont_dayin" id="shopLibraryPrint">
+               <li class="clearfix clearfix_2">
+                    <div class="used used_dayin">
+                        <label>
+                            <input type="radio" name="print" checked="checked" id="" class="shopLibraryPrint_radio" value="0">
+                            <span>沿用总部</span>
+                        </label>
+                        <ul>
+                            <li>当前生产打印机 :&nbsp;&nbsp;<span>配菜打印机</span></li>
+                            <li>当前配菜打印机 :&nbsp;&nbsp;<span>配菜打印机</span></li>
+                            <li>当前标签打印机 :&nbsp;&nbsp;<span>配菜打印机</span></li>
+                            <li>当前传菜打印机 :&nbsp;&nbsp;<span>配菜打印机</span></li>
+                            <li>当前划菜打印机 :&nbsp;&nbsp;<span>配菜打印机</span></li>                       
+                        </ul>
+                    </div>
+                    <div class="custom custom_dayin">
+                        <label>
+                            <input type="radio" name="print" id="" value="1" class="shopLibraryPrint_radio">
+                            <span>自定义</span>
+                        </label>
+                        <ul>
+                            <li>当前生产打印机 :&nbsp;
+                                <select id="printLisTbodys" class="printTbodys"></select>
+                            </li>
+                            <li>当前配菜打印机 :&nbsp;
+                                <select id="passPrinterId" class="printTbodys"></select>
+                            </li>
+                            <li>当前标签打印机 :&nbsp;
+                                <select id="tagPrinterId" class="printTbodys"></select>
+                            </li>
+                            <li>当前传菜打印机 :&nbsp;
+                                <select id="matchPrinter" class="printTbodys"></select>
+                            </li>
+                            <li>当前划菜打印机 :&nbsp;
+                                <select id="producePrinterId" class="printTbodys"></select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+            <div class="StrategyFoot StrategyFoot_1" id="shopLibraryPrint_footer">
+                <div class="button_box">
+                    <div class="button" id="shopLibraryPrint_save">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 添加点击套餐弹出层 -->
+    <div class="Strategy message message_tc " id="">
+        <div class="StrategyBox StrategyBox_tc">
+            <div class="StrategyTitle StrategyTitle_tc">
+                <span id=""></span>XX套餐<i id=""></i><i id="" class="hide"></i>
+            </div>
+            <div class="StrategyCont" id="">
+               <li class="clearfix clearfix_2">
+                    <div class="custom ">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr class="stores_title dishesTitle">
+                                    <th>菜品名</th>
+                                    <th>数量</th>                        
+                                    <th>可替换菜品</th>
+                                </tr>
+                            </thead>
+                            <tbody id="">
+                                <tr class="dishesContent">
+                                    <td class="report_text">哈尔滨冰纯</td>
+                                    <td class="">1</td> 
+                                    <td class="report_text">嘉士伯、崂山</td>
+                                </tr>
+                                <tr class="dishesContent">
+                                    <td class="report_text">哈尔滨冰纯</td>
+                                    <td class="">1</td> 
+                                    <td class="report_text">嘉士伯、崂山</td>
+                                </tr>
+                            </tbody>
+                        </table> 
+                    </div>
+                </li>
+            </div>
+            <div class="StrategyFoot StrategyFoot_1">
+                <div class="button_box">
+                    <div class="button" id="">确认</div>
+                    <div class="button hide" id="">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 添加会员价格策略弹窗(门店)-->
+    <div class="Strategy message message_3 " id="shopLibraryPrice">
+        <div class="StrategyBox StrategyBox_1">
+            <div class="StrategyTitle StrategyTitle_1">
+                <span id="shopLibraryPrice_top_title">价格</span><i id="shopLibraryPrice_close"></i>
+            </div>
+            <div class="StrategyCont" id="shopLibraryPrice_content">
+               <li class="clearfix clearfix_2">
+                    <div class="used used_price">
+                        <label><input type="radio" name="" class="shopLibraryPrice_radio" id="" value="0">沿用总部</label>
+                        <table cellpadding="0" cellspacing="0" id="shopLibraryPrice_father_table">
+                            <thead>
+                                <tr class="stores_title dishesTitle">
+                                    <th>菜品名</th>
+                                    <th class="shopLibraryPrice_th"></th>                        
+                                    <th>日期</th>
+                                    <th>星期</th>
+                                    <th>时段</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shopLibraryPrice_father_tbody">
+                                
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="custom custom_peice">
+                        <label><input type="radio" name="" id="" value="1" class="shopLibraryPrice_radio ">自定义</label>
+                        <table cellpadding="0" cellspacing="0" id="shopLibraryPrice_shop_table">
+                            <thead>
+                                <tr class="stores_title dishesTitle">
+                                    <th>菜品名</th>
+                                    <th class="shopLibraryPrice_th"></th>                        
+                                    <th>日期</th>
+                                    <th>星期</th>
+                                    <th>时段</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shopLibraryPrice_shop_tbody">
+                                
+                            </tbody>
+                        </table> 
+                        <input id="addMemberPrice" type="button" name="addmemberPrice" class="add_price addInitAll">
+                        <div class="kuExplain">
+                            <div class="kuExplain_title"><span id="shopLibraryPrice_footer_title"></span>策略说明:</div> 
+                            <div class="kuExplain_content">
+                                <p><span class="content_left">1、</span><span class="content_right"> 不存在时间有重叠的价格策略。</span></p>
+                                <p><span class="content_left">2、</span><span class="content_right"> 日期、星期、时段匹配规则：优先匹配"时段"属性，如未设置"时段"，匹配的"星期"属性，如未设置"星期"，匹配"日期"属性，如未设置"日期"，则菜单上不显示此菜品。</span></p>
+                                <p><span class="content_left">3、</span><span class="content_right">时段跨天的价格策略，所属日期为起始时间段所在日期;如<i>2018.02.06&nbsp;23</i>23时至02时，所属的日期为2018.02.06，相关统计数据也依照次标准。</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <div class="StrategyFoot" id="shopLibraryPrice_footer">
+                <div class="button_box">
+                    <div class="button" id="shopLibraryPrice_footer_but">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- 添加会员价格策略弹窗(全部)-->
+    <div class="Strategy message message_1 " id="Strategy-message">
+        <div class="StrategyBox StrategyBox_1">
+            <div class="StrategyTitle StrategyTitle_1">
+                <span id="StrategyName"></span><i id="Strategy-cancel"></i><i id="Member-cancel" class="hide"></i>
+            </div>
+            <div class="StrategyCont" id="">
+               <li class="clearfix clearfix_2">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr class="stores_title dishesTitle">
+                                <th>菜品名</th>
+                                <th id="StrategyNameTh">会员价</th>                        
+                                <th>日期</th>
+                                <th>星期</th>
+                                <th>时段</th>
+                            </tr>
+                        </thead>
+                        <tbody id="StrategyTbody">
+
+                        </tbody>
+                    </table> 
+                    <div class="kuExplain">
+                        <div class="kuExplain_title"><span id="StrategyNameKu"></span>策略说明:</div> 
+                        <div class="kuExplain_content">
+                            <p><span class="content_left">1、</span><span class="content_right"> 不存在时间有重叠的价格策略。</span></p>
+                            <p><span class="content_left">2、</span><span class="content_right"> 日期、星期、时段匹配规则：优先匹配"时段"属性，如未设置"时段"，匹配的"星期"属性，如未设置"星期"，匹配"日期"属性，如未设置"日期"，则菜单上不显示此菜品。</span></p>
+                            <p><span class="content_left">3、</span><span class="content_right">时段跨天的价格策略，所属日期为起始时间段所在日期;如<i>2018.02.06&nbsp;23</i>23时至02时，所属的日期为2018.02.06，相关统计数据也依照次标准。</span></p>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <div class="StrategyFoot">
+                <div class="button_box">
+                    <div class="button" id="other-logoin">确认</div>
+                    <div class="button hide" id="Member-logoin">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+       <!-- 添加价格策略弹窗 -->
+    <div id="add_price_strategy" class="select-dialog select-dialog_1 hide message">
+        <div class="select-dialog-title">
+            <span class="title-text">价格</span>
+            <i class="close-btn" id="select_close"></i>
+        </div>
+        <div class="dialog-content price_strategy" id="price_strategy">
+            <ul>
+                <li class="clearfix clearfix_1">
+                    <p class="price_left price_title">价格：</p>
+                    <p class="price_left"><input type="tel" id="PriceStrategy" data-description="菜品价格" class="nav-shop nav-shop_1" value="" placeholder="" autocomplete="off"><span class="font color">&nbsp;*必填</span>
+                    </p>
+                </li>
+                <li class="clearfix clearfix_2">
+                    <p class="price_p">时间：<input type="radio" name="pricedate" checked="checked" id="pricedate" data-description="菜品策略时间" value="不限"/>不限
+                    </p>
+                    <div class="time_input price_con">
+                        <p class="price_left price_p">
+                            <input type="radio" name="pricedate" data-description="菜品策略时间" value="自定义"/>自定义
+                        </p>
+                        <div class="price_left price_left_1">
+                            <input type="text" id="start-date" name="start-date" class="Wdate second-width" readonly="readonly" data-required="true" placeholder="请选择" disabled="" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                            至
+                            <input type="text" id="end-date" name="end-date" class="Wdate second-width" data-required="true" placeholder="请选择" readonly="readonly" disabled="" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})">
+                        </div>
+                    </div>                    
+                </li>
+                <li class="clearfix clearfix_2">
+                    <p class="price_p">星期：<input type="radio" name="week_radio" id="week_radio" checked="checked" data-description="菜品策略星期" value="不限">不限</p>
+                    <div class="price_con">
+                        <p class="price_left price_p"><input type="radio" name="week_radio" data-description="菜品策略星期" value="自定义">自定义</p>
+                        <div id="weekcheckbox" class="week_select price_left">
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="1" />周一</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="2" />周二</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="3"/>周三</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="4"/>周四</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="5" />周五</label> 
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="6"/>周六</label>  
+                            <label><input name='weekcheckbox' disabled="true" type="checkbox" value="7"/>周日</label>
+                        </div>
+                        <div class="clearfix"></div>  
+                    </div>
+                </li>
+                <li class="clearfix clearfix_2">
+                    <p class="price_p">时段：<input type="radio" checked="checked" name="hour_radio" id="hour_radio" data-description="菜品策略时段" value="不限">不限</p>
+                    <div class="price_con">
+                        <p class="price_left"><input type="radio" name="hour_radio" value="自定义" data-description="菜品策略时段">自定义</p>
+                        <div class="price_left price_left_1">
+                            <select name="hourstartselect" disabled="true" id="hour_stat_select" class="hour_select">
+                            </select>至
+                            <select name="hourendselect" disabled="true" id="hour_end_select" class="hour_select">
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>  
+                    </div>  
+                </li>
+            </ul>
+        </div>     
+        <p class="dialog-button">
+            <input id="dialog_price_sava_btn" data-type='' type="button" value="保存" class="search-btn search_save">
+            <input id="dialog_price_cancel_btn" type="button" value="取消" class="search-btn search_cancel">
+        </p>
+    </div>
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+     <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!--日期选中插件-->
+    <script type="text/javascript" src="../../js/base/config.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/page/dishesManage.js?v=201802021050"></script>
+</body>
+</html>

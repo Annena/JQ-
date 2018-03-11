@@ -1,0 +1,571 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors 营业报表 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+/* 其他支付下的优惠和实收*/
+
+table .line_title {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+table .line_title div,
+table .use_line_con div {
+    text-align: center;
+}
+
+table .line_title .other_pay {
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 1.8;
+}
+
+table .line_title div span {
+    width: 49%;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+table .line_title div span:first-child {
+    border-right: 1px solid #dcdcdc;
+}
+
+table .use_line_con div span {
+    width: 49%;
+    display: inline-block;
+    line-height: 45px;
+}
+
+table .use_line_con div span:first-child {
+    border-right: 1px solid #dcdcdc;
+}
+
+.stafffloatdivs {
+    height: 127px;
+}
+
+table td {
+    text-align: right;
+    padding-right: 20px;
+}
+
+table .leftTd {
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/* 其他支付下的优惠和实收结束*/
+
+.owidth {
+    width: 25%;
+}
+
+.twidth {
+    width: 17%;
+}
+.bwidth {
+    width: 7%;
+}
+.text_left {
+    text-align: left;
+    color: #03A9F4 !important;
+    padding-left: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.text_center {
+    text-align: center;
+    color: #03A9F4 !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.stores-nav {
+    float: left;
+    width: 97%;
+    margin-top: 10px;
+    margin-left: 25px;
+    /*margin-bottom: 20px;*/
+}
+
+.stores-lan {
+    font-size: 14px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 40px;
+    border-bottom: 1px solid #dedede;
+}
+
+.stores-lan span {
+    background: #FF8366;
+    float: right;
+    margin-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.stores-lan u {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.stores-btn {
+    display: block;
+    width: 100px;
+    height: 36px;
+    line-height: 25px;
+    border: none;
+    padding: 2px 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: #FF8366;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.stores-content {
+    font-size: 12px;
+    color: #838383;
+    overflow: auto;
+}
+
+.otherTh {
+    width: 200px;
+}
+
+
+/*添加悬浮层*/
+
+.out_table_title {
+    position: fixed;
+    overflow: hidden;
+    width: 97%;
+    z-index: 999;
+}
+
+.stores-search {
+    background: #FAFAFA;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    margin-top: 13px;
+}
+
+.stores-search p {
+    float: left;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px 10px;
+    color: #666666;
+}
+
+.stores-search p .btn {
+    width: 70px;
+    height: 25px;
+    background: #FF8366;
+    line-height: 25px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: #E79D06;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    opacity: 1;
+}
+
+.stores_title {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    background: #ededed;
+}
+
+.total-tr {
+    font-weight: bold;
+}
+
+.navContent .stores_title th,
+.navContent tr,
+.navContent td {
+    height: 45px;
+    position: relative;
+}
+
+.tbodys td u {
+    color: #0397ff;
+    cursor: pointer;
+}
+
+
+/* 排序箭头样式 */
+
+.topjt {
+    background: url('../../img/base/jt.png')no-repeat 0px -5px;
+    width: 17px;
+    height: 8px;
+    display: inline-block;
+}
+
+.botjt {
+    background: url('../../img/base/jt.png')no-repeat 0px -13px;
+    width: 17px;
+    height: 8px;
+    display: inline-block;
+}
+
+.stores_title th u {
+    width: 17px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    line-height: 0;
+}
+
+.topjtCurrent {
+    background: url('../../img/base/hs.png')no-repeat 0px -5px;
+}
+
+.botjtCurrent {
+    background: url('../../img/base/hs.png')no-repeat 0px -13px;
+}
+
+
+
+/* 详情内容 */
+.contentlist section nav:nth-child(2n) {
+    /* background: #f1f1f1;  */
+}
+
+.contentlist section nav {
+    /* height:18px; */
+    line-height: 18px;
+    padding: 12px;
+    color: #333;
+}
+
+.contentlist section nav>span:last-child {
+    float: left;
+    width: 39%;
+    color: #9c9c9c;
+    padding-left: 10%;
+}
+
+.contentlist section nav>span:first-child {
+    float: left;
+    width: 39%;
+    text-align: right;
+    padding-right: 10%;
+    border-right: 1px solid #ddd;
+}
+
+.setSize {
+    color: #ff3b3c !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contentlist section>nav:first-child {
+    height: auto;
+    line-height: auto;
+}
+
+.contentlist section>nav:first-child span {
+    width: 100%;
+    text-align: left;
+    border-right: none;
+    color: #333 !important;
+    /* font-weight: bold; */
+    padding: 0px;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.contentlist section>nav:first-child span b {
+    font-size: 14px;
+}
+
+.background_hui {
+    background: #f1f1f1;
+    border-top: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+    margin-top: 10px;
+}
+/* 文字加粗 */
+
+.textbold td,.textbold th {
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #fb5555 !important;
+}
+
+.contentlist section nav .ileftclass {
+    border-right: 0px !important;
+    color: #00a2ff !important;
+    border-top: 0px solid #E3EAF2 !important;
+}
+
+.contentlist section nav .irightclass {
+    color: #00a2ff !important;
+    border-top: 0px solid #E3EAF2 !important;
+    border-left: 0px;
+}
+
+.sale_style {
+    padding: 10px 3% 0 !important;
+    position: relative;
+    background-color: #fff !important;
+    margin-top: 10px;
+    line-height: 19px !important;
+}
+.sale_style:first-child {
+    margin-top: 0;
+}
+.sale_style p:nth-child(1) {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.sale_style p {
+    height: 20px;
+}
+
+.sale_img_sty {
+    background: url(../../img/base/sale_img.png) no-repeat 10px;
+}
+
+.stored_img_sty {
+    background: url(../../img/base/stored_img.png) no-repeat 10px;
+}
+
+.summary_img_sty {
+    background: url(../../img/base/zjl.png) no-repeat 10px;
+}
+
+.sale_share_sty {
+    width: 74px !important;
+    text-align: right !important;
+    display: inline-block !important;
+    position: absolute !important;
+    top: 20px !important;
+    left: 30px !important;
+    /*z-index: 999 !important;*/
+    color: #333 !important;
+    font-size: 16px !important;
+    background-size: 22px !important;
+    background-color: #fff !important;
+    padding: 0 10px !important;
+    float: none !important;
+    padding-left: 0px !important;
+}
+
+.summary_share_sty {
+    width: 90px !important;
+    text-align: right !important;
+    display: inline-block !important;
+    position: absolute !important;
+    top: 20px !important;
+    left: 30px !important;
+    /*z-index: 999 !important;*/
+    color: #333 !important;
+    font-size: 16px !important;
+    background-size: 22px !important;
+    background-color: #fff !important;
+    padding: 0 10px !important;
+    float: none !important;
+    padding-left: 0px !important;
+    height: 21px;
+}
+
+.margin_style {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.padding_none {
+    padding: 0px !important;
+}
+
+.margin_style table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /** 设置这个之后表格不会因为内容而变化 **/
+}
+
+.margin_style table th,
+.margin_style table td {
+    padding: 12px 0px;
+}
+
+.margin_style table .summary th {
+    padding-right: 30px;
+    text-align: right;
+    border-right: 1px solid #dfdfdf;
+}
+
+.margin_style table .summary th:nth-child(2) {
+    padding-right: 50px;
+}
+
+.margin_style .haderTr {
+    background-color: #f1f1f1;
+    border: 1px solid #c2c2c2;
+    color: #333;
+}
+.margin_style .haderTr th {
+    color: #333;
+    font-size: 16px;
+}
+.font_weight {
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+.margin_style .haderTr th {
+    font-weight: bold;
+}
+
+.margin_style .haderBr {
+    font-size: 14px;
+    line-height: 14px;
+    text-align: right;
+    border-left: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.margin_style .shallow {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.margin_style .haderBr td:nth-child(1) {
+    border-right: 1px solid #dfdfdf;
+    color: #666 !important;
+    padding-right: 16%;/*30px*/
+}
+
+.margin_style .haderBr td:nth-child(2) {
+    color: #999;
+    padding-right: 21%;/*50px*/
+}
+
+
+.all_money tr:nth-child(2n-1) {
+    /*background: #f1f1f1;*/
+}
+.font_weight_bold {
+    font-weight: bold !important;
+}
+
+.padding_right {
+    padding-right: 29%;
+}
+
+.margin_style .back_color {
+    background: #fff !important;
+    border-bottom: 0px;
+}
+
+.back_color:last-child {
+    background: #fff !important;
+    border-bottom: 1px !important;
+}
+
+.back_bottom {
+    background: #fff !important;
+    border-bottom: 1px solid #dfdfdf !important;
+}
+
+.back_bottom_b {
+    background: #fff !important;
+    border-bottom: 1px solid #c2c2c2 !important;
+}
+
+table tr:last-child {
+    border-bottom: 1px solid #c2c2c2 !important;
+}
+
+
+/* 向下向上箭头 */
+
+.icon-down:after {
+    content: " ";
+    background: url(../../img/base/wewe.png) right top no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    vertical-align: middle;
+    float: right;
+    margin-top: 2px;
+}
+
+.icon-upward:after {
+    content: " ";
+    background: url(../../img/base/veve.png) right top no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    vertical-align: middle;
+    float: right;
+    margin-top: 2px;
+}
+
+.pre_hade {
+    padding: 12px 20px 12px 0px !important;
+}
+
+.pay_hade {
+    padding: 12px 20px 12px 0px !important;
+}
+.color_0 {
+    color: #333 !important;
+}
+
+.self_staff {
+    height: 0 !important;
+}
+.self_search {
+    margin-top: 52px !important;
+}
+.self_stores {
+    /*margin-top: 50px;*/
+}
+.self_cursor{
+    cursor: auto !important;
+}
+/*营业报表明细新增样式*/
+.haderBr_nav{
+    text-align: center;
+}
+.haderBr_navs{
+    font-weight:normal !important;
+    text-align: center;
+}

@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.nav {
+	float: left;
+	width: 97%;
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+.nav-lan {
+	font-size: 15px;
+	height: 54px;
+	font-weight:  bold;
+	line-height: 54px;
+	border-bottom: 1px solid #dedede;
+}
+
+.nav-lan span {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 149px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.nav-btn {
+	display: block;
+	width: 154px;
+	height: 49px;
+	line-height: 25px;
+	border: none;
+	padding: 2px 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FF8366;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.nav-quxiao-btn {
+	width: 154px;
+	height: 49px;
+	background: #FFFFFF;
+	line-height: 25px;
+	border: 1px solid #e79d06;
+	padding: 2px 15px;
+	color: #E79D06;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.nav-content {
+	font-size: 12px;
+	padding-top: 17px;
+	color: #838383;
+}
+
+.nav-content ul {
+	line-height: 21px;
+}
+
+.nav-content ul li {
+	padding-bottom: 14px;
+}
+
+.nav-content-title {
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	width: 80px;
+	height: 33px;
+}
+
+.nav-content-edit-title {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 130px;
+	text-align: right;
+	padding-right: 10px;
+	line-height:36px;
+}
+
+.nav-content-add {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	/*width: 80px;*/
+	margin-right: 8px;
+}
+
+.nav-content ul li span {
+	padding-left: 15px;
+}
+
+.nav-shop {
+	border: #D5D5D5 1px solid;
+	width: 159px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-select {
+	border: #D5D5D5 1px solid;
+	width: 175px;
+	height: 33px;
+	line-height: 33px;
+	text-indent: 6px;
+	text-align: left;
+	margin-right: 14px;
+}
+.nav-select-2 {
+    border: #D5D5D5 1px solid;
+    width: 159px;
+    height: 33px;
+    line-height: 33px;
+    text-indent: 6px;
+    text-align: left;
+    margin-right: 14px;
+}
+.s_shopAddSelect{
+	width: 110px;
+	margin-right:auto;
+}
+.nav-content-add .s_shopAddInput{
+	width: 110px;
+}
+.nav-info-content {
+	border: #D5D5D5 1px solid;
+	width: 200px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-itinfo {
+	font-size: 14px;
+	color: #666666;
+	font-weight: bold;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #dedede;
+}
+
+.vipcard-content-logo {
+	padding-right: 44px;
+	font-size: 13px;
+	float: left;
+}
+
+.stores-cancel {
+	margin-left: 20px;
+}
+
+
+/* 地图样式 */
+.nav-input {
+	border: #D5D5D5 1px solid;
+	width: 464px;/*340px*/
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+#allmap {
+	width: 75%;
+	height: 400px;
+	overflow: hidden;
+	margin:0 auto;
+	font-family:"微软雅黑";
+	margin-left: 140px;
+}
+.appPattern{
+	padding-left: 125px;
+}
+.appPattern i{
+	font-style: normal;
+}
+.appPattern p{
+	height: 30px;
+	line-height: 30px;
+}
+.appPattern p span{
+	padding-left: 15px;
+    color: #000;
+    margin-right: 15px;
+    height: 30px;
+    display: inline-block;	
+}
+.appPattern p span input{
+	width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 3px;
+}    
+
+.nav_region{
+	line-height:36px !important;
+}

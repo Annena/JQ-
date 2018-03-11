@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>储值卡管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801202334">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801202334">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801202334">
+<link rel="stylesheet" type="text/css" href="../../css/page/voucher.css?v=201801202334">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置：储值卡列表
+            </div>
+            <div class="pinglun-search">
+                <ul>
+                    <li class="clearfix">
+                        <p>门店：
+                            <select name="shopList" id="shopList"></select>
+                        </p>
+                        <p><input style="width:60px;" type="button" value="查询" id="selectbtn" class="btn"></p>
+                    </li>
+                </ul>
+            </div>         
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="storedMan">使用中</div>
+                <div class="caipin-fenleinucheck" id="storedShe">停用中</div>
+                <div class="caipin-fenleinucheck" id="todayCreditBtn">当日可用额度</div>
+                <div class="caipin-add" id="permissions"><input type="button" value="添加储值卡" id="updatebtn" class="stores-btn"></div>
+                <div class="caipin-add hide" id="permissionsSave"><input type="button" value="保存" id="todayCreditEdit" class="stores-btn"></div>
+            </div>
+        </div>
+        <div class="stafffloatdiv" style="height:134px;"></div>
+
+        <div class="stores-content">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th style="width:15%;">名称</th>
+                        <th style="width:10%">储值金额</th>
+                        <th style="width:10%">赠送金额</th>
+                        <th style="width:13%">赠抵用劵</th>
+                        <th style="width:10%">赠送积分</th>
+                        <th style="width:10%">上架日期</th>
+                        <th style="width:10%">下架日期</th>
+                        <th style="width:10%">售卖方式</th>
+                        <th style="width:12%" id="sale_display">提成金额<br>(<span id="shopName"></span>)</th>
+                        <th style="width:12%" id="operation">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!--额度设置页面 -->
+        <div style="padding-top: 100px;"  id ="todayCreditBox" class="nav-content hide">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">当日可用额度：</div>
+                     <div class="nav-content-add">
+                        <input id="todayCredit" type="text" class="Wdate" data-required="true" > % <span style="font-weight: normal;">&nbsp;储值成功后当日可消费的最高额度。</span>
+                    </div> 
+                    <!-- <input id="todayCreditEdit" type="button" value="修改" class="stores-caozuo-btn"> -->
+
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801202334"></script>
+    <script type="text/javascript" src="../../js/page/storedValueManage.js?v=201801202334"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.stores-nav {
+	float: left;
+	width: 97%;
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+.stores-lan {
+	font-size: 15px;
+	height: 54px;
+	font-weight:  bold;
+	line-height: 54px;
+	border-bottom: 1px solid #dedede;
+}
+
+.stores-lan span {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 149px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.stores-fenleinucheck {
+	background: #F3F3F3;
+	float: left;
+	width: 154px;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	color: #9c9c9c;
+}
+
+.stores-fenleicheck {
+	background: #FFFFFF;
+	border-top: 5px solid #FF8366;
+	float: left;
+	width: 100px;
+	height: 41px;
+	line-height: 36px;
+	text-align: center;
+	color: #9c9c9c;
+}
+
+.caipin-lan {
+	font-size: 14px;
+	height: 54px;
+	font-weight:  bold;
+	line-height: 54px;
+	border-bottom: 1px solid #dedede;
+	margin-top: 10px;
+}
+
+.stores-add {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.stores-btn {
+	display: block;
+	width: 154px;
+	height: 49px;
+	line-height: 25px;
+	border: none;
+	padding: 2px 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FF8366;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.stores-content {
+	font-size: 12px;
+	padding-top: 130px;
+	color: #838383;
+}
+
+.stores-content table {
+	width: 100%;
+}
+
+.stores-search {
+	background: #FAFAFA;
+	height: 54px;
+	line-height: 54px;
+	width: 100%;
+	border: 1px solid #E5E5E5;
+	margin-top: 13px;
+	font-size: 14px;
+}
+
+.stores-search p {  
+	float: left;
+	font-weight: bold;
+	font-size: 13px;
+	margin: 0px 10px;
+	color: #666666;
+}
+
+.stores-search p .btn {
+	width: 70px;
+	height: 31px;
+	background: #FF8366;
+	line-height: 25px;
+	border: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #E79D06;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+}
+
+.stores_title {
+	width: 100%;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+	background: #FAFAFA;
+}
+
+.total-tr {
+	font-weight: bold;
+}
+.stores_title th, tr, td {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 10px;
+	padding-right: 10px;
+	/*color: #A0A0A0 !important;*/
+	/*border: 1px solid #CCCCCC;*/
+}
+
+.total-shopnametxt {
+	width: 9%;
+	font-weight: normal;
+	  text-align: center;
+}
+
+.total-addr {
+  width: 32%;
+  font-weight: normal;
+}
+
+.total-tel {
+  width: 18%;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.total-type {
+  width: 9%;
+  font-weight: normal;
+}
+
+.total-caozuo {
+  width: 18%;
+  font-weight: normal;
+  /*padding-left: 4%;*/
+  text-align: center;
+}
+
+.total-caozuo span {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.stores-caozuo-btn {
+	width: 70px;
+	height: 30px;
+	background: #FF8366;
+	line-height: 25px;
+	border: none;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: center;
+	background: #E79D06;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+}
+
+.total-num span {
+	float: left;
+	margin-left: 10px;
+}
+
+/*页面标题浮动*/
+
+.stafffloat {
+	width: 97%;
+	position: fixed;
+	background: #FFFFFF;
+}
+/*修改表格的行高为自动*/
+.s_changHeight table th,.s_changHeight table td,.s_changHeight table tr{ line-height: auto; }

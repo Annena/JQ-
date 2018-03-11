@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.nav {
+	margin: 49px;
+}
+
+.nav ul {
+	margin-top: 40px;
+	border-bottom: 1px dotted #dedede;
+}
+
+.shopbor {
+	width: 180px;
+	padding-bottom: 25px;
+	float: left;
+	cursor: pointer;
+	/*margin-right: 100px; */
+}
+
+.shoplogo,.shoplogo_2 {
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	border-radius: 55px;
+	-moz-border-radius: 55px 55px 55px 55px;
+	background: #FF8366;
+	text-align: center;
+	/*float: left;*/
+	margin: 0 auto;
+}
+
+.shoplogo_grey {
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	border-radius: 55px;
+	background: #CCCCCC;
+	text-align: center;
+	/*float: left;*/
+	margin: 0 auto;
+}
+
+.shoplogo img {
+	width: 35px;
+	height: 35px;
+	vertical-align: middle;
+}
+/* 选商户页面logo */
+.shoplogo_2 img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+}
+
+.shoplogo-txt {
+	/*width: 80px;*/
+	font-weight: bold;
+	line-height: 36px;
+	text-align: center;
+	margin: 0 auto;
+}

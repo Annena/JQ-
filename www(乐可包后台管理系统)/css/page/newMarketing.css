@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 会员优惠
+ * @date    2018-1-17 15:44:06
+ * @version $Id$
+ */
+
+/*点评营销*/
+.contRule{
+	height:45px;
+}
+/*消费营销*/
+.payContent{
+	height:55px;
+}
+.payWay{
+	position: relative;
+    top: 10px;
+}

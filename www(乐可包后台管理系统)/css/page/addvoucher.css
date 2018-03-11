@@ -1,0 +1,248 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors 店铺选择页面 (you@example.org)
+ * @date    2015-12-29 15:44:06
+ * @version $Id$
+ */
+
+
+.nav {
+	float: left;
+	width: 97%;
+	margin-top: 10px;
+	margin-left: 25px;
+}
+
+.nav-lan {
+	font-size: 15px;
+	height: 54px;
+	font-weight:  bold;
+	line-height: 54px;
+	border-bottom: 1px solid #dedede;
+}
+
+.nav-lan span {
+	background: #FF8366;
+	float: right;
+	margin-bottom: 5px;
+	width: 149px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.nav-btn {
+	display: block;
+	width: 154px;
+	height: 49px;
+	line-height: 25px;
+	border: none;
+	padding: 2px 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background: #FF8366;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	cursor: pointer;
+	opacity: 1;
+}
+
+.nav-quxiao-btn {
+	width: 154px;
+	height: 49px;
+	background: #FFFFFF;
+	line-height: 25px;
+	border: 1px solid #e79d06;
+	color: #E79D06;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.nav-content {
+	font-size: 12px;
+	padding-top: 17px;
+	color: #838383;
+}
+
+.nav-content ul {
+	line-height: 21px;
+}
+
+.nav-content ul li {
+	padding-bottom: 14px;
+}
+
+.nav-content-title {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 80px;
+	height: 33px;
+}
+
+.nav-content-edit-title {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 100px;
+}
+
+.nav-content-add {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	/*width: 80px;*/
+	margin-right: 8px;
+}
+
+.nav-content ul li span {
+	padding-left: 15px;
+}
+
+.nav-shop {
+	border: #D5D5D5 1px solid;
+	width: 159px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-select {
+	border: #D5D5D5 1px solid;
+	width: 160px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-info-content {
+	border: #D5D5D5 1px solid;
+	width: 200px;
+	height: 27px;
+	line-height: 27px;
+	text-indent: 6px;
+	text-align: left;
+}
+
+.nav-itinfo {
+	font-size: 14px;
+	color: #666666;
+	font-weight: bold;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #dedede;
+}
+
+.vipcard-content-logo {
+	padding-right: 44px;
+	font-size: 13px;
+	float: left;
+}
+
+.stores-cancel {
+	margin-left: 20px;
+}
+
+.fendian {
+	min-width: 130px;
+	padding: 6px 10px;
+	border: 1px solid #dedede;
+	
+	vertical-align: middle;
+	float: left;
+	font-weight: normal;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.more {
+	/*background: #dedede;*/
+	height: 40px;
+	line-height: 40px;
+	/*margin-left: 98px;*/
+	/*margin-top: 10px;*/
+	/*text-align: center;*/
+	color: #FF8366;
+	cursor: pointer;
+}
+.more:hover{ text-decoration:underline;}
+
+.nav-content-edit-righttitle {
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+	width: 85%;
+	margin-top: 3px;
+	/*width: 1240px;*/
+}
+
+
+.replace_amount{
+float: left;	
+}
+.replace_amount p>*{ vertical-align: middle;}
+.replace_amount p{ margin-bottom: 12px;}
+.replace_amount p>input[type="text"]{width: 59px;}
+
+
+
+.shenfenduoxuan {
+	border: 1px solid #D5D5D5;
+	width: 300px;
+	min-height: 200px;
+	max-height: 200px;
+	float: left;
+	overflow: auto;
+	margin-top: 10px;
+	margin-left: 3px;
+	margin-right: 20px;
+}
+
+.shenfenduoxuan ul li:nth-child(odd)  {
+	padding: 10px;
+	background: #FFFFFF;
+}
+
+.shenfenduoxuan ul li:nth-child(even)  {
+	padding: 10px;
+	background: #FAFAFA;
+	border-bottom: 1px solid #F1F1F1;
+	border-top: 1px solid #F1F1F1;
+}
+
+.neimargin {
+	margin: 5px;
+}
+
+.dishesclass {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	background: #EDEDED;
+}
+
+.dishesclass a {
+	color: #A0A0A0;
+	padding-left: 15px;
+	font-weight: bold;
+}
+.titleclass {
+	padding-left: 30px !important;
+}
+
+.caipin_show >ul> .titleclass{ padding-left:0px}

@@ -1,0 +1,42 @@
+.stores-content {
+	font-size: 14px;
+}
+.stores-caozuo-btn {
+	width: 85px;
+	height: 45px;
+	background: #FF8366;
+	line-height: 45px;
+	border: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	background: #E79D06;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	margin-right: 10px;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.stores-caozuo-delbtn {
+	width: 85px;
+	height: 45px;
+	background: #FFFFFF;
+	line-height: 45px;
+	border: 1px solid #e79d06;
+	color: #e79d06;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	opacity: 1;
+	margin-left: 10px;
+	display: inline-block;
+	font-size: 16px;
+}

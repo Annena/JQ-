@@ -1,0 +1,181 @@
+
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your header公共 (you@example.org)
+ * @date    2015-12-29 16:47:42
+ * @version $Id$
+ */
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.left_html {
+    overflow: hidden;
+}
+
+.left {
+    float: left;
+    width: 194px;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    border-right: 1px solid #dfdfdf;
+    /*padding-bottom: 9999px;
+    margin-bottom: -9999px;*/
+}
+
+.left ul {
+    /* padding-top: 8px; */
+    /*padding-left: 18px;*/
+}
+
+.left ul li {
+    font-size: 14px;
+    overflow: hidden;
+    height: 42px;
+    line-height: 46px;
+    vertical-align: top;
+    color: #5E5E5E;
+}
+
+.left ul li a {
+    padding-left: 43px;
+    display: inline-block;
+    width: 138px;
+    color: #333;
+}
+
+
+/*导航被选中时的状态*/
+
+.left ul .navLeftCheck a {
+    color: #ff8366
+}
+
+
+/* .navLeftCheck:before {
+    display: inline-block;
+    content: " ";
+    width: 5px;
+    background: #ff8366;
+    height: 100%;
+    vertical-align: middle;
+} */
+
+.left-line {
+    border-bottom: 2px solid #F7F7F7;
+    padding-left: 18px;
+    position: relative;
+}
+
+.left-line .down {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 19px;
+    background: url('../../img/base/wewe.png') no-repeat;
+    background-size: 13px;
+}
+
+.left-line .up {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    background: url('../../img/base/veve.png') no-repeat;
+    background-size: 13px;
+}
+
+.left-line img {
+    position: absolute;
+    top: 12.5px;
+    left: 10px;
+    width: 21px;
+}
+
+.left ul li b {
+    font-size: 15px;
+    color: #615959;
+}
+
+.left .uls {
+    /*overflow-y: scroll;*/
+    display: inline-block;
+    width: 188px;
+    /*padding-top: 15px;*/
+    padding:14px 0;
+}
+
+.left-zuosuojin {
+    /*padding-left: 28px;*/
+    /* border-bottom: 1px dotted #F4F4F4; */
+}
+
+.left-check {
+    padding-left: 24px;
+    border-left: 5px solid #FF8366;
+    background: #F3F3F3;
+}
+
+.left .left-line u {
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    font-weight:bold;
+}
+.left .left-line:before {
+    display: none !important;
+}
+
+.left .left-line {
+    background: #f7f7f7 !important;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 43px;
+    border-top: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    margin-top: -1px;
+}
+
+/*.borleft {
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}*/
+
+.borleft .left-line {
+    margin-right: -1px;
+}
+
+/* 在ipad上显示滚动条 */
+.left::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+.left::-webkit-scrollbar-track-piece
+{
+    background-color: #CCCCCC;
+    -webkit-border-radius: 6px;
+}
+.left::-webkit-scrollbar-thumb:vertical
+{
+    height: 5px;
+    background-color: #999999;
+    -webkit-border-radius: 6px;
+}
+.left::-webkit-scrollbar-thumb:horizontal
+{
+    width: 5px;
+    background-color: #CCCCCC;
+    -webkit-border-radius: 6px;
+}

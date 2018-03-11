@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商户信息</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201801311421">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201801311421">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201801311421">
+<link rel="stylesheet" type="text/css" href="../../css/page/shopinfo.css?v=201801311421">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：商户信息
+                <span id="permissions" class="hide"><a href="index-shopeditinfo.html"></a><input type="button" value="修改" id="consumebtn" class="nav-btn"></a></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <li class="clearfix">
+                    <div class="nav-content-title">公司名称：</div>
+                    <div id="companyName"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">英文名称：</div>
+                    <div id="companyNameEn"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">企业法人：</div>
+                    <div id="companyLegal"></div>
+                    </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">联 系 人：</div>
+                    <div id="merchantPer"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">联系电话：</div>
+                    <div id="merchantTel"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">发卡额度：</div>
+                    <div id="maxCardRate" data-description="发卡额度"></div>
+                </li>
+                <li class="clearfix" id="stored_1">
+                    <div class="nav-content-title">储值通用商户：</div>
+                    <div id="StoredType"></div>
+                </li>
+                <li class="clearfix" id="stored_2">
+                    <div class="nav-content-title">储值卡通用商户：</div>
+                    <div id="StoredRange"></div>
+                </li>
+            </ul>
+            <div class="nav-itinfo"><span class="nav-itinfo-span">IT管理员信息</span></div>
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-title">联 系 人：</div>
+                    <div id="itPer"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-title">联系电话：</div>
+                    <div id="itTel"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201801311421"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201801311421"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201801311421"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201801311421"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201801311421"></script>
+    <script type="text/javascript" src="../../js/page/information.js?v=201801311421"></script>
+</body>
+</html>

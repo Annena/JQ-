@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>菜品属性添加</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802021050">
+<link rel="stylesheet" type="text/css" href="../../css/page/addcaipin.css?v=201802021050">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a id="selectJump" target="main">菜品管理</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-btn"></span>
+                <span><input type="button" value="保存" id="updatebtn" class="nav-btn"></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">分类编号：</div>
+                    <div><input type="text" name="shop" id="menuTypeDid" class="nav-shop" value="" placeholder="" autocomplete="off"></div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">属性名称：</div>
+                    <div><input type="text" name="shop" id="menuType" data-description="属性名称" class="nav-shop" value="" placeholder="" autocomplete="off"><p class="font red">*必填</p>&nbsp;最多支持10个汉字、字母、数字、符号_(字母数字符号算半个)</div>
+                </li>       
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802021050"></script>
+    <script type="text/javascript" src="../../js/page/dishesPropertyEdit.js?v=201802021050"></script>
+</body>
+</html>

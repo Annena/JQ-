@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>打印机管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+    
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201607051447">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201607051447">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201607051447">
+<link rel="stylesheet" type="text/css" href="../../css/page/printset.css?v=201607051447">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+            <div class="stores-lan">
+                当前位置： 打印机列表
+                <div class="caipin-add" id="permissions">
+                    <input type="button" value="添加打印机" id="addbtn" class="stores-btn">
+                </div>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="stores-content  stores-content-print">
+            <table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th style="width:10%">序号</th>
+                        <th style="width:53.33%">名称</th>
+                        <th style="width:33.33%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodys">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201607051447"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201607051447"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201607051447"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201607051447"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201607051447"></script>
+    <script type="text/javascript" src="../../js/page/printerManage.js?v=201607051447"></script>
+</body>
+</html>

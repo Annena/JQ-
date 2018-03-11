@@ -1,0 +1,38 @@
+/* 按储值会员 */
+.table_wrap{
+	width: 98%;
+	margin-bottom: 10px;
+}
+.table_wrap table{
+	width: 100%;
+}
+.table_wrap table th{
+	background: #f2f2f2;
+}
+.tdbg{
+	background: #f2f2f2;
+	color: #666 !important; 
+	font-weight: bold !important;
+}
+#tables{
+	float: left;
+}
+#tables td{
+	width: 20%;
+}
+table tr{
+    background: #fff !important;
+    border: none !important;
+}
+/* 图表样式 */
+/* 会员性别占比表 */
+
+#charts{
+	display: inline-block;
+	/* width: 390px; */
+	width: 98%;
+	height:330px; 
+	float: left;
+	border: 1px solid #e3eaf2;
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>会员卡管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201802221448">
+<link rel="stylesheet" type="text/css" href="../../css/page/vipcard.css?v=201802221448">
+</head>
+<body style="height:100%">
+    
+
+    <!--main部分-->
+    <div class="vipcard-nav">
+        <div class="stafffloat">
+            <div class="vipcard-lan">
+                当前位置：会员卡信息
+                <span id="permissions"><a href="index-shopeditinfo.html"></a><input type="button" value="修改" id="consumebtn" class="vipcard-btn"></a></span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="vipcard-content">
+            <li class="clearfix">
+                <div class="vipcard-content-title">会员卡LOGO：</div>
+                <div class="vipcard-content-logo" id="cardLogo"></div>
+            </li>
+            <li class="clearfix">
+                <div class="nav-content-text">会员卡名称：</div>
+                <div class="vipcard-content-nametw" id="cardName"></div>
+            </li>
+            <li class="clearfix">
+                <div class="nav-content-text">适用范围：</div>
+                <div class="vipcard-content-nametw" id="cardScope"></div>
+            </li>
+            <li class="clearfix hide">
+                <div class="nav-content-text">发卡额度：</div>
+                <div class="vipcard-content-nametw" id=""></div>
+            </li>
+            <li class="clearfix">
+                <div class="nav-content-text">会员价适用范围：</div>
+                <div class="vipcard-content-nametw  vipcard-content-add" id="memberPriceUsed"></div>
+            </li>
+            <li class="clearfix">
+                <div class="vipcard-content-title">会员卡背景：</div>
+                <div class="vipcard-content-logo" id="cardBackground"></div>
+            </li>
+            <li class="clearfix">
+                <div class="vipcard-content-title">商户背景：</div>
+                <div class="vipcard-content-logo" id="companyBackground"></div>
+            </li>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201802221448"></script>
+    <script type="text/javascript" src="../../js/page/cardManage.js?v=201802221448"></script>
+</body>
+</html>

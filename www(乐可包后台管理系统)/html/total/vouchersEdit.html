@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>抵用券添加</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201706191846">
+<link rel="stylesheet" type="text/css" href="../../css/page/addvoucher.css?v=201706191846">
+</head>
+<body style="height:100%">
+   
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+        	<div class="nav-lan">
+        		当前位置：<a href="vouchersManage.html" target="main">抵用券列表</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel"><input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn"></span>
+        		<span><input type="button" value="保存" id="updatebtn" class="nav-btn"></span>
+        	</div>
+        </div>
+        <div class="stafffloatdiv" style="height:60px;"></div>
+    	<div class="nav-content">
+    		<ul>
+	    		<li class="clearfix">
+	    			<div class="nav-content-edit-title">名称：</div>
+	    			<div><input type="text" name="shop" data-description="名称" class="nav-shop" id="voucherName" value="" placeholder="" autocomplete="off">&nbsp;*必填</div>
+	    		</li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">面值：</div>
+                    <div><input type="tel" name="shop" data-description="面值" id="voucherMoney" class="nav-shop" value="" placeholder="" autocomplete="off">&nbsp;*必填</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">用券最低消费：</div>
+                    <div><input type="text" name="shop" id="lowConsume" data-description="用券最低消费" class="nav-shop" value="" placeholder="" autocomplete="off">&nbsp;*必填（使用抵用券的最低消费额度）</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">适用店铺</div>
+                    <div id="shopIds" class="nav-content-edit-righttitle">
+
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">有效期：</div>
+                    <div>
+                        <input name="date_input" type="radio" id="validity" checked value="">
+                        <input type="text" id="openTime" name="start-time" data-description="开始时间" class="Wdate nav-shop"  data-required="true" onClick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})"/> 至 
+                        <input type="text" id="closeTime" name="end-time" data-description="结束时间" class="Wdate nav-shop"  data-required="true" onClick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd',lang:'zh-cn'})"/>&nbsp;*
+                    </div>
+                </li>
+                <li>
+                     <div class="nav-content-edit-title">&nbsp;&nbsp;&nbsp;</div>
+                    <div>
+                        <input name="date_input" type="radio" id="effective" value="">
+                        <select name="statusList" id="effect" class="nav-select">
+                            <option value="0">当日生效</option>
+                            <option value="1">次日生效</option>
+                        </select>
+                        <span>有效天数：</span>
+                        <input name="" type="text" data-description="有效天数" id="effectiveDate">
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title">发放方式：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="giveOut" class="nav-select">
+                            <option value="1">消费返赠</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="clearfix" id="addNoDisplay">
+                    <div class="nav-content-edit-title">状  态：</div>
+                    <div class="nav-content-add">
+                        <select name="statusList" id="vouStatus" class="nav-select">
+                            <option value="0">使用</option>
+                            <option value="1">停用</option>
+                        </select>
+                    </div>
+                </li>
+                
+    		</ul>
+    	</div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../plug-in/DatePicker/WdatePicker.js"></script><!-- 日期选中插件  -->
+    <script type="text/javascript" src="../../js/base/config.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201706191846"></script>
+    <script type="text/javascript" src="../../js/page/vouchersManageAdd.js?v=201706191846"></script>
+</body>
+</html>

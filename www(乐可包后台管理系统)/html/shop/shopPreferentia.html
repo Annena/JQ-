@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>优惠方案管理</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201606131742">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201606131742">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201606131742">
+<link rel="stylesheet" type="text/css" href="../../css/page/youhui.css?v=201606131742">
+</head>
+<body style="height:100%">
+
+    <!--main部分-->
+    <div class="stores-nav">
+        <div class="stafffloat">
+        	<div class="stores-lan">
+        		当前位置：优惠方案列表
+        	</div>
+
+            <div class="caipin-lan clearfix">
+                <div class="caipin-fenleicheck" id="preferentiaMan">优惠方案</div>
+                <div class="caipin-fenleinucheck" id="preferentiaShe">下架管理</div>
+            </div>
+        </div>
+        <div class="stafffloatdiv"></div>
+    	<div class="stores-content">
+    		<table cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr class="stores_title">
+                        <th style="width:35%">方案名称：</th>
+                        <th style="width:25%">有效日期：</th>
+                        <th style="width:25%">最低消费：</th>
+                        <th style="width:15%">店长授权：</th>
+                        <!-- <th>操作：</th> -->
+                    </tr>
+                </thead>
+                <tbody id="tbodys">
+
+                </tbody>
+            </table>
+    	</div>
+
+
+        <!--查看详情弹层-->
+        <div class="laydertan hide" id="shopPreferntia">
+            <div class="laydertop"></div>
+            <div class="layderspan">优惠方案详情<span id="can-alert">关闭</span></div>
+            <div class="laydercontent" id="laydercontent">
+                <p>银行卡：<span id="card"></span></p>
+                <p>现金：<span id="cash"></span></p>
+                <p>储值本金金额：<span id="principal"></span></p>
+                <p>储值支付金额：<span id="stored"></span></p>
+                <p>抵用券支付金额：<span id="voucher"></span></p>
+                <p>快捷支付：<span id="quickpay"></span></p>
+                <p>其他支付方式：<span id="other"></span></p>
+                <p>赠送菜品：<span id="paygive"></span></p>
+                <p>其他支付数据：<span id="payother"></span></p>
+                <p>结账金额：<span id="paymoney"></span></p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201606131742"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201606131742"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201606131742"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201606131742"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201606131742"></script>
+    <script type="text/javascript" src="../../js/page/shopPreferentia.js?v=201606131742"></script>
+</body>
+</html>

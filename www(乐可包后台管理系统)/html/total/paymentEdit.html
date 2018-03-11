@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>微信支付宝修改设置</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
+<link rel="stylesheet" type="text/css" href="../../css/base/public.css?v=201606241622">
+<link rel="stylesheet" type="text/css" href="../../css/base/header.css?v=201606241622">
+<link rel="stylesheet" type="text/css" href="../../css/base/left.css?v=201606241622">
+<link rel="stylesheet" type="text/css" href="../../css/page/addpay.css?v=201606241622">
+</head>
+<body style="height:100%">
+    
+    <!--main部分-->
+    <div class="nav">
+        <div class="stafffloat">
+            <div class="nav-lan">
+                当前位置：<a href="paymentSettings.html" target="main">在线支付设置</a> >> <b id="addAndedit"></b>
+                <span class="stores-cancel">
+                    <input type="button" value="取消" id="exitbtn" class="nav-quxiao-btn">
+                </span>
+                <span>
+                    <input type="button" value="保存" id="updatebtn" class="nav-btn">
+                </span>
+            </div>
+        </div>
+        <div class="stafffloatdivt"></div>
+        <div class="nav-content nav_content_set">
+            <ul>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title list_tip">APP ID：</div>
+                    <div><input type="text" id="app_id" name="app_id" class="nav-shop" data-description="APPID" value="" placeholder=""  autocomplete="off"> &nbsp;*必填</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title list_tip">APP密钥：</div>
+                    <div><input type="text" id="app_secret" name="app_secret" class="nav-shop" value="" data-description="APP密钥" placeholder="" autocomplete="off">&nbsp;*必填</div>
+                </li>
+                <li class="clearfix">
+                    <div class="nav-content-edit-title list_tip">微信支付商户号：</div>
+                    <div><input type="text" id="mch_id" name="mch_id" class="nav-shop" value="" data-description="微信支付商户号" placeholder="" autocomplete="off">&nbsp;*必填</div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示信息（弹出提示消息） -->
+    <div id="prompt-message" class="prompt-message"></div>
+
+    <!-- 弹出信息（弹出框） -->
+    <div id="alert-message" class="message">
+        <h1 id="alert-title" class="title">系统提示</h1>
+        <div id="alert-content" class="container">
+        </div>
+        <div id="close-alert-message" class="close-message">
+            <div id="cancel-alert" class="close-dialog"></div>
+            <div id="definite-alert" class="definite-dialog"></div>
+        </div>
+        <div id="alert-prompt-message" class="prompt-message">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/layer/layer.min.js"></script>
+    <script type="text/javascript" src="../../plug-in/jquery.cookie/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/base/config.js?v=201606241622"></script>
+    <script type="text/javascript" src="../../js/base/common.js?v=201606241622"></script>
+    <script type="text/javascript" src="../../js/base/pattern.js?v=201606241622"></script>
+    <script type="text/javascript" src="../../js/base/cache.js?v=201606241622"></script>
+    <script type="text/javascript" src="../../js/base/public.js?v=201606241622"></script>
+    <script type="text/javascript" src="../../js/page/paymentEdit.js?v=201606241622"></script>
+</body>
+</html>
